@@ -42,9 +42,9 @@ let navbar = () => {
             </div>
           </div>
           <a href="../index.html" id="in_nav_icon" class="nav-icon">
-            <img class="navbar-logo" style="width:10%" src="../image/logo.img.jpeg" alt="logo" id="in_logo"
+            <img class="navbar-logo" style="width:40% border:1px solid black" src="../image/codinglogo.png" alt="logo" id="in_logo"
             />
-            <img class="nav-mini-logo" style="width:10%" src="../image/logo.img.jpeg"alt="logo"
+            <img class="nav-mini-logo" style="width:40% " src="../image/codinglogo.png"alt="logo"
               id="in_mini_logo"
             />
           </a>
@@ -52,8 +52,8 @@ let navbar = () => {
         <div class="nav-links">
           <ul>
             <li><a href="../html/users.html" id="users-page">Users</a></li>
-            <li><a href="../html/home.html" id="in_quetions">Questions</a></li>
-            <li><a href="../html/ask.html" id="in_ask">Ask</a></li>
+            <li><a href="../html/home.html" id="in_quetions">TopQuestions</a></li>
+            <li><a href="../html/ask.html" id="in_ask">AskQuestion</a></li>
           </ul>
         </div>
         <div class="navbar-search">
