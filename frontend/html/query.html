@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ask Question</title>
+  <link rel="stylesheet" href="../style/query.css" />
+  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet" />
+  <!----------------------------- navbar css --------------------------------->
+  <!----------------------------- navbar css --------------------------------->
+</head>
+
+<body>
+  <div id="preloader">
+    <i class="preloader-icon fa fa-spinner"></i>
+    <!-- this is the preloader -->
+  </div>
+
+  <div id="NAVBAR">
+    <!-- navbar here "Copy this div" -->
+  </div>
+  <div id="ask">
+    <h1>Ask a public question</h1>
+
+
+    <div class="Good-Question">
+      <h2 style="padding: 10px 0px;">Write a good question</h2>
+      <p style="padding: 10px 0px 0px 0px;">You’re ready to <span style="color: #4ea5e3;">ask a programming-related question</span>  and this form will help guide you through the process.</p>
+      <p>Looking to ask a non-programming question? See <span style="color: #4e9ed7;">the topics here </span>  to find a relevant site.</p>
+      <p style="padding: 10px 0px;">Steps</p>
+      <ul style="list-style-type: disc;" class="unordered">
+        <li>Summarize your problem in a one-line title.</li>
+        <li>Describe your problem in more detail.</li>
+        <li>Describe what you tried and what you expected to happen.</li>
+        <li>Add “tags” which help surface your question to members of the community.</li>
+        <li>Review your question and post it to the site.</li>
+      </ul>
+    </div>
+
+
+    <form action="">
+      <div class="heading">
+        <h3>Title</h3>
+        <p>
+          Be specific and imagine you’re asking a question to another person.
+        </p>
+        <input type="text" name="heading" id="heading"
+          placeholder="e.g. Is there an R function for finding the index of an element in a vector?" required />
+        <div id="question_body">
+          <h3>What are the details of your problem?</h3>
+          <p>
+            Introduce the problem and expand on what you put in the title.
+            Minimum 20 characters.
+          </p>
+          <div id="editor-container"></div>
+        </div>
+        <button id="submit">Post Your Question</button>
+      </div>
+    </form>
+  </div>
+  <div id="FOOTER">
+    <!-- footer here copy this div -->
+  </div>
+  <script>
+    // Hide the preloader when the page is loaded
+    window.addEventListener("load", () => {
+      document.querySelector("body").classList.add("loaded");
+    });
+  </script>
+  <script type="module" src="../script/navbar.js"></script>
+  <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+  <script type="module" src="../script/ask.js"></script>
+  <script>
+    var quill = new Quill("#editor-container", {
+      modules: {
+        toolbar: [
+          [{ header: [1, 2, 3, 4, 5, 6, false] }],
+          ["bold", "italic", "underline"],
+          ["code-block"],
+          [{ list: "ordered" }, { list: "bullet" }],
+        ],
+      },
+      placeholder: "Explain Question in details...",
+      theme: "snow",
+    });
+  </script>
+</body>
+
+</html>
