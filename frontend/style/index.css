@@ -1,3 +1,1106 @@
-div{
-    height:100px;
+
+
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 10px;
+  color: #242729;
+}
+
+.bag {
+  width: 100%;
+  max-width: 126.4rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+section {
+  padding: 5rem 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #0077cc;
+  cursor: pointer;
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.btn {
+  text-align: center;
+  font-size: 1.3rem;
+  border-radius: 3px;
+  transition: all 0.5s;
+  padding: 1.3rem 2.5rem;
+}
+
+.btn-orange {
+  background-color:#5D6D7E  ;
+  color: #fff;
+}
+
+.btn-dark-blue {
+  background-color: #2b2d6e;
+  color: #fff;
+}
+
+/* --------------top-------section--------------- */
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
+.containerr {
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.containerr p {
+  font-size: 4rem;
+  padding: 0.5rem;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  overflow: hidden;
+}
+.containerr p span.typed-text {
+  font-weight: 700;
+  color: white;
+}
+.containerr p span.cursor {
+  display: inline-block;
+  background-color: #ccc;
+  margin-left: 0.1rem;
+  width: 3px;
+  animation: blink 1s infinite;
+}
+.containerr p span.cursor.typing {
+  animation: none;
+}
+@keyframes blink {
+  0% {
+    background-color: #ccc;
+  }
+  49% {
+    background-color: #ccc;
+  }
+  50% {
+    background-color: transparent;
+  }
+  99% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: #ccc;
+  }
+}
+
+.top-section {
+  background-image: url("../imgs/Untitled_design-removebg.svg");
+  background-repeat: no-repeat;
+  background-position:  center;
+  background-color: #5D6D7E  ;
+  background-size: cover;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.top-section-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 3rem;
+}
+
+.titlesection {
+  color: #242729;
+  font-family: "Roboto Slab Bold", serif;
+  font-weight: 700;
+  font-weight: bold;
+  font-size: 5.5rem;
+  text-align: center;
+  max-width: 100%;
+}
+.titlesection span {
+  font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono,
+    DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace,
+    sans-serif;
+}
+
+.top-section-para {
+  margin: 2rem 0;
+  font-size: 2rem;
+  color: #242729;
+  max-width: 40rem;
+  font-weight: 400;
+  text-align: center;
+  font-family: "Source Sans Pro", sans-serif;
+}
+#main{
+    border:0px solid rgb(0, 111, 26);
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    margin-left: 20%;
+}
+#m1,#m2{
+    border: 0px solid orangered;
+    height:20vh;
+    width:60%;
+    text-align: center;
+    font-size: larger;
+    
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    background-color: white;
+    margin: 5%;
+    padding:4%;
+    
+}  
+#m1 button,#m2 button{
+    background-color:#f48024
+    ;
+   color: white;
+   border: 1px solid #f48024;
+    padding:7px;
+    
+    margin-top: 5%;
+}
+
+.top-section-opts {
+  display: flex;
+  border:1px solid blue;
+}
+
+.btn-developers {
+  background-color: #fff;
+  color:#5D6D7E  ;
+  border: 1px solid#5D6D7E  ;
+}
+
+.btn-businesses {
+  background-color:#5D6D7E  ;
+  color: #fff;
+  margin-left: 0.5rem;
+}
+
+/* --------------top-------section----Ends----------- */
+
+/*-------------------------Businesses-------------------------*/
+
+.businesses {
+  background-color: #f7f6f9;
+  padding: 10rem 0;
+}
+.businesses .optss {
+  margin-top: 6rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+.businesses .opt {
+  flex-basis: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3.5rem;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 2px 6px rgba(0, 0, 0, 0.06),
+    0 3px 8px rgba(0, 0, 0, 0.09);
+  border-radius: 0.7rem;
+}
+.businesses .DesForOpt {
+  font-size: 1.7rem;
+  font-weight: 400;
+  margin-left: 1rem;
+  color: #242729;
+}
+.businesses .option-link {
+  color:#5D6D7E  ;
+}
+
+/*----------------Businesses-------Ends-----------*/
+
+/*----------------- Developer ----------------*/
+.btn btn-developers{
+    display:grid;
+    grid-template-columns: repeat(1,1fr);
+    border:1px solid red;
+}
+.head-sec {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #242729;
+}
+
+.titlesection {
+  font-size: 3.4rem;
+  font-family: "Roboto Slab Bold", serif;
+  font-weight: 700;
+}
+
+.linesec {
+  width: 64px;
+  height: 8px;
+  margin: 3rem auto;
+  border-radius: 100rem;
+  background-color:#5D6D7E  ;
+}
+
+.descriptionSec {
+  font-size: 1.7rem;
+  max-width: 52.6rem;
+  text-align: center;
+}
+.descriptionSec a {
+  color:#5D6D7E  ;
+}
+
+.developers .optss {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.developers .opt {
+  flex-basis: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 2px 6px rgba(0, 0, 0, 0.06),
+    0 3px 8px rgba(0, 0, 0, 0.09);
+  border-radius: 0.7rem;
+}
+.developers .opt:nth-child(1),
+.developers .opt:nth-child(3) {
+  margin-top: 12rem;
+}
+.developers .opt:hover {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.09), 0 3px 8px rgba(0, 0, 0, 0.09),
+    0 4px 13px rgba(0, 0, 0, 0.13);
+}
+.developers .optTIT {
+  color: #242729;
+  font-size: 2.1rem;
+  font-weight: 400;
+  margin: 2rem 0;
+}
+.developers .DesForOpt {
+  font-size: 1.4rem;
+  font-weight: 400;
+  text-align: center;
+  color: #242729;
+}
+.developers .DesForOpt a {
+  color:#5D6D7E  ;
+}
+.developers .optBTN {
+  margin: 3rem 0 2rem;
+}
+.developers .option-link {
+  color: #fff;
+}
+
+/*---------------------Developers--------------Ends--------------*/
+
+/*----------------------------Hire----------------------------*/
+.for-hire {
+  background-color: #f7f6f9;
+  padding: 10rem 0;
+}
+.for-hire .bag {
+  display: flex;
+  justify-content: center;
+  padding: 0 5rem;
+}
+
+.hire-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(40rem, 1fr));
+  grid-column-gap: 3rem;
+  grid-row-gap: 6rem;
+}
+
+.hire-item {
+  display: block;
+  color: #242729;
+}
+.hire-item .btn {
+  font-size: 1.5rem;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 400;
+  padding: 1.2rem 2rem;
+}
+
+.hire-icon {
+  max-width: 7.6rem;
+}
+
+.hire-item-title {
+  font-size: 2.7rem;
+  font-family: "Roboto Slab Bold", serif;
+  font-weight: 700;
+  margin: 1rem 0;
+}
+
+.hire-item-description {
+  font-size: 1.5rem;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 400;
+  margin-bottom: 3.5rem;
+}
+
+/*---------------------Hire------------------------*/
+
+/*-------------------Teams--------------------*/
+.for-teams {
+  background-image: url("https://cdn.sstatic.net/Img/product/teams/illo-teams-pricing.svg?v=8afb8ac7c580");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-color: #2c3034;
+  padding: 12rem 0;
+}
+.teams .optss {
+  margin-top: 6rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+.teams .opt {
+  flex-basis: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3.5rem;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 2px 6px rgba(0, 0, 0, 0.06),
+    0 3px 8px rgba(0, 0, 0, 0.09);
+  border-radius: 0.7rem;
+}
+.teams .DesForOpt {
+  font-size: 1.7rem;
+  font-weight: 400;
+  margin-left: 1rem;
+  color: #242729;
+}
+.teams .option-link {
+  color: #A3E4D7 ;
+}
+
+.headOfTeamsSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+}
+
+.titleOfTeamsSection {
+  font-size: 3.4rem;
+  font-family: "Roboto Slab Bold", serif;
+  font-weight: bold;
+  max-width: 55rem;
+}
+
+.decOfTeams {
+  font-size: 1.7rem;
+  max-width: 52.6rem;
+  text-align: center;
+  margin: 3rem 0 2rem;
+}
+
+.plansOfTeams {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 10rem auto 0;
+}
+
+.card {
+  flex: 1 auto;
+  flex-basis: calc(33% - 4rem);
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 1px 4px rgba(0, 0, 0, 0.05),
+    0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 3rem;
+  border-radius: 0.7rem;
+  margin: 2rem;
+  position: relative;
+}
+
+.priceSection {
+  margin: 4rem 0;
+}
+
+.plansForTeams {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  font-family: "Roboto Slab", serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+  border-radius: 0.3rem;
+}
+
+.card-basic .plansForTeams {
+  background-color: #c8ccd0;
+  color: #2f3337;
+}
+.card-basic .btn-card {
+  background-color: #d6d9dc;
+  color: #2f3337;
+}
+
+.card-business .plansForTeams {
+  background-color: #3c4146;
+  color: #fff;
+}
+.card-business .btn-card {
+  background-color: #3c4146;
+  color: #fff;
+}
+
+.card-enterprise .plansForTeams {
+  background-color: #2b2d6e;
+  color: #fff;
+}
+.card-enterprise .btn-card {
+  background-color: #2b2d6e;
+  color: #fff;
+}
+
+.card-most-used {
+  position: absolute;
+  width: 90%;
+  left: 5%;
+  top: -3.7rem;
+  padding: 1rem 2rem;
+  background-color: #e4e6e8;
+  color: #242729;
+  font-size: 1.2rem;
+  font-family: "Source Sans Pro Bold", sans-serif;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #d6d9dc;
+  border-top-left-radius: 0.7rem;
+  border-top-right-radius: 0.7rem;
+}
+
+.descriptionOfPlans {
+  color: #242729;
+  font-size: 1.5rem;
+  font-family: "Roboto Slab", serif;
+  font-weight: 500;
+  margin-top: 2rem;
+}
+
+.parentPriceSec {
+  border-bottom: 1px solid #e4e6e8;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+}
+
+.price {
+  font-size: 3.4rem;
+  font-family: "Roboto Slab Bold", serif;
+  font-weight: 900;
+  color: #242729;
+}
+
+.per {
+  color: #9199a1;
+  font-size: 1.3rem;
+  display: block;
+  margin-top: 1rem;
+}
+
+.offerings {
+  display: flex;
+  flex-direction: column;
+}
+
+.offeringPlan {
+  margin: 0.6rem 0;
+  display: flex;
+  align-items: center;
+}
+.offeringPlan i {
+  font-size: 1.8rem;
+  color: #242729;
+}
+.offeringPlan:last-child {
+  margin-bottom: 1.5rem;
+}
+
+.simpleTXT {
+  color: #242729;
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-family: "Source Sans Pro", sans-serif;
+  margin-left: 1rem;
+}
+
+.FooterOfThemainCardsec {
+  position: absolute;
+  bottom: 3rem;
+  width: calc(100% - 6rem);
+}
+
+.btn-card {
+  font-size: 1.5rem;
+  font-family: "Source Sans Pro Bold", sans-serif;
+  font-weight: 700;
+  padding: 1.5rem 1rem;
+  display: block;
+}
+.btn-card:hover {
+  background-color: #0095ff;
+  color: #fff;
+}
+
+.footer-teams-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 80%;
+  margin: 5rem auto 0;
+}
+.footer-teams-section img {
+  max-height: 24px;
+  width: initial;
+  margin-right: 1rem;
+}
+
+.per-section-teamsFooter {
+  margin: 2rem;
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  color: #bbc0c4;
+}
+
+.teams-footer-text {
+  display: inline-block;
+}
+
+/*----------------- Teams---Ends----------------------*/
+
+/*-----------------Questions-----Ends----------------*/
+.content-questions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.content-questions .question-title-h3 {
+  font-family: "Roboto Slab Bold", serif;
+  font-weight: 900;
+  color: #242729;
+  font-size: 3.4rem;
+  text-align: center;
+}
+
+.question-header-div {
+  margin: 3rem 0 6rem;
+}
+
+.questions-body {
+  display: flex;
+  justify-content: center;
+}
+
+.questions-body-item {
+  flex-basis: 20%;
+  display: flex;
+  align-items: center;
+  padding: 1.5rem 5rem 1.5rem 1.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+  cursor: pointer;
+  z-index: 2;
+}
+.questions-body-item:hover {
+  border-color: transparent;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 2px 6px rgba(0, 0, 0, 0.06),
+    0 3px 8px rgba(0, 0, 0, 0.09);
+}
+.questions-body-item.active {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.09), 0 3px 8px rgba(0, 0, 0, 0.09),
+    0 4px 13px rgba(0, 0, 0, 0.13);
+}
+.questions-body-item.active:hover {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 2px 6px rgba(0, 0, 0, 0.06),
+    0 3px 8px rgba(0, 0, 0, 0.09);
+}
+.questions-body-item.active .question-arrow-right {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  overflow: hidden;
+  width: 1.6rem;
+  left: 100%;
+}
+.questions-body-item.active .question-arrow-right:after {
+  position: absolute;
+  top: 50%;
+  content: "";
+  width: 1.6rem;
+  height: 1.6rem;
+  background-color: #fff;
+  border: 1px solid #d6d9dc;
+  box-shadow: 2px 0 8px rgba(59, 64, 69, 0.1);
+  transform: translate(-50%, -50%) rotate(45deg);
+  transition: all 0.2s;
+}
+.questions-body-item.active .question-arrow-left {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  overflow: hidden;
+  width: 1.6rem;
+  right: 100%;
+}
+.questions-body-item.active .question-arrow-left:before {
+  position: absolute;
+  top: 50%;
+  content: "";
+  width: 1.6rem;
+  height: 1.6rem;
+  background-color: #fff;
+  border: 1px solid #d6d9dc;
+  box-shadow: 2px 0 8px rgba(59, 64, 69, 0.1);
+  transform: translate(-50%, -50%) rotate(45deg);
+  transition: all 0.2s;
+  right: -100%;
+}
+
+.question-item-icon {
+  width: 5rem;
+}
+
+.question-item-text {
+  margin-left: 1rem;
+  color: #242729;
+  font-size: 1.7rem;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 400;
+}
+
+.questions-body-item-content {
+  flex-basis: 40%;
+  margin: 0 3rem;
+  display: block;
+  text-align: center;
+}
+
+.question-item-content-text {
+  padding: 4rem 0;
+  font-size: 2.1rem;
+  font-family: "Roboto Slab", serif;
+  font-weight: 500;
+  color: #242729;
+}
+
+.question-item-content-btn {
+  margin-top: 2rem;
+  padding: 1.5rem 2.5rem;
+}
+
+.questions-footer {
+  margin: 20rem 0 10rem;
+  width: 100%;
+}
+
+.questions-div-grid {
+  margin-top: 6rem;
+  padding: 0 5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-gap: 2.5rem;
+}
+
+.grid-item-img {
+  max-height: 15rem;
+}
+.grid-item-img img {
+  width: auto;
+}
+
+.grid-item-title {
+  font-size: 1.9rem;
+  font-family: "Roboto Slab Bold", serif;
+  font-weight: 700;
+  margin: 2rem 0;
+}
+
+.grid-item-description {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.5rem;
+  line-height: 19px;
+  font-weight: 400;
+}
+
+/* ---------------------------Questions---------------------*/
+
+/*----------------------Media Queries-------------------------*/
+@media screen and (max-width: 1100px) {
+  .businesses .opt {
+    flex-direction: column;
+  }
+  .businesses .optIcon {
+    margin-bottom: 1.5rem;
+  }
+  .businesses .optIcon img {
+    max-width: 7.6rem;
+  }
+}
+@media screen and (max-width: 810px) {
+  .navbar-brand {
+    flex: initial;
+  }
+
+  .nav-links ul li:not(:nth-child(2)) {
+    display: none;
+  }
+
+  .navbar-search {
+    flex: initial;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    top: 4.7rem;
+    padding: 0.8rem 1rem;
+    background-color: #d6d9dc;
+    margin-right: initial;
+    display: none;
+  }
+  .navbar-search.open {
+    display: flex;
+  }
+
+  .search-btn {
+    display: flex;
+  }
+
+  .nav-right-buttons {
+    flex: initial;
+    margin-right: 1rem;
+  }
+
+  .searchbox-hints {
+    width: 94%;
+    left: 3%;
+    top: 5.2rem;
+  }
+
+  .developers .optss {
+    justify-content: initial;
+    flex-direction: column;
+    max-width: initial;
+    margin-top: 6rem;
+  }
+  .developers .optss > .opt {
+    margin-top: initial;
+  }
+  .developers .opt {
+    max-width: 28rem;
+    margin-bottom: 3rem;
+    margin-top: initial;
+  }
+
+  .businesses .optss {
+    flex-direction: column;
+  }
+  .businesses .opt {
+    flex-direction: row;
+    margin-bottom: 2.5rem;
+    max-width: 35rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .businesses .optIcon {
+    margin-bottom: 0;
+  }
+  .businesses .optIcon img {
+    max-width: initial;
+  }
+
+  .for-teams {
+    background-image: none;
+  }
+
+  .plansOfTeams {
+    width: 90%;
+  }
+  .plansOfTeams .card {
+    flex-basis: initial;
+  }
+  .plansOfTeams .card:nth-child(2) {
+    order: -1;
+  }
+
+  .footer-teams-section {
+    width: 90%;
+  }
+
+  .content-questions .question-title-h3 {
+    font-size: 2.3rem;
+  }
+
+  .questions-body {
+    flex-direction: column;
+    justify-content: initial;
+  }
+
+  .questions-body-items {
+    display: flex;
+  }
+
+  .questions-body-item {
+    flex-basis: 33%;
+    flex-direction: column;
+    padding: 1rem;
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+  }
+
+  .question-item-text {
+    margin-left: initial;
+    margin-top: 1rem;
+  }
+
+  .question-arrow-right,
+  .question-arrow-left {
+    display: none;
+  }
+
+  .questions-body-item-content {
+    margin: 2rem 0 0;
+    order: 3;
+  }
+
+  .question-item-content-img {
+    padding: 0 2rem;
+  }
+
+  .question-item-content-text {
+    font-size: 1.8rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .questions-div-grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 830px) {
+  .footer-content {
+    flex-wrap: wrap;
+  }
+
+  .social-media {
+    margin-bottom: 1rem;
+  }
+}
+@media screen and (max-width: 500px) {
+  .questions-div-grid {
+    padding: 0;
+  }
+}
+@media screen and (max-width: 640px) {
+  .nav-icon {
+    padding: 0 1rem;
+  }
+
+  .navbar-logo {
+    display: none;
+  }
+
+  .nav-mini-logo {
+    display: block;
+    width: 40px;
+  }
+
+  .nav-links {
+    font-size: 1.1rem;
+  }
+
+  .searchbox-hint-body {
+    flex-direction: column;
+  }
+
+  .containerr P {
+    font-size: 2.5rem;
+  }
+
+  .top-section {
+    background-image: url("https://cdn.sstatic.net/Img/home/illo-hero-small.svg?v=884735d21ea5");
+  }
+
+  .titlesection {
+    font-size: 3rem;
+  }
+
+  .top-section-opts {
+    flex-direction: column;
+  }
+
+  .btn-developers {
+    margin-bottom: 1rem;
+  }
+
+  .btn-businesses {
+    margin-left: initial;
+  }
+
+  .titlesection {
+    font-size: 2.3rem;
+  }
+
+  .descriptionSec {
+    font-size: 1.4rem;
+    line-height: 2rem;
+  }
+
+  .businesses .DesForOpt {
+    font-size: 1.4rem;
+    line-height: 2rem;
+  }
+
+  .headOfTeamsSection {
+    padding: 0 6rem;
+  }
+
+  .titleOfTeamsSection {
+    font-size: 2.3rem;
+  }
+
+  .decOfTeams {
+    font-size: 1.4rem;
+    line-height: 2rem;
+  }
+
+  .questions-div-grid {
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    padding: 0 9rem;
+  }
+
+  .footer-icon {
+    display: none;
+  }
+
+  .footer-links-title a {
+    font-size: 1.1rem;
+  }
+
+  .footer-link {
+    font-size: 1.1rem;
+  }
+}
+
+/*-----------------------Queries----------------------------------------*/
+/* Center the preloader */
+#preloader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fafafb;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  overflow: hidden;
+  scrollbar-width: none;
+}
+
+/* Rotate the loading icon */
+.preloader-icon {
+  animation: spin 1s infinite linear;
+  font-size: 4rem;
+  color: #A3E4D7 ;
+}
+
+/* Rotate the preloader */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Hide the preloader when the page is loaded */
+.loaded #preloader {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+}
+@font-face {
+  font-family: "Source Sans Pro Bold";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Source Sans Pro Bold Bold"), local("SourceSans Pro Bold-Bold"),
+    local("Source Sans Pro Bold 700"), local("SourceSans Pro Bold-700"),
+    url("https://cdn.sstatic.net/Fonts/source-sans-pro/source-sans-pro-bold-webfont.woff?v=f52ccc0bbce9")
+      format("woff");
+}
+@font-face {
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Roboto Slab Regular"), local("RobotoSlab-Regular"),
+    local("Roboto Slab 400"), local("RobotoSlab-400"), local("Roboto Slab"),
+    url("https://cdn.sstatic.net/Fonts/roboto-slab/roboto-slab-regular-webfont.woff?v=a75088a46d79")
+      format("woff");
+}
+@font-face {
+  font-family: "Roboto Slab Bold";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Roboto Slab Bold Bold"), local("RobotoSlab Bold-Bold"),
+    local("Roboto Slab Bold 700"), local("RobotoSlab Bold-700"),
+    url("https://cdn.sstatic.net/Fonts/roboto-slab/roboto-slab-bold-webfont.woff?v=719d1c709127")
+      format("woff");
+}
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Source Sans Pro Regular"), local("SourceSans Pro-Regular"),
+    local("Source Sans Pro 400"), local("SourceSans Pro-400"),
+    local("Source Sans Pro"),
+    url("https://cdn.sstatic.net/Fonts/source-sans-pro/source-sans-pro-regular-webfont.woff?v=993db0ec4347")
+      format("woff");
 }
