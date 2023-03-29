@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
     font-family: "Source Sans Pro Bold";
     font-style: normal;
     font-weight: 700;
@@ -34,7 +34,7 @@
       local("Source Sans Pro"),
       url("https://cdn.sstatic.net/Fonts/source-sans-pro/source-sans-pro-regular-webfont.woff?v=993db0ec4347")
         format("woff");
-  }
+  } */
   /* ===== Scrollbar CSS ===== */
   /* Firefox */
   * {
@@ -138,12 +138,16 @@
   
   nav {
     display: flex;
-    width: 200%;
+    
     height: inherit;
    border:1px solid  #0c0d0e;
     color:white;
-    margin-left: 10%;
+   
   }
+  /* .searchbox{
+    width:30%;
+    background-color: #0c0d0e;
+  } */
   
   .navbar-brand {
     flex: 1 0 auto;
@@ -335,11 +339,13 @@
   }
   
   .searchbox {
-    width: 100%;
-    border: 1px solid #bbc0c4;
+    width: 30%;
+    border: 1px solid #03070b;
+    color:#03070b;
     border-radius: 3px;
     padding: 0.8rem;
-    background-color: #fff;
+    /* background-color: #d12828; */
+    margin-left: -1%;
     display: flex;
     align-items: center;
   }
@@ -625,9 +631,10 @@
       position: absolute;
       top: 4.7rem;
       padding: 0.8rem 1rem;
-      background-color: #d6d9dc;
+      background-color: #1f6ab5c2;
       margin-right: initial;
       display: none;
+      border:5px solid black
     }
     .navbar-search.open {
       display: flex;
