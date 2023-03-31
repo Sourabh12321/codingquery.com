@@ -23,6 +23,7 @@ io.on("connection", (socket) => {
 
     socket.on("chatmessage", (msg) => {
         const user = getcurrentuser(socket.id);
+        console.log(user,"hello");
         io.to(user.room).emit("msg", formatmessage(user.username, msg));
     })
 
