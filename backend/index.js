@@ -2,10 +2,14 @@ const http = require("http");
 const express = require("express");
 const socketio = require("socket.io");
 const app = express();
+const cors =  require("cors")
 const { formatmessage } = require("./utils/message")
-const {userjoin,getcurrentuser,userleave,getroomusers} = require("./utils/users")
+const {userjoin,getcurrentuser,userleave,getroomusers} = require("./utils/users");
+const { connection } = require("./config/db");
+const { questionRouter } = require("./Router/question.router");
 
-
+app.use(express.json())
+app.use(cors());
 const httpServer = http.createServer(app);
 
 app.use(express.static(__dirname + '/frontend'));
@@ -34,7 +38,15 @@ io.on("connection", (socket) => {
     })
 })
 
+app.use("/question",questionRouter)
 
-httpServer.listen(2000, () => {
-    console.log("start");
+
+httpServer.listen(2000, async() => {
+    try {
+        await connection
+        console.log("Connected to the DataBase")
+    } catch (error) {
+        console.log("Error While Making connection to Database",error)
+    }
+    console.log("Connected to server");
 })
