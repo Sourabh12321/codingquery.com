@@ -1,3 +1,7 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
 #in_login {
   margin-right: 0px;
 }
@@ -13,10 +17,10 @@ a {
   margin-top: 50px;
   margin-bottom: 50px;
 }
-button {
+/* .button {
   border-radius: 3px;
-  transition: all 0.5s;
-}
+  
+} */
 
 #rightdiv {
   background-color: rgb(251, 243, 213);
@@ -315,40 +319,44 @@ button {
   width: 80%;
   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
     rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-  height: auto;
+  height: 300px;
   padding: 10px;
 }
 
 .top-section {
-  /* border: 2px solid green; */
+  /* border: 2px solid blue; */
   display: flex;
   justify-content: space-between;
+  /* height: 200px; */
+  padding: 10px;
 }
 
 .top-section > h1 {
-  padding: 20px 0px 0px 20px;
+  /* padding: 20px 0px 0px 20px; */
   font-weight: 400;
   font-size: 30px;
+  /* border: 2px solid green; */
+  /* height: 50px; */
+  width: 200px;
 }
 
-.button {
+.AskButton {
   padding: 10px;
-  margin: 20px 20px 0px 0px;
+  /* margin: 20px 20px 0px 0px; */
   background-color: rgb(10, 149, 255);
   color: white;
   border-radius: 6px;
-  border: none;
+  border: 2px solid rgb(10, 149, 255);
+  transition: all 0.5s;
 }
 
-.button:hover {
+.AskButton:hover {
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
     rgba(0, 0, 0, 0.22) 0px 10px 10px;
   cursor: pointer;
 }
 
 .right-sidebar {
-  /* border: 2px solid red; */
-  /* width: 25%; */
   text-align: center;
 }
 
@@ -520,22 +528,6 @@ button {
 .form-container .btn:hover, .open-button:hover {
   opacity: 1;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .chat-sidebar {
   background: var(--dark-color-b);
   color: #fff;
