@@ -1,53 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../style/register-login.css">
+    <title>Signup</title>
+    <link rel="stylesheet" href="../style/signup.css">
 </head>
-<body>
-    <div class="cont_principal">
 
-        <div class="cont_centrar">
-        <div class="cont_login">
-          <form action="">
-          <div class="cont_tabs_login">
-            <ul class='ul_tabs'>
-              <li class="active"><a href="#" onclick="sign_in()">SIGN IN</a>
-              <span class="linea_bajo_nom"></span>
-              </li>
-              <li><a href="#up" onclick="sign_up()">SIGN UP</a><span class="linea_bajo_nom"></span>
-              </li>
-            </ul>
-            </div>
-        <div class="cont_text_inputs">
-            <input type="text" class="input_form_sign " placeholder="NAME" name="name_us" />
-          
-          <input type="text" class="input_form_sign d_block active_inp" placeholder="EMAIL" name="emauil_us" />
-      
-          <input type="password" class="input_form_sign d_block  active_inp" placeholder="PASSWORD" name="pass_us" />  
-         <input type="password" class="input_form_sign" placeholder="CONFIRM PASSWORD" name="conf_pass_us" />
-          
-          <a href="#" class="link_forgot_pass d_block" >Forgot Password ?</a>    
-      <div class="terms_and_cons d_none">
-          <p><input type="checkbox" name="terms_and_cons" /> <label for="terms_and_cons">Accept  Terms and Conditions.</label></p>
-        
-          </div>
-            </div>
-      <div class="cont_btn">
-           <button class="btn_sign">SIGN IN</button>
+<body>
+    <div id="container">
+        <div id="left">
+            <h1>Sign up</h1>
+            <!-- <form action=""> -->
+            <label for="name">Name</label><br>
+            <input type="text" id="name" placeholder="enter your name"><br><br>
+            <label for="email">Email</label><br>
+            <input type="email" id="email" placeholder="enter your email"><br><br>
+            <label for="password">Password</label><br>
+            <input type="password" id="password" placeholder="enter the password"><br><br>
+            <button onclick="register()">Sign Up</button>
+            <!-- </form> -->
             
-            </div>
-            
-          </form>
-          </div>
-          
         </div>
-        
-      
-      </div>
+        <div id="right">
+            <img src="https://workdesk.netlify.app/routes/loginsignup/images/signup-image.jpg" alt="">
+            <p><a href="./login.html">I am already member</a></p>
+        </div>
+    </div>
 </body>
+
 </html>
-<script src="../scripts/signup-login.js"></script>
+<!-- <script src="./scripts/signup.js"></script> -->
+<script>
+    // let btn=document.getElementById("signup")
+    // btn.addEventListener("click",(e)=>{
+    //     e.preventDefault()
+    //     let obj={
+    //         name: document.getElementById("name").value,
+    //         email: document.getElementById("email").value,
+    //         password: document.getElementById("password").value
+    //     }
+    //     sgnup(obj)
+    // })
+
+
+    // async function sgnup(data){
+    //      //  console.log(data)
+    //        try{
+    //           let res=await fetch("http://localhost:1700/user/register",{
+    //             method:"POST",
+    //             body:JSON.stringify(data),
+    //             headers:{"Content-type":"application/json"}
+    //           })
+ 
+    //          if(res.ok){
+    //             let X=res.json()
+    //             console.log(X)
+    //          }
+
+    //        }catch(err){
+    //         console.log(err)
+    //        }
+    // }
+ 
+
+    const  register=async ()=>{
+        const payload={
+            name:document.getElementById("name").value,
+            email:document.getElementById("email").value,
+            password:document.getElementById("password").value
+        }
+       let data=await fetch("http://localhost:1700/user/register",{
+            method:"POST",
+            headers:{
+                "Content-type":"application/json"
+            },
+            body: JSON.stringify(payload)
+        })
+
+        .then(res=>res.json())
+        .then(res=>{
+
+            console.log(res);
+            window.location.href="login.html"
+        }
+            )
+        .catch(err=>console.log(err))
+        // let res=await data.json()
+        // console.log(res);
+    }
+
+        
+
+</script>
