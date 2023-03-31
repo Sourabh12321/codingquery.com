@@ -1,104 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CodingQuerries</title>
-    <link rel="stylesheet" href="../style/topQuesstions.css" />
-    <link rel="shortcut icon" href="../image/logo.img.jpeg" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-      integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
-      crossorigin="anonymous"
-    />
-    <script src="https://kit.fontawesome.com/05fc89279a.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../style/navBar.css" />
-  </head>
-  <body>
-    <div id="preloader">
-      <!-- this is the preloader -->
-      <i class="preloader-icon fa fa-spinner"></i>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CodingQuerries</title>
+  <link rel="stylesheet" href="../style/topQuesstions.css" />
+  <link rel="shortcut icon" href="../image/logo.img.jpeg" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+    crossorigin="anonymous" />
+  <script src="https://cdn.socket.io/4.6.0/socket.io.min.js"
+    integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+"
+    crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/05fc89279a.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../style/navBar.css" />
+</head>
+
+<body>
+  <div id="preloader">
+    <!-- this is the preloader -->
+    <i class="preloader-icon fa fa-spinner"></i>
+  </div>
+  <!-- here comes the navbar -->
+  <div id="NAVBAR"></div>
+
+  <div id="whole-page" style="margin-top: 51px;">
+    <div class="left-sidebar">
+      <div class="home">HOME</div>
+      <div class="public" style="color: #a0a5ab;">PUBLIC
+        <div class="ques">
+          <p> <i class="fa-solid fa-earth-americas fa-xl"></i> Questions</p>
+          <div class="subparts">
+            <p>Tags</p>
+            <p>Users</p>
+            <p>Companies</p>
+          </div>
+        </div>
+      </div>
+      <div class="collectives"> COLLECTIVES
+        <div class="starImage"> <img class="image" src="/frontend/image/start.png" alt="Start">
+          <p> Explore Collectives</p>
+        </div>
+      </div>
+      <div class="teams" ; style="color: #a0a5ab;"> TEAMS
+        <div class="starImage"> <i class="fa-solid fa-suitcase fa-2xl"></i>
+          <p>Create free teams</p>
+        </div>
+      </div>
     </div>
-    <!-- here comes the navbar -->
-    <div id="NAVBAR"></div>
-
-    <div id="whole-page" style="margin-top: 51px;">
-      <div class="left-sidebar">
-          <div class="home">HOME</div>
-          <div class="public" style="color: #a0a5ab;">PUBLIC
-            <div class="ques">
-              <p> <i class="fa-solid fa-earth-americas fa-xl"></i> Questions</p>
-              <div class="subparts">
-                <p>Tags</p>
-                <p>Users</p>
-                <p>Companies</p>
-              </div>
-            </div>
-          </div>
-          <div class="collectives"> COLLECTIVES
-            <div class="starImage"> <img class="image" src="/frontend/image/start.png" alt="Start"> <p> Explore Collectives</p></div>
-          </div>
-          <div class="teams"; style="color: #a0a5ab;">  TEAMS
-            <div class="starImage"> <i class="fa-solid fa-suitcase fa-2xl"></i><p>Create free teams</p></div>
-          </div>
+    <div class="topQuestion">
+      <div class="top-section">
+        <h1>Top Questions</h1>
+        <button class="button">Ask Question</button>
       </div>
-      <div class="topQuestion">
-        <div class="top-section">
-          <h1>Top Questions</h1>
-          <button class="button">Ask Question</button>
-        </div>
 
-        <div class="second-top">
-          <p class="filterby">Intresting</p>
-          <p class="filterby">Bountied</p>
-          <p class="filterby">Hot</p>
-          <p class="filterby">Week</p>
-          <p class="filterby">Month</p>
+      <div class="second-top">
+        <p class="filterby">Intresting</p>
+        <p class="filterby">Bountied</p>
+        <p class="filterby">Hot</p>
+        <p class="filterby">Week</p>
+        <p class="filterby">Month</p>
+      </div>
+      <hr style="margin-top: 90px;">
+      <div class="third-section">
+        <div class="details">
+          <div class="votes">0
+            votes</div>
+          <div class="answers">0 answers</div>
+          <div class="views">20
+            views</div>
         </div>
-<hr style="margin-top: 90px;">
-        <div class="third-section">
-          <div class="details">
-            <div class="votes">0
-              votes</div>
-            <div class="answers">0 answers</div>
-            <div class="views">20
-              views</div>
+        <div class="title">
+          <div class="questionTitle">How to write a regex which splits the string into an array when https and a
+            trailing space are found in javascript</div>
+          <div id="tags">
+            <div class="tags">Javascript</div>
+            <div class="tags">HTML</div>
+            <div class="tags">CSS</div>
           </div>
-          <div class="title">
-            <div class="questionTitle">How to write a regex which splits the string into an array when https and a trailing space are found in javascript</div>
-            <div id="tags">
-              <div class="tags">Javascript</div>
-              <div class="tags">HTML</div>
-              <div class="tags">CSS</div>
-            </div>
 
-            <div class="userName">Emir modified time</div>
-          </div>
+          <div class="userName">Emir modified time</div>
         </div>
-<hr style="margin-top: 20px;">
       </div>
-      <div class="right-sidebar">
-        <h3>The CodingQuery Blog</h3>
+      <hr style="margin-top: 20px;">
+    </div>
+    <div class="right-sidebar">
+      <h3>The CodingQuery Blog</h3>
+    </div>
+    <button class="open-button" onclick="openForm()">Chat</button>
+
+    <div class="chat-popup" id="myForm">
+      <div class="chat-container">
+        <header class="chat-header">
+          <h1>Coding query</h1>
+          <a id="leave-btn" class="btn">Leave chat</a>
+        </header>
+        <main class="chat-main">
+          <div class="chat-sidebar">
+            <h3>Coding query</h3>
+            <h2 id="user-name"></h2>
+          </div>
+          <div class="chat-messages"></div>
+        </main>
+        <div class="chat-form-container">
+          <input id="msg" type="text" placeholder="Enter Message" required autocomplete="off" />
+          <button class="btn-icon"><i class="fa-brands fa-airbnb" style="rotate: 90deg;"></i></button>
+        </div>
       </div>
+
+      <button id="close" type="button" class="btn cancel" onclick="closeForm()">Close</button>
 
     </div>
-    
+
 
     <!-- <div id="FOOTER"> -->
-      <!-- footer here copy this div -->
+    <!-- footer here copy this div -->
     <!-- </div> -->
 
     <script>
+      document.querySelector("body").classList.add("loaded");
       // Hide the preloader when the page is loaded
-      window.addEventListener("load", () => {
-        document.querySelector("body").classList.add("loaded");
-      });
+      // window.addEventListener("load", () => {
+
+      // });
+      document.querySelector(".chat-form-container").addEventListener("click", (e) => {
+        window.stop();
+        e.preventDefault();
+      })
+      function openForm() {
+        document.getElementById("myForm").style.display = "block";
+      }
+
+      function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+      }
+      const socket = io("http://localhost:2000", { transports: ["websocket"] });
+
+      const chatmessage = document.getElementById("msg");
+      const chatmessages = document.querySelector(".chat-messages");
+      const user_name = document.querySelector(".btn");
+      const btn = document.querySelector(".btn-icon");
+
+
+
+      const url = new URLSearchParams(window.location.search);
+      // const username = url.get("username");
+      // const room = url.get("room")
+      const username = "sourabh";
+      const room = "javaScript";
+
+      console.log(username, room);
+      user_name.innerText = username;
+
+      socket.emit("joinroom", { username, room });
+
+      socket.emit("msg", "one user in connected");
+
+      socket.on("msg", (message) => {
+        console.log("hello");
+        console.log(message);
+        outputmsg(message);
+        chatmessages.scrollTop = chatmessages.scrollHeight;
+      })
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        console.log("hello ")
+        const msg = chatmessage.value;
+        socket.emit("chatmessage", msg);
+        console.log(msg);
+      })
+
+      // chatForm.addEventListener("submit", (e) => {
+      //   e.preventDefault();
+      //   console.log("hello ")
+      //   const msg = e.target.elements.msg.value;
+      //   socket.emit("chatmessage", msg);
+      //   console.log(msg);
+
+      // })
+
+      function outputmsg(message) {
+        let div = document.createElement("div");
+        div.classList.add("message");
+
+        let p = document.createElement("p");
+        p.classList.add("meta");
+
+        p.innerText = message.username;
+        p.innerHTML += `<span>${message.time}</span>`;
+
+
+        div.appendChild(p);
+
+        const para = document.createElement("p");
+
+        para.classList.add("text");
+        para.innerText = message.text;
+
+        div.appendChild(para);
+        chatmessages.appendChild(div);
+      }
     </script>
-  </body>
+</body>
+
 </html>
 
-<script src="../scripts/homepage.js"></script>
-<script type="module" src="../scripts/navbar.js"></script>
-<script type="module" src="../scripts/header.js"></script>
+<script src="../scripts/topQuestion.js"></script>
+<!-- <script type="module" src="../scripts/navbar.js"></script>
+<script type="module" src="../scripts/header.js"></script> -->
