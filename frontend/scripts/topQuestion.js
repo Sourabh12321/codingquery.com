@@ -1,4 +1,4 @@
-document.querySelector(".button").addEventListener("click", () => {
+document.querySelector(".AskButton").addEventListener("click", () => {
     window.location.href = "query.html"
 })
 

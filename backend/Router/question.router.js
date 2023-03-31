@@ -1,5 +1,6 @@
 const express = require("express");
 const { QuestionModel } = require("../Schema/question.schema");
+const { authentication } = require("../middlewares/authentication");
 const questionRouter = express.Router();
 
 questionRouter.get("/getAllQuestions",async(req,res)=>{
@@ -7,7 +8,7 @@ questionRouter.get("/getAllQuestions",async(req,res)=>{
     res.json("allQuestions")
 })
 
-questionRouter.post("/addquestion", async (req, res) => {
+questionRouter.post("/addquestion",authentication, async (req, res) => {
     const { name,description,title,email } = req.body;
     try {
         const new_question = new QuestionModel({
