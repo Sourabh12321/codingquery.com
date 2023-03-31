@@ -4,29 +4,20 @@ const socketio = require("socket.io");
 require("dotenv").config();
 const {UserRouter}=require("./routes/user.routes");
 const {passport}=require("./oauth(google)");
-
 const redis=require("redis");
-const cors=require("cors");
-
 const app = express();
 const cors =  require("cors")
-const { formatmessage } = require("./utils/message")
-const {userjoin,getcurrentuser,userleave,getroomusers} = require("./utils/users");
 const { connection } = require("./config/db");
 const { questionRouter } = require("./Router/question.router");
-app.use(express.json())
 const { formatmessage } = require("./utils/message")
 const {userjoin,getcurrentuser,userleave,getroomusers} = require("./utils/users")
 app.use(cors());
 
 
 app.use(express.json())
-app.use(cors());
 const httpServer = http.createServer(app);
 
 app.use(express.static(__dirname + '/frontend'));
-
-
 
 
 //redis
@@ -97,8 +88,3 @@ httpServer.listen(2000, async() => {
     }
     console.log("Connected to server");
 })
-//connecting to the server 
-httpServer.listen(1700, () => {
-    console.log("start");
-})
-
