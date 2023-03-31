@@ -9,11 +9,19 @@ const redis=require("redis");
 const cors=require("cors");
 
 const app = express();
+const cors =  require("cors")
+const { formatmessage } = require("./utils/message")
+const {userjoin,getcurrentuser,userleave,getroomusers} = require("./utils/users");
+const { connection } = require("./config/db");
+const { questionRouter } = require("./Router/question.router");
 app.use(express.json())
 const { formatmessage } = require("./utils/message")
 const {userjoin,getcurrentuser,userleave,getroomusers} = require("./utils/users")
 app.use(cors());
 
+
+app.use(express.json())
+app.use(cors());
 const httpServer = http.createServer(app);
 
 app.use(express.static(__dirname + '/frontend'));
@@ -76,9 +84,21 @@ io.on("connection", (socket) => {
     })
 })
 
+app.use("/question",questionRouter)
 
 
+
+httpServer.listen(2000, async() => {
+    try {
+        await connection
+        console.log("Connected to the DataBase")
+    } catch (error) {
+        console.log("Error While Making connection to Database",error)
+    }
+    console.log("Connected to server");
+})
 //connecting to the server 
 httpServer.listen(1700, () => {
     console.log("start");
 })
+
