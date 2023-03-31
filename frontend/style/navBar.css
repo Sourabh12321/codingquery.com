@@ -1,7 +1,8 @@
 #navbar{
   border: 4px solid #f48024;
-  width: 100%;
+  width: 98.65%;
   display: flex;
+  margin:auto;
   /* justify-content: space-around; */
   align-items: center;
   padding: 10px;
@@ -92,4 +93,60 @@ width:30%;
 }
 #navbtn button:hover{
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+#contents button{
+  padding:10px;
+  border:1px solid #f48024;
+  border-radius: 5px;
+  color:#f48024;
+  font-size:medium;
+  line-height:15px;
+  margin-right: 10px;
+  margin-bottom: 3px;
+}
+#hb{
+  display: none;
+}
+#hb img{
+  width: 5%;
+}
+@media (min-width:320px) and (max-width:750px)
+{
+  #navbar{
+    width: 96%;
+  }
+  #lh{
+      display: none;
+  }
+  #sec>div:nth-child(2) input
+  {
+    display: block;
+  }
+  #sec>div:nth-child(1)
+  {
+    display: none;
+  }
+  #hb{
+      display: block;
+  }
+  #contents{
+      display: none;
+  }
+  #hb:hover #contents{
+      display: block;
+      position: fixed;
+      left: 20px;
+  }
+  #contents button{
+      display: block;
+  }
+
+  .footer{
+    display:flex;
+    flex-wrap: wrap;
+ }
+ #pTag{
+    display:flex;
+    flex-wrap: wrap; 
+ }
 }
