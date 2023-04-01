@@ -12,7 +12,7 @@
 <body>
     <div id="container">
         <div id="left">
-            <h1>Sign up</h1>
+            <h1>sign up</h1>
             <!-- <form action=""> -->
             <label for="name">Name</label><br>
             <input type="text" id="name" placeholder="enter your name"><br><br>
@@ -25,8 +25,8 @@
             
         </div>
         <div id="right">
-            <img src="https://workdesk.netlify.app/routes/loginsignup/images/signup-image.jpg" alt="">
-            <p><a href="./login.html">I am already member</a></p>
+            <img src="https://img.freepik.com/free-vector/sign-concept-illustration_114360-125.jpg?w=2000" alt="">
+            <p><a href="./login.html">I am a member already</a></p>
         </div>
     </div>
 </body>
@@ -72,7 +72,7 @@
             email:document.getElementById("email").value,
             password:document.getElementById("password").value
         }
-       let data=await fetch("http://localhost:1700/user/register",{
+       let data=await fetch("http://localhost:2000/user/register",{
             method:"POST",
             headers:{
                 "Content-type":"application/json"

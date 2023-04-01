@@ -43,48 +43,96 @@ UserRouter.post("/register",async(req,res)=>{
 
 //the login route
 
-UserRouter.post("/login",async(req,res)=>{
-    try{
-        let user=req.body;
+// UserRouter.post("/login",async(req,res)=>{
+//     try{
+//         let user=req.body;
 
-        let findUser=await UserModel.findOne({"email":user.email});
+//         let findUser=await UserModel.findOne({"email":user.email});
 
-        if(!findUser){
-            res.json("user not registered");
-        }
+//         if(!findUser){
+//             res.json("user not registered");
+//         }
 
-        bcrypt.compare(findUser.password, user.password, async(err,decoded)=>{
-            if(err) {
-                res.json("wrong password entered");
-            }
-            let token=jwt.sign({userid:findUser._id,email:findUser.email,name:findUser.name}, process.env.token, {expiresIn:100});
+//         bcrypt.compare(findUser.password, user.password, async(err,decoded)=>{
+//             if(err) {
+//                 res.json("wrong password entered");
+//             }
+//             let token=jwt.sign({userid:findUser._id,email:findUser.email,name:findUser.name}, process.env.token, {expiresIn:100});
 
-            let refreshToken=jwt.sign({userid:findUser._id},process.env.refreshToken, {expiresIn:400})
+//             let refreshToken=jwt.sign({userid:findUser._id},process.env.refreshToken, {expiresIn:400})
 
-            await redisclient.setEx("token",100,token);
+//             await redisclient.setEx("token",100,token);
              
-            await redisclient.setEx("refreshToken",400,refreshToken);
-            res.json("the user has been logged in ")
+//             await redisclient.setEx("refreshToken",400,refreshToken);
+//             res.json("the user has been logged in ")
 
-        })
+//         })
+//     }
+//     catch(err){
+//         res.json({"error":err.message});
+//     }
+// })
+
+
+//login router
+UserRouter.post("/login", async (req, res) => {
+    try {
+      const { email, password } = req.body;
+  
+  
+      //find the user by email
+      const user = await UserModel.findOne({ email });
+      if (!user) {
+        res.send({ msg: "the user does not exist, please signup first" });
+      } else {
+        const isPasswordMatch = await bcrypt.compare(password, user.password);
+        if (!isPasswordMatch) {
+          res.send({ msg: "Invalid username or password" });
+        }
+  
+        //an access token is generated.
+        const token = jwt.sign({ userId: user._id }, process.env.secret, {
+          expiresIn: 90,
+        });
+  
+        //a refresh token is generated.
+        const refreshToken = jwt.sign(
+          { userId: user._id },
+          process.env.refreshToken,
+          {
+            expiresIn: 200,
+          }
+        );
+  
+        // localStorage.setItem("token",token);
+        // localStorage.setItem("refreshToken",refreshToken);
+        // Store refresh token in a secure cookie or database
+        // res.cookie("refreshToken", refreshToken, {
+        //   httpOnly: true,
+        //   secure: true,
+        // });
+        console.log(token,refreshToken);
+        res.json({ msg: "login successful", token , refreshToken });
+      }
+    } catch (err) {
+      res.send("something went wrong");
     }
-    catch(err){
-        res.json({"error":err.message});
-    }
-})
+  });
+
+
 
 
 //logout route
 
-UserRouter.get("/logout",authentication,async(req,res)=>{
-    let token=await redisclient.get("token");
-    let refreshToken=await redisclient.get("refreshToken");
-    await redisclient.rPush("blacklistToken",token,refreshToken);
+// UserRouter.get("/logout",authentication,async(req,res)=>{
+//     let token=await redisclient.get("token");
+//     let refreshToken=await redisclient.get("refreshToken");
+//     await redisclient.rPush("blacklistToken",token,refreshToken);
 
-    let btokens=await redisclient.lRange("blacklistToken",0,-1);
-    console.log(btokens);
-    res.json("user logged out successfully");
-})
+//     let btokens=await redisclient.lRange("blacklistToken",0,-1);
+//     console.log(btokens);
+//     res.json("user logged out successfully");
+// })
 
 
 module.exports={

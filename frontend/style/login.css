@@ -108,16 +108,6 @@ button:hover {
     background-color: #5a0fcb;
 }
 
-#right1 {
-
-    width: 60%;
-    font-size: 25px;
-    margin-top: 40px;
-
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
 
 #right1 div {
     width: 40%;
