@@ -1,45 +1,42 @@
-const express=require("express");
-const jwt=require("jsonwebtoken");
-const bcrypt=require("bcrypt");
+const express = require("express");
+const jwt = require("jsonwebtoken");
+const bcrypt = require("bcrypt");
 require("dotenv").config();
 
+const { redisclient } = require("../configs/redis");
+const { UserModel } = require("../models/user.model");
+const UserRouter = express.Router();
 
-const {redisclient}=require("../configs/redis");
-const {UserModel}=require("../models/user.model")
-const UserRouter=express.Router();
-
-const {authentication}=require("../middlewares/authentication");
+const { authentication } = require("../middlewares/authentication");
 
 // UserRouter.get("/",(req,res)=>{
 //     res.jsonFile(__dirname+"/index.html");
 // })
 
+UserRouter.post("/register", async (req, res) => {
+  let user = req.body;
 
-UserRouter.post("/register",async(req,res)=>{
-    let user=req.body;
-
-    try{
-        let findUser=await UserModel.findOne({"email":user.email});
-        if(findUser){
-           return res.json("the user is already registered");
-        }
-
-        bcrypt.hash(user.password,6,async(err,hash)=>{
-            if(err) return res.json("something went wrong");
-            else{
-                user.password=hash;
-
-                user=new UserModel(user);
-                await user.save();
-                res.json("The user user has now been registered");
-            }
-        })
+  try {
+    let findUser = await UserModel.findOne({ email: user.email });
+    if (findUser) {
+      return res.json("the user is already registered");
     }
-    catch(err){
-         res.json(err.message);
-    }
-})
 
+    bcrypt.hash(user.password, 6, async (err, hash) => {
+      if (err) return res.json("something went wrong");
+      else {
+        user.password = hash;
+
+        user = new UserModel(user);
+        await user.save();
+        res.json("The user user has now been registered");
+      }
+    });
+  } catch (err) {
+    console.log(err);
+    res.json("something went wrong while registering!!!");
+  }
+});
 
 //the login route
 
@@ -62,7 +59,7 @@ UserRouter.post("/register",async(req,res)=>{
 //             let refreshToken=jwt.sign({userid:findUser._id},process.env.refreshToken, {expiresIn:400})
 
 //             await redisclient.setEx("token",100,token);
-             
+
 //             await redisclient.setEx("refreshToken",400,refreshToken);
 //             res.json("the user has been logged in ")
 
@@ -73,54 +70,32 @@ UserRouter.post("/register",async(req,res)=>{
 //     }
 // })
 
-
 //login router
 UserRouter.post("/login", async (req, res) => {
-    try {
-      const { email, password } = req.body;
-  
-  
-      //find the user by email
-      const user = await UserModel.findOne({ email });
-      if (!user) {
-        res.send({ msg: "the user does not exist, please signup first" });
-      } else {
-        const isPasswordMatch = await bcrypt.compare(password, user.password);
-        if (!isPasswordMatch) {
-          res.send({ msg: "Invalid username or password" });
-        }
-  
-        //an access token is generated.
-        const token = jwt.sign({ userId: user._id }, process.env.secret, {
-          expiresIn: 90,
-        });
-  
-        //a refresh token is generated.
-        const refreshToken = jwt.sign(
-          { userId: user._id },
-          process.env.refreshToken,
-          {
-            expiresIn: 200,
-          }
-        );
-  
-        // localStorage.setItem("token",token);
-        // localStorage.setItem("refreshToken",refreshToken);
-        // Store refresh token in a secure cookie or database
-        // res.cookie("refreshToken", refreshToken, {
-        //   httpOnly: true,
-        //   secure: true,
-        // });
-        console.log(token,refreshToken);
-        res.json({ msg: "login successful", token , refreshToken });
+  try {
+    const { email, password } = req.body;
+    //find the user by email
+    const user = await UserModel.findOne({ email });
+    if (!user) {
+      res.send({ msg: "the user does not exist, please signup first" });
+    } else {
+      const isPasswordMatch = await bcrypt.compare(password, user.password);
+      if (!isPasswordMatch) {
+        res.send({ msg: "Invalid username or password" });
       }
-    } catch (err) {
-      res.send("something went wrong");
+      //an access token is generated.
+      const token = jwt.sign(
+        { userid: user._id, email: user.email, name: user.name },
+        process.env.token
+      );
+      console.log(token);
+      res.json({ msg: "login successful", token });
     }
-  });
-
-
-
+  } catch (err) {
+    console.log(err);
+    res.send("something went wrong in login route");
+  }
+});
 
 //logout route
 
@@ -134,7 +109,6 @@ UserRouter.post("/login", async (req, res) => {
 //     res.json("user logged out successfully");
 // })
 
-
-module.exports={
-    UserRouter
-}
+module.exports = {
+  UserRouter,
+};
