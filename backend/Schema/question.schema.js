@@ -1,9 +1,11 @@
 const mongoose = require("mongoose");
 
+
 const QuestionSchma = mongoose.Schema({
-    email:String,
+    email:{type:String,Unique:true},
     name:String,
-    Date:{type: Date, default: Date.now()},
+    Date:{type: String},
+    Time:{type:String},
     title:String,
     description:String,
     votes:Number,
