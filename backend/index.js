@@ -6,6 +6,9 @@ const {UserRouter}=require("./routes/user.routes");
 const {passport}=require("./oauth(google)");
 const redis=require("redis");
 const app = express();
+
+const {githubRouter}=require("./Oauth/github")
+
 const cors =  require("cors")
 const { connection } = require("./config/db");
 const { questionRouter } = require("./Router/question.router");
@@ -31,6 +34,7 @@ redisClient.on("ready",()=>{console.log("connected to Redis");});
 
 
 app.use("/user",UserRouter);
+app.use("/github",githubRouter);
 
 
 //routes to apply google auth on the login page
