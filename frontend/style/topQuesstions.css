@@ -384,6 +384,7 @@ a {
 
 .card {
   display: flex;
+  cursor: pointer;
 }
 
 .details div {
