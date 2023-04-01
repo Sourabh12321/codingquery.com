@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CodingQuerries</title>
+  <link rel="shortcut icon" href="../image/logo.img.jpeg" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+    crossorigin="anonymous" />
+  <script src="https://kit.fontawesome.com/05fc89279a.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../style/navBar.css" />
+  <link rel="stylesheet" href="../style/topQuesstions.css" />
+</head>
+
+<body>
+  <div id="preloader">
+    <!-- this is the preloader -->
+    <i class="preloader-icon fa fa-spinner"></i>
+  </div>
+  <!-- here comes the navbar -->
+  <div id="NAVBAR"></div>
+
+  <div id="whole-page" style="margin-top: 51px;">
+    <div class="topQuestion">
+      <div class="top-section">
+        <h1>Top Questions</h1>
+        <button class="AskButton">Ask Question</button>
+      </div>
+
+      <div class="second-top">
+        <p class="filterby">Intresting</p>
+        <p class="filterby">Bountied</p>
+        <p class="filterby">Hot</p>
+        <p class="filterby">Week</p>
+        <p class="filterby">Month</p>
+      </div>
+      <hr style="margin-top: 90px;">
+      <div class="third-section"></div>
+    </div>
+    <div class="right-sidebar">
+      <div class="boxOne">
+        <img src="/frontend/image/imgonline-com-ua-twotoone-Y1vW58VhPW8P9-removebg-preview.png" alt="">
+      </div>
+    </div>
+  </div>
+
+  <button class="open-button" onclick="openForm()">Chat</button>
+
+  <div class="chat-popup" id="myForm">
+    <div class="chat-container">
+      <header class="chat-header">
+        <h1>Coding query</h1>
+        <a id="leave-btn" class="btn">Leave chat</a>
+      </header>
+      <main class="chat-main">
+        <div class="chat-sidebar">
+          <h3>Coding query</h3>
+          <h2 id="user-name"></h2>
+        </div>
+        <div class="chat-messages"></div>
+      </main>
+      <div class="chat-form-container">
+        <input id="msg" type="text" placeholder="Enter Message" required autocomplete="off" />
+        <button class="btn-icon"><i class="fa-brands fa-airbnb" style="rotate: 90deg;"></i></button>
+      </div>
+    </div>
+
+    <button id="close" type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </div>
+
+
+  <!-- <div id="FOOTER"> -->
+  <!-- footer here copy this div -->
+  <!-- </div> -->
+
+  <script>
+    // Hide the preloader when the page is loaded
+    window.addEventListener("load", () => {
+      document.querySelector("body").classList.add("loaded");
+    });
+
+    document.querySelector(".chat-form-container").addEventListener("click", (e) => {
+        window.stop();
+        e.preventDefault();
+      })
+      function openForm() {
+        document.getElementById("myForm").style.display = "block";
+      }
+
+      function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+      }
+      const socket = io("http://localhost:2000", { transports: ["websocket"] });
+
+      const chatmessage = document.getElementById("msg");
+      const chatmessages = document.querySelector(".chat-messages");
+      const user_name = document.querySelector(".btn");
+      const btn = document.querySelector(".btn-icon");
+
+
+
+      const url = new URLSearchParams(window.location.search);
+      // const username = url.get("username");
+      // const room = url.get("room")
+      const username = "sourabh";
+      const room = "javaScript";
+
+      console.log(username, room);
+      user_name.innerText = username;
+
+      socket.emit("joinroom", { username, room });
+
+      socket.emit("msg", "one user in connected");
+
+      socket.on("msg", (message) => {
+        console.log("hello");
+        console.log("bye");
+        console.log(message);
+        outputmsg(message);
+        chatmessages.scrollTop = chatmessages.scrollHeight;
+      })
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        console.log("hello ")
+        const msg = chatmessage.value;
+        socket.emit("chatmessage", msg);
+        console.log(msg);
+      })
+      function outputmsg(message) {
+        let div = document.createElement("div");
+        div.classList.add("message");
+
+        let p = document.createElement("p");
+        p.classList.add("meta");
+
+        p.innerText = message.username;
+        p.innerHTML += `<span>${message.time}</span>`;
+
+
+        div.appendChild(p);
+
+        const para = document.createElement("p");
+
+        para.classList.add("text");
+        para.innerText = message.text;
+
+        div.appendChild(para);
+        chatmessages.appendChild(div);
+      }
+
+  </script>
+</body>
+
+</html>
+
+<script src="../scripts/topQuestion.js"></script>
+<!-- <script type="module" src="../scripts/navbar.js"></script> -->
+<!-- <script type="module" src="../scripts/header.js"></script> -->

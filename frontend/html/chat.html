@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/f584623432.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../style/chat.css">
+    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js"
+        integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+"
+        crossorigin="anonymous"></script>
+    <title>Chat</title>
+    <link rel="shortcut icon" href="../mini.logo.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+        integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+        crossorigin="anonymous" />
+    <link rel="shortcut icon" href="../favicon/mini.logo.png" />
+
+
+</head>
+
+<body>
+    <div class="chat-container">
+        <header class="chat-header">
+            <h1>Coding query</h1>
+            <a id="leave-btn" class="btn">Leave chat</a>
+        </header>
+        <main class="chat-main">
+            <div class="chat-sidebar">
+                <h3> Name</h3>
+                <h2 id="user-name"></h2>
+            </div>
+            <div class="chat-messages"></div>
+        </main>
+        <div class="chat-form-container">
+            <form id="chat-form">
+                <input id="msg" type="text" placeholder="Enter Message" required autocomplete="off" />
+                <button class="btn"><i class="fa-brands fa-airbnb" style="rotate: 90deg;"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <script src="../scripts/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="../style/signup.css">
+</head>
+
+<body>
+    <div id="container">
+        <div id="left">
+            <h1>sign up</h1>
+            <!-- <form action=""> -->
+            <label for="name">Name</label><br>
+            <input type="text" id="name" placeholder="enter your name"><br><br>
+            <label for="email">Email</label><br>
+            <input type="email" id="email" placeholder="enter your email"><br><br>
+            <label for="password">Password</label><br>
+            <input type="password" id="password" placeholder="enter the password"><br><br>
+            <button onclick="register()">Sign Up</button>
+            <!-- </form> -->
+            
+        </div>
+        <div id="right">
+            <img src="https://img.freepik.com/free-vector/sign-concept-illustration_114360-125.jpg?w=2000" alt="">
+            <p><a href="./login.html">I am a member already</a></p>
+        </div>
+    </div>
+</body>
+
+</html>
+<!-- <script src="./scripts/signup.js"></script> -->
+<script>
+    // let btn=document.getElementById("signup")
+    // btn.addEventListener("click",(e)=>{
+    //     e.preventDefault()
+    //     let obj={
+    //         name: document.getElementById("name").value,
+    //         email: document.getElementById("email").value,
+    //         password: document.getElementById("password").value
+    //     }
+    //     sgnup(obj)
+    // })
+
+
+    // async function sgnup(data){
+    //      //  console.log(data)
+    //        try{
+    //           let res=await fetch("http://localhost:1700/user/register",{
+    //             method:"POST",
+    //             body:JSON.stringify(data),
+    //             headers:{"Content-type":"application/json"}
+    //           })
+ 
+    //          if(res.ok){
+    //             let X=res.json()
+    //             console.log(X)
+    //          }
+
+    //        }catch(err){
+    //         console.log(err)
+    //        }
+    // }
+ 
+
+    const  register=async ()=>{
+        const payload={
+            name:document.getElementById("name").value,
+            email:document.getElementById("email").value,
+            password:document.getElementById("password").value
+        }
+       let data=await fetch("http://localhost:2000/user/register",{
+            method:"POST",
+            headers:{
+                "Content-type":"application/json"
+            },
+            body: JSON.stringify(payload)
+        })
+
+        .then(res=>res.json())
+        .then(res=>{
+
+            console.log(res);
+            window.location.href="login.html"
+        }
+            )
+        .catch(err=>console.log(err))
+        // let res=await data.json()
+        // console.log(res);
+    }
+
+        
+
+</script>
