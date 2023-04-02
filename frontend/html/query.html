@@ -99,15 +99,20 @@
         title : question,
         description : description
       }
+
+      let token = localStorage.getItem("token");
+
       let postTheNewQuestion = await fetch("http://localhost:2000/question/addquestion",{
         method : "POST",
         headers :{
           "Content-Type":"application/json",
+          authorization: token,
         },
         body:JSON.stringify(postObject)
       })
       console.log(postTheNewQuestion)
       let data = await postTheNewQuestion.json();
+      console.log(data)
         if(data){
           console.log(true);
         }else{

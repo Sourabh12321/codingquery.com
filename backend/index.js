@@ -10,7 +10,7 @@ const app = express();
 const {githubRouter}=require("./Oauth/github")
 
 const cors =  require("cors")
-const { connection } = require("./config/db");
+const { connection } = require("./configs/db");
 const { questionRouter } = require("./Router/question.router");
 const { formatmessage } = require("./utils/message")
 const {userjoin,getcurrentuser,userleave,getroomusers} = require("./utils/users")
@@ -36,7 +36,6 @@ redisClient.on("ready",()=>{console.log("connected to Redis");});
 app.use("/user",UserRouter);
 app.use("/github",githubRouter);
 
-//the routes for the google authentication.
 app.get('/auth/google',
  passport.authenticate('google', { scope: ['profile','email'] }));
 
@@ -74,10 +73,6 @@ io.on("connection", (socket) => {
         }
     })
 })
-
-app.use("/question",questionRouter)
-
-
 
 httpServer.listen(2000, async() => {
     try {

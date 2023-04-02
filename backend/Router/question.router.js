@@ -1,21 +1,26 @@
 const express = require("express");
 const { QuestionModel } = require("../Schema/question.schema");
-const { authentication } = require("../middlewares/authentication");
+const { validateUser } = require("../middlewares/authentication");
+const moment = require("moment")
 const questionRouter = express.Router();
+
+console.log()
 
 questionRouter.get("/getAllQuestions",async(req,res)=>{
     const allQuestions = await QuestionModel.find()
-    res.json("allQuestions")
+    res.json(allQuestions)
 })
 
-questionRouter.post("/addquestion",authentication, async (req, res) => {
-    const { name,description,title,email } = req.body;
+questionRouter.post("/addquestion",validateUser, async (req, res) => {
+    const { name,description,title,email,Time } = req.body;
     try {
         const new_question = new QuestionModel({
             name,
-            description,
             title,
-            email
+            description,
+            email,
+            Time:moment().format('h:mm:ss a'),
+            Date:moment().format('MMMM Do YYYY'),
         });
         await new_question.save();
         res.json(new_question)
