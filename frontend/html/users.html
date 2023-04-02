@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Users</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+        integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+        crossorigin="anonymous" />
+    <!-- <link rel="shortcut icon" href="../favicon/mini.logo.png" /> -->
+    <!----------------------------- navbar css --------------------------------->
+    <!-- <link rel="stylesheet" href="../style/nav.css" /> -->
+    <!----------------------------- navbar css --------------------------------->
+ <link rel="stylesheet" href="../style/user.css" />
+    <link rel="stylesheet" href="../style/navBar.css" />
+    <link rel="stylesheet" href="../style/index.css" />
+ 
+</head>
+
+<body>
+    <div id="preloader">
+        <!-- this is the preloader -->
+        <i class="preloader-icon fa fa-spinner"></i>
+    </div>
+    <div id="navbar">
+        <div id="hb">
+          <img src="../image/hamburger.png" alt="">
+          <div id="contents">
+              <button>TopQuestions</button>
+              <button>Query</button>
+              <button>Client</button> 
+          </div>
+      </div>
+        
+        <div id="lh">
+          <!-- <img src="../image/hamburger.png" id="hanb" alt=""> -->
+         
+            <img src="../image/orangelogo.png" alt="logo">
+        </div>
+        <div id="sec">
+            <div id="navbtn">
+            <button>TopQuestions</button>
+            <button>Query</button>
+            <button>Client</button>
+            </div>
+            <div>
+                <input id="input" type="text" placeholder="Search Query "  >
+            </div>
+        </div>
+       
+        <div id="ls">
+          <!-- <a href="register.html">Sign up</a>
+          <a href="login.html">Login</a> -->
+            <button> <a href="register.html">Sign up</a> </button>
+            <button> <a href="login.html"> Login</a></button>
+        </div>
+       
+    </div>
+    <div class="cntnr" style="height: auto">
+        <!-- main body -->
+        <section id="user-body">
+            <h1>Users</h1>
+            <div class="row first">
+                <div class="user-body-filter row">
+                    <img src="../image/search.png" alt="search" />
+                    <input type="text" class="user-body-filter-searchbox" placeholder="Filter by user"
+                        oninput="search()" />
+                </div>
+                <div class="user-body-sorting row">
+                    <div>Reputation</div>
+                    <div>New Users</div>
+                    <div>Voters</div>
+                    <div>Editors</div>
+                    <div>Moderators</div>
+                </div>
+            </div>
+            <div class="user-box"></div>
+        </section>
+
+        <!-- ---------------------
+        left div added from Homepage -->
+
+        <!-- <div id="leftdiv">
+            <a href="#home">Home</a>
+            <div>
+                <p>PUBLIC</p>
+                <ul style="list-style-type: none">
+                    <li><a href="home.html">Questions</a></li>
+                    <li><a href="">Tags</a></li>
+                    <li><a href="../html/users.html">Users</a></li>
+                    <li><a href="">Companies</a></li>
+                </ul>
+            </div>
+            <div class="other-list">
+                <p>COLLECTIVES</p>
+                <a href="" class="Collectives">Explore Collectives</a>
+            </div>
+            <div>
+                <p>TEAMS</p>
+                <a href="" class="Collectives">Create free team</a>
+            </div>
+        </div> -->
+
+        <!-- ---------------------- -->
+    </div>
+    <div id="FOOTER">
+        <!-- footer here copy this div -->
+    </div>
+    <div class="footer">
+        <div id="pTag">
+           <div>
+              <h2>CODING EXCHANGE NETWORK</h2>
+              <p>Technology</p>
+              <p>Culture & receation</p>
+              <p>Life & arts</p>
+              <p>Science</p>
+              <p>Professional</p>
+              <p>Business</p>
+              <p>API</p>
+              <p>Data</p>
+           </div>
+           <div>
+              <h2>COMPANY/h2>
+              <p>About</p>
+              <p>Press</p>
+             <p>Cookie Setting</p>
+             <p>Cookie Policy</p>
+             <p>Contact Us</p>
+             <p>Privacy Policy</p>
+             <p>Terms of Service</p>
+           </div>
+           <div>
+              <h2>PRODUCTS</h2>
+              <p>ABOUT US</p>
+              <p>ADVERTISE WITH US</p>
+              <p>DEVELOPERS</p>
+              <p>OUR BRANDS</p>
+              <p>CARRIERS</p>
+              <p>SOCIAL RESPONSIBILITY</p>
+              <p>NEWS AND MEDIA</p>
+              <p>INVESTORS</p>
+              <p>CUSTOMER SERVICE</p>
+              <p>SCHEDULE A SERVICE</p>
+             
+           </div>
+           <div>
+  
+  
+              <h2>CUSTOMER SERVICE</h2>
+              <p>VISIT OUR SUPPORT CENTER</p>
+              <p>CUSTOMER SERVICE</p>
+              <p>SCHEDULE A SERVICE</p>
+              <p>MANAGE AN APPOINTMENT</p>
+             <p>Questions</p>
+             <p>Help</p>
+             <p>CONTACT US</p>
+  
+           </div>
+  
+        </div>
+  
+  
+        <!-- ICONS -->
+  
+        <div id="icons"><img src="../image/facebook.png" alt=".\facebook.png">
+          <!-- twitter  -->
+              <img src="../image/twitter.png" alt="">
+              <!-- instagram -->
+              <img src="../image/instagram.png" alt="">
+  
+              <!-- pinterest -->
+              <img src="../image/pinterest (1).png" alt="">
+              <!-- youtube -->
+              <img src="../image/youtube.png" alt="">
+        </div>
+     </div>
+
+
+    <script>
+        // Hide the preloader when the page is loaded
+        window.addEventListener("load", () => {
+            document.querySelector("body").classList.add("loaded");
+        });
+    </script>
+</body>
+
+</html>
+<!-- <script type="module" src="../script/navbar.js"></script> -->
+<script>
+    // let baseURL = "http://localhost:2000"
+    let baseURL = "http://localhost:2000/user/getall";
+    let bag = [];
+    let getAllUsers = async () => {
+        try {
+            let fData = await fetch(baseURL);
+            const users = await fData.json();
+            bag = users; // for searching functionality;
+            display(users);
+        } catch (error) {
+            alert(error);
+        }
+    }
+    getAllUsers();
+
+    function display(users) {
+        document.querySelector(".user-box").innerHTML = "";
+
+        document.querySelector(".user-box").innerHTML = "";
+
+        let basket = document.querySelector(".user-box");
+        for (const user of users) {
+            let div1 = document.createElement("div");
+            div1.addEventListener("click", () => {
+                window.location.href = "index.html";
+            })
+
+            let div2 = document.createElement("div");
+
+            let img = document.createElement("img");
+            img.src = "../image/profile.png";
+
+            let name = document.createElement("h3");
+            name.innerText = user.name;
+
+            let email = document.createElement("p");
+            email.innerText = user.email;
+
+            div2.append(name, email);
+            div1.append(img, div2);
+
+            basket.append(div1);
+        }
+    }
+
+    async function search() {
+        let input = document.querySelector(".user-body-filter-searchbox").value;
+        let newData = bag.filter((element) => {
+            return element.name.toLowerCase().includes(input.toLowerCase());
+        });
+        display(newData);
+    }
+
+</script>
