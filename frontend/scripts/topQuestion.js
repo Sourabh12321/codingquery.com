@@ -5,7 +5,7 @@ document.querySelector(".AskButton").addEventListener("click", () => {
 async function getData() {
     let data = await fetch("http://localhost:2000/question/getAllQuestions");
     let res = await data.json();
-    showAllQuestion(res)
+    showAllQuestion(res.data)
 }
 getData()
 

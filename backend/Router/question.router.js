@@ -7,7 +7,7 @@ const questionRouter = express.Router();
 
 questionRouter.get("/getAllQuestions", async (req, res) => {
   const allQuestions = await QuestionModel.find();
-  res.json(allQuestions);
+  res.send({"data":allQuestions});
 });
 
 questionRouter.post("/addquestion", validateUser, async (req, res) => {

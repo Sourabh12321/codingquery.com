@@ -34,6 +34,7 @@ redisClient.on("ready",()=>{console.log("connected to Redis");});
 
 
 app.use("/user",UserRouter);
+app.use("/question",questionRouter)
 app.use("/github",githubRouter);
 
 app.get('/auth/google',
