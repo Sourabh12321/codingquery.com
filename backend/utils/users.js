@@ -11,7 +11,7 @@ function userjoin(id,username,room){
 function getcurrentuser(id){
     return users.find(user=>user.id ===id);
 }
-
+ //new//
 function userleave(id){
     const index = users.findIndex(user=>user.id===id);
     if(index!==-1){
