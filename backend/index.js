@@ -1,9 +1,9 @@
 const http = require("http");
 const express = require("express");
+const {passport}=require("./Oauth/google");
 const socketio = require("socket.io");
 require("dotenv").config();
 const {UserRouter}=require("./routes/user.routes");
-const {passport}=require("./oauth(google)");
 const redis=require("redis");
 const app = express();
 
@@ -35,23 +35,18 @@ redisClient.on("ready",()=>{console.log("connected to Redis");});
 
 app.use("/user",UserRouter);
 app.use("/github",githubRouter);
-app.use("/question",questionRouter)
 
-//routes to apply google auth on the login page
 app.get('/auth/google',
-  passport.authenticate('google', { scope: ['profile','email'] }));
+ passport.authenticate('google', { scope: ['profile','email'] }));
 
 app.get('/auth/google/callback', 
-  passport.authenticate('google', {
-     successRedirect:"https://www.facebook.com",
-     failureRedirect: '/login',
-     session:false
-     }),
+  passport.authenticate('google', { failureRedirect: '/login',session:false }),
   function(req, res) {
     // Successful authentication, redirect home.
-    console.log(req.user);
-    res.redirect('/');
+    res.redirect('https://www.cricbuzz.com');
   });
+
+// routers for google oauth ends here
 
 
 const io = socketio(httpServer);

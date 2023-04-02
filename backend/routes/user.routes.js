@@ -38,16 +38,7 @@ UserRouter.post("/register", async (req, res) => {
 
 //login router
 UserRouter.post("/login", async (req, res) => {
-  try {
-    const { email, password } = req.body;
-    //find the user by email
-    const user = await UserModel.findOne({ email });
-    if (!user) {
-      res.send({ msg: "the user does not exist, please signup first" });
-    } else {
-      const isPasswordMatch = await bcrypt.compare(password, user.password);
-      if (!isPasswordMatch) {
-        res.send({ msg: "Invalid username or password" });
+
       }
       //an access token is generated.
       const token = jwt.sign(
