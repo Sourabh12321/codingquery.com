@@ -1,17 +1,17 @@
 // import { navbar, footer } from "../scripts/header.js";
 
-// let navbarContainer = document.getElementById("NAVBAR");
-// navbarContainer.innerHTML = navbar();
+// // let navbarContainer = document.getElementById("NAVBAR");
+// // navbarContainer.innerHTML = navbar();
 
-// let footercontainer = document.getElementById("FOOTER");
-// footercontainer.innerHTML = footer();
+// // let footercontainer = document.getElementById("FOOTER");
+// // footercontainer.innerHTML = footer();
 
 // /*Hamburger Menu */
-// var hamburger_menu = document.querySelector(".hamburger");
-// var button = hamburger_menu.querySelector(".hamburger-menu");
-// button.addEventListener("click", (event) => {
-//   hamburger_menu.classList.toggle("open");
-// });
+// // var hamburger_menu = document.querySelector(".hamburger");
+// // var button = hamburger_menu.querySelector(".hamburger-menu");
+// // button.addEventListener("click", (event) => {
+// //   hamburger_menu.classList.toggle("open");
+// // });
 
 // /* Nav Search Hints */
 // var nav_search = document.querySelector(".navbar-search");
