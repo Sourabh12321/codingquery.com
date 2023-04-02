@@ -10,6 +10,9 @@ const QuestionSchma = mongoose.Schema({
     description:String,
     votes:Number,
     answer:{type:Array,default:[]},
+    userid:String
+},{
+    userid:false
 })
 
 const QuestionModel = mongoose.model("questions",QuestionSchma)

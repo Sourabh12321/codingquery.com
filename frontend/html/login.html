@@ -58,7 +58,7 @@ btn.addEventListener("click",(e)=>{
 })
 
 async function  lgn(data){
-    console.log(data)
+    console.log("DATATATAT",data)
     try{
         let res=await fetch("http://localhost:2000/user/login",{
             method:"POST",
@@ -67,12 +67,11 @@ async function  lgn(data){
         })
         if(res.ok){
             let X=await res.json()
-            console.log(X);
+            console.log("XXXXX",X);
             if(X.msg=="login successful"){
                 alert("login successful");
+                localStorage.setItem("loggedInUser",JSON.stringify(data.email))
                 localStorage.setItem("token",X.token);
-                localStorage.setItem("refreshToken",X.refreshToken);
-                
                 window.location.href="./topQuestions.html";
             }
             else{
