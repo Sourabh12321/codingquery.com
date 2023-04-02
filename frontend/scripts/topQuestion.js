@@ -5,8 +5,6 @@ document.querySelector(".AskButton").addEventListener("click", () => {
 async function getData() {
     let data = await fetch("http://localhost:2000/question/getAllQuestions");
     let res = await data.json();
-    console.log("hello ->",res)
-    // renderData(res);
     showAllQuestion(res)
 }
 getData()
@@ -14,7 +12,6 @@ getData()
 let thirdSection = document.querySelector(".third-section")
 
 function showAllQuestion(array){
-    // console.log(array)
     array.forEach((item) => {
         console.log(item)
         let detailsDiv = document.createElement("div");
@@ -22,11 +19,11 @@ function showAllQuestion(array){
 
         let votesDiv = document.createElement("div");
         votesDiv.setAttribute("class","votes")
-        votesDiv.innerHTML = "votes"
+        votesDiv.innerHTML = "0 votes"
 
         let answerDiv = document.createElement("div");
         answerDiv.setAttribute("class","answer")
-        answerDiv.innerHTML = "answer"
+        answerDiv.innerHTML = `${item.answer.length}  answer`
 
 
         let titleDiv = document.createElement("div");
@@ -49,10 +46,11 @@ function showAllQuestion(array){
         hrDiv.style.marginTop = "20px"
 
         let cardDiv = document.createElement("div")
-        cardDiv.setAttribute("class","card");
+        cardDiv.setAttribute("class","eCard");
+        cardDiv.setAttribute("id", item._id)
         cardDiv.addEventListener("click",()=>{
-            localStorage.setItem("particaularQuestion",JSON.stringify(item))
-            window.location.href = "../html/question.html"
+            localStorage.setItem("particularQuestion",JSON.stringify(item))
+            window.location.href = "../html/questions.html"
         })
 
         detailsDiv.append(votesDiv,answerDiv)
@@ -62,5 +60,9 @@ function showAllQuestion(array){
 
         thirdSection.append(cardDiv,hrDiv)
     });
+}
+
+function questionClicked(event){
+    console.log(event)
 }
 

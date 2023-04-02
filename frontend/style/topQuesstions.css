@@ -323,7 +323,7 @@ a {
   padding: 10px;
 }
 
-.top-section {
+.first-section {
   /* border: 2px solid blue; */
   display: flex;
   justify-content: space-between;
@@ -331,7 +331,7 @@ a {
   padding: 10px;
 }
 
-.top-section > h1 {
+.first-section > h1 {
   /* padding: 20px 0px 0px 20px; */
   font-weight: 400;
   font-size: 30px;
@@ -382,7 +382,7 @@ a {
   flex-direction: column;
 }
 
-.card {
+.eCard {
   display: flex;
   cursor: pointer;
 }
