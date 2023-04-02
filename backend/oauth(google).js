@@ -1,38 +1,27 @@
-const GoogleStrategy = require('passport-google-oauth20').Strategy;
-
-const passport=require("passport");
-
-//importing uuid
+// const GoogleStrategy = require('passport-google-oauth20').Strategy;
+// require("dotenv").config()
+// const {userModel}=require("./models/user.model");
 // const { v4: uuidv4 } = require('uuid');
+// const passport=require("passport")
 
-// const { UserModel } = require('./models/user.model');
+// passport.use(new GoogleStrategy({
+//     clientID: process.env.google_client_id,
+//     clientSecret: process.env.google_client_secret,
+//     callbackURL: "http://localhost:2000/googleauth/auth/google/callback"
+//   },
+//  async function(accessToken, refreshToken, profile, cb) {
+//     let email=profile._json.email
+//     let name=profile._json.name
+//     const user=new userModel({
+//         name,email,password:uuidv4()
 
-require("dotenv").config();
+//     })
+//     await user.save()
+//     return cb(null,user)
+//     //console.log(profile)
+//   }
+// ));
 
-passport.use(new GoogleStrategy({
-    clientID: process.env.google_client_id,
-    clientSecret: process.env.google_client_secret,
-    callbackURL: "http://localhost:1700/auth/google/callback"
-  },
-  async function(accessToken, refreshToken, profile, cb) {
-    // User.findOrCreate({ googleId: profile.id }, function (err, user) {
-    //   return cb(err, user);
-    // });
-    // let email=profile._json.email;
-    //  const user=new UserModel({
-    //   email,
-    //   password: uuidv4()
-    //  })
-    //  await user.save()
-
-     //in the return callback ,we can pass details like email, name etc which we will get when the login is made by the user.
-     return cb(null,"random text");
-    //console.log(profile);
-  }
-));
-
-
-
-module.exports={
-    passport
-}
+// module.exports={
+//     passport
+// }

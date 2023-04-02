@@ -91,18 +91,12 @@ UserRouter.post("/login", async (req, res) => {
         }
   
         //an access token is generated.
-        const token = jwt.sign({ userId: user._id }, process.env.secret, {
-          expiresIn: 90,
-        });
+        const token = jwt.sign({ userId: user._id }, process.env.secret);
   
         //a refresh token is generated.
         const refreshToken = jwt.sign(
           { userId: user._id },
-          process.env.refreshToken,
-          {
-            expiresIn: 200,
-          }
-        );
+          process.env.refreshToken);
   
         // localStorage.setItem("token",token);
         // localStorage.setItem("refreshToken",refreshToken);
