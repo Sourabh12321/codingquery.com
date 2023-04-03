@@ -17,15 +17,12 @@ Deployed Link :- https://effortless-froyo-51ea64.netlify.app/
 → Node Modules: mongoose.js | bcrypt | cors | dotenv | jsonwebtoken | nodemon
 
 # API end points
-POST /users/register - to register
-POST /users/login - to login
-GET /products - to get products data
-GET /products/?type=exampletype - to get products type wise 
-GET /products/?title=exampleTitle - to search products by title
-POST /products/add - to add products
-POST /cartproducts - to add products to cart
-GET /cartproducts - to get cart products
-DELETE /cartproducts/:id - to delete a product from cart
+POST /user/register - to register
+POST /user/login - to login
+GET /auth/google/callback - for Google Outh
+GET /question/getAllQuestions - it will show all the questions
+POST /question/addquestion - this route is use to post the question
+POST /question/addans - this route is use to post the answer
 
 # Home Page!
 
@@ -56,4 +53,9 @@ DELETE /cartproducts/:id - to delete a product from cart
 
 
 # FeedBack
-If You want to give any feedback connect with me on- sourabh.rajput.22082001@gmail.com
+If You want to give any feedback connect with me on-
+1) sourabh.rajput.22082001@gmail.com
+2) gauravanand67584@gmail.com
+3) himuabd17@gmail.com
+4) aparnaharsh2604@gmail.com
+5) singhaman2750@gmail.com
