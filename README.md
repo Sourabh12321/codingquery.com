@@ -21,6 +21,7 @@ POST /user/register - to register
 POST /user/login - to login
 GET /auth/google/callback - for Google Outh
 GET /question/getAllQuestions - it will show all the questions
+GET /user/getall - get all the users
 POST /question/addquestion - this route is use to post the question
 POST /question/addans - this route is use to post the answer
 
