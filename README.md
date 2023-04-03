@@ -2,8 +2,7 @@
 
 # coding query
 
-Coding query is clone of stakoverflow. where user can ask any type of question and search for that and give answer to other questions also.
-
+Coding query is clone of stakoverflow. Here users can ask any type of coding question and reply to other questions.
 Deployed Link :- https://effortless-froyo-51ea64.netlify.app/
 
 
@@ -14,16 +13,16 @@ Deployed Link :- https://effortless-froyo-51ea64.netlify.app/
 
 • Backend: Node.js | Express.js | MongoDB
 
-→ Node Modules: mongoose.js | bcrypt | cors | dotenv | jsonwebtoken | nodemon
+→ Node Modules: mongoose | bcrypt | cors | dotenv | jsonwebtoken | nodemon | socket.io | passport | node-fetch | redis | moment | uuid
 
 # API end points
-POST /user/register - to register
-POST /user/login - to login
-GET /auth/google/callback - for Google Outh
-GET /question/getAllQuestions - it will show all the questions
-GET /user/getall - get all the users
-POST /question/addquestion - this route is use to post the question
-POST /question/addans - this route is use to post the answer
+1) POST /user/register - to register
+2) POST /user/login - to login
+3) GET /auth/google/callback - for Google Outh
+4) GET /question/getAllQuestions - it will show all the questions
+5) GET /user/getall - get all the users
+6) POST /question/addquestion - this route is use to post the question
+7) POST /question/addans - this route is use to post the answer
 
 # Home Page!
 
