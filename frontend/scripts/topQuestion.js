@@ -2,10 +2,19 @@ document.querySelector(".AskButton").addEventListener("click", () => {
     window.location.href = "query.html"
 })
 
+let token = sessionStorage.getItem("token")
+
+if(token){
+    document.getElementById("ls").style.display = "none"
+    document.querySelector(".user").innerText = "Hi!!"+" "+sessionStorage.getItem("Name");
+}else{
+    document.querySelector("#Name").style.display = "none"
+}
+
 async function getData() {
     let data = await fetch("http://localhost:2000/question/getAllQuestions");
     let res = await data.json();
-    showAllQuestion(res.data)
+    showAllQuestion(res)
 }
 getData()
 
@@ -13,7 +22,7 @@ let thirdSection = document.querySelector(".third-section")
 
 function showAllQuestion(array){
     array.forEach((item) => {
-        console.log(item)
+        // console.log(item)
         let detailsDiv = document.createElement("div");
         detailsDiv.setAttribute("class","details")
 
@@ -50,7 +59,7 @@ function showAllQuestion(array){
         cardDiv.setAttribute("id", item._id)
         cardDiv.addEventListener("click",()=>{
             localStorage.setItem("particularQuestion",JSON.stringify(item))
-            window.location.href = "../html/questions.html"
+            window.location.href = "../frontend/questions.html"
         })
 
         detailsDiv.append(votesDiv,answerDiv)
@@ -62,7 +71,7 @@ function showAllQuestion(array){
     });
 }
 
-function questionClicked(event){
-    console.log(event)
-}
+// function questionClicked(event){
+//     console.log(event)
+// }
 

@@ -1,15 +1,7 @@
-*{
-    font-family: 'Alkatra', cursive;
-}
 #nav {
 
     width: 100%;
     height: 70px;
-}
-#already_user{
-
-    color: #0f62fe;
-    width: 200px;
 }
 
 #nav img {
@@ -22,7 +14,7 @@
     padding: 200px;
     border-radius: 10px;
     width: 40%;
-    height: 445px;
+    height: 40%;
     margin: auto;
 
     /* margin-top: 5%; */
@@ -97,11 +89,6 @@ input :focus {
 }
 
 button {
-
-    position: relative;
-    bottom: 120px;
-    left: 320px;
-
     width: 150px;
     display: inline-block;
     outline: 0;

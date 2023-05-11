@@ -1,6 +1,7 @@
 let question_div = document.getElementById("question");
 let question_id = localStorage.getItem("question_id");
 
+// storing Particula quesition in localStoarage 
 const particularquestion = JSON.parse(
   localStorage.getItem("particularQuestion")
 );
@@ -79,7 +80,7 @@ function answers(data) {
 
     let p = document.createElement("p");
     p.innerHTML = el.answer;
-    console.log("Answer", p.innerText);
+    // console.log("Answer", p.innerText);
     p.classList = "ans_p";
 
     let newdiv = document.createElement("div");
@@ -91,26 +92,26 @@ function answers(data) {
   });
 }
 
-let token = localStorage.getItem("token");
+let token = sessionStorage.getItem("token");
 let particularQuestion = JSON.parse(localStorage.getItem("particularQuestion"));
 let _id = particularQuestion._id;
 document.getElementById("submit").addEventListener("click", async () => {
   let answer = quill.root.innerText;
-  console.log("answer->", answer);
+  // console.log("answer->", answer);
   let qObj = {
     answer,
     _id,
   };
   if (token) {
-    console.log("Getting Token");
+    // console.log("Getting Token");
     try {
       let x = JSON.parse(localStorage.getItem("loggedInUser"));
-      console.log(x);
+      // console.log(x);
       let y = JSON.parse(localStorage.getItem("particularQuestion"));
-      console.log(y.email);
+      // console.log(y.email);
       if (x != y.email) {
         let post_question = await fetch(
-          `http://localhost:2000/question/addans`,
+          `https://poised-shorts-toad.cyclic.app/question/addans`,
           {
             method: "POST",
             headers: {
@@ -121,6 +122,7 @@ document.getElementById("submit").addEventListener("click", async () => {
           }
         );
         const res = await post_question.json();
+        window.location.reload()
       } else {
         return alert("You Cannot answer your own question");
       }
@@ -128,14 +130,15 @@ document.getElementById("submit").addEventListener("click", async () => {
       console.log(error);
     }
   } else {
-    location.assign("../html/login.html");
+    alert("You Have to Login First")
+    window.location.href = "login.html"
   }
 });
 
 let x = JSON.parse(localStorage.getItem("particularQuestion"));
 let id = x._id;
 async function GetSpecific(id) {
-  let res = await fetch(`http://localhost:2000/question/getAllQuestions`);
+  let res = await fetch(`https://poised-shorts-toad.cyclic.app/question/getAllQuestions`);
   let data = await res.json();
 
   data.forEach((elem) => {

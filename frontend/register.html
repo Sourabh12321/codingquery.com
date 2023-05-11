@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="shortcut icon" href="./image/orangelogo.png" />
+    <link rel="stylesheet" href="./style/signup.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <div id="left">
+            <h1>sign up</h1>
+            <!-- <form action="#"> -->
+            <label for="name">Name</label><br>
+            <input type="text" id="name" placeholder="enter your name" required><br><br>
+            <label for="email">Email</label><br>
+            <input type="email" id="email" placeholder="enter your email" required><br><br>
+            <label for="password">Password</label><br>
+            <input type="password" id="password" placeholder="enter the password" required><br><br>
+            <button id="Signup">Sign Up</button>
+            <!-- </form> -->
+
+        </div>
+        <div id="right">
+            <img src="https://img.freepik.com/free-vector/sign-concept-illustration_114360-125.jpg?w=2000" alt="">
+            <p><a href="./login.html">I am a member already</a></p>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    let signup = document.getElementById("Signup").addEventListener("click", () => {
+        register()
+    })
+
+
+    const register = async () => {
+        const payload = {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            password: document.getElementById("password").value
+        }
+
+        console.log(payload)
+        if (payload.name == "" || payload.email == "" || payload.password == "") {
+            swal({
+                title: "Fill all the details!!",
+                icon: "warning",
+            });
+        }
+        else {
+            let data = await fetch("http://localhost:2000/user/register", {
+                method: "POST",
+                headers: {
+                    "Content-type": "application/json"
+                },
+                body: JSON.stringify(payload)
+            })
+            let res = await data.json()
+            if (res == "the user is already registered") {
+                swal({
+                    title: "This Email is Already Exists Try Using Different Email!!",
+                    icon: "warning",
+                });
+            } else {
+                swal({
+                    title: "User Registered Successfully!!",
+                    icon: "success",
+                });
+                setTimeout(() => {
+                    window.location.href = "./login.html"
+                }, 2000)
+            }
+        }
+    }
+
+
+
+</script>

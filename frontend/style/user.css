@@ -305,4 +305,8 @@ body {
       }
       .navbar-search.open {
         display: flex;
-      }   
+      }
+      
+      #ls{
+        display: none;
+      }

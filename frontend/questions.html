@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Document</title>
+  <link rel="shortcut icon" href="./image/orangelogo.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
     integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
     crossorigin="anonymous" />
@@ -13,9 +14,9 @@
   <!----------------------------- navbar css --------------------------------->
   <!-- <link rel="stylesheet" href="../style/nav.css" /> -->
   <!----------------------------- navbar css --------------------------------->
-  <link rel="stylesheet" href="../style/questions.css" />
-  <link rel="stylesheet" href="../style/navBar.css" />
-  <link rel="stylesheet" href="../style/index.css" />
+  <link rel="stylesheet" href="./style/navBar.css" />
+  <link rel="stylesheet" href="./style/index.css" />
+  <link rel="stylesheet" href="./style/questions.css" />
 </head>
 
 <body>
@@ -26,23 +27,23 @@
   
   <div id="navbar">
     <div id="hb">
-      <img src="../image/hamburger.png" alt="">
+      <img src="./image/hamburger.png" alt="">
       <div id="contents">
-          <button>TopQuestions</button>
-          <button>Query</button>
-          <button>Client</button> 
+        <a href="./topQuestions.html"> <button>TopQuestion</button></a>
+        <a href="./query.html"> <button>Query</button></a>
+        <a href="./users.html"> <button>Users</button></a>
       </div>
   </div>
     
     <div id="lh">
-      <img src="../image/hamburger.png" alt="">
-        <img src="../image/orangelogo.png" alt="logo">
+      <img src="./image/hamburger.png" alt="">
+      <a href="../index.html"><img style="width: 130px;" src="./image/orangelogo.png" alt="logo"></a>
     </div>
     <div id="sec">
         <div id="navbtn">
-        <button>TopQuestions</button>
-        <button>Query</button>
-        <button>Client</button>
+          <a href="./topQuestions.html"> <button>TopQuestion</button></a>
+          <a href="./query.html"> <button>Query</button></a>
+          <a href="./users.html"> <button>Users</button></a>
         </div>
         <div>
             <input id="input" type="text" placeholder="Search Query "  >
@@ -128,16 +129,16 @@
 
     <!-- ICONS -->
 
-    <div id="icons"><img src="../image/facebook.png" alt=".\facebook.png">
+    <div id="icons"><img src="./image/facebook.png" alt=".\facebook.png">
       <!-- twitter  -->
-          <img src="../image/twitter.png" alt="">
+          <img src="./image/twitter.png" alt="">
           <!-- instagram -->
-          <img src="../image/instagram.png" alt="">
+          <img src="./image/instagram.png" alt="">
 
           <!-- pinterest -->
-          <img src="../image/pinterest (1).png" alt="">
+          <img src="./image/pinterest (1).png" alt="">
           <!-- youtube -->
-          <img src="../image/youtube.png" alt="">
+          <img src="./image/youtube.png" alt="">
     </div>
  </div>
   <script>
@@ -148,7 +149,7 @@
   </script>
   <!-- <script type="module" src="../script/navbar.js"></script> -->
   <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-  <script src="../scripts/questions.js"></script>
+  <script src="./scripts/questions.js"></script>
 </body>
 <script>
   var quill = new Quill("#editor-container", {

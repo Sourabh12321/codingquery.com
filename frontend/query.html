@@ -6,11 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ask Question</title>
-  <link rel="stylesheet" href="../style/query.css" />
+  <link rel="shortcut icon" href="./image/orangelogo.png" />
   <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet" />
   <!----------------------------- navbar css --------------------------------->
-  <link rel="stylesheet" href="../style/navBar.css" />
-  <link rel="stylesheet" href="../style/index.css" />
+  <link rel="stylesheet" href="./style/navBar.css" />
+  <link rel="stylesheet" href="./style/query.css" />
+  <link rel="stylesheet" href="./style/index.css" />
   <!----------------------------- navbar css --------------------------------->
 </head>
 
@@ -22,37 +23,43 @@
 
   <div id="navbar">
     <div id="hb">
-      <!-- <img src="../image/hamburger.png" alt=""> -->
+      <img src="./image/hamburger.png" alt="">
       <div id="contents">
-          <button>TopQuestions</button>
-          <button>Query</button>
-          <button>Client</button> 
+        <a href="./topQuestions.html"> <button>Top Question</button></a>
+        <a href="./query.html"> <button>Query</button></a>
+        <a href="./users.html"> <button>Users</button></a>
       </div>
-  </div>
-    
+    </div>
+
     <div id="lh">
-      <!-- <img src="../image/hamburger.png" alt=""> -->
-        <img src="../image/orangelogo.png" alt="logo">
+      <!-- <img src="../image/hamburger.png" id="hanb" alt=""> -->
+
+      <a href="../index.html"><img style="width: 130px;" src="./image/orangelogo.png" alt="logo"></a>
     </div>
     <div id="sec">
-        <div id="navbtn">
-        <button>TopQuestions</button>
-        <button>Query</button>
-        <button>Client</button>
-        </div>
-        <div>
-            <input id="input" type="text" placeholder="Search Query "  >
-        </div>
+      <div id="navbtn">
+        <a href="./topQuestions.html"> <button>TopQuestion</button></a>
+        <a href="./query.html"> <button>Query</button></a>
+        <a href="./users.html"> <button>Users</button></a>
+      </div>
+      <div>
+        <input id="input" type="text" placeholder="Search Query ">
+      </div>
     </div>
-   
+
     <div id="ls">
       <!-- <a href="register.html">Sign up</a>
       <a href="login.html">Login</a> -->
-        <button> <a href="register.html">Sign up</a> </button>
-        <button> <a href="login.html"> Login</a></button>
+      <button class="btn1"> <a href="register.html">Sign up</a> </button>
+      <button class="btn1"> <a href="login.html"> Login</a></button>
     </div>
-   
-</div>
+
+    <div id="Name">
+      <p class="user">
+        <p />
+    </div>
+
+  </div>
 
   <div id="ask">
     <h1>Ask a public question</h1>
@@ -98,72 +105,72 @@
 
   <div class="footer">
     <div id="pTag">
-       <div>
-          <h2>CODING EXCHANGE NETWORK</h2>
-          <p>Technology</p>
-          <p>Culture & receation</p>
-          <p>Life & arts</p>
-          <p>Science</p>
-          <p>Professional</p>
-          <p>Business</p>
-          <p>API</p>
-          <p>Data</p>
-       </div>
-       <div>
-          <h2>COMPANY/h2>
+      <div>
+        <h2>CODING EXCHANGE NETWORK</h2>
+        <p>Technology</p>
+        <p>Culture & receation</p>
+        <p>Life & arts</p>
+        <p>Science</p>
+        <p>Professional</p>
+        <p>Business</p>
+        <p>API</p>
+        <p>Data</p>
+      </div>
+      <div>
+        <h2>COMPANY/h2>
           <p>About</p>
           <p>Press</p>
-         <p>Cookie Setting</p>
-         <p>Cookie Policy</p>
-         <p>Contact Us</p>
-         <p>Privacy Policy</p>
-         <p>Terms of Service</p>
-       </div>
-       <div>
-          <h2>PRODUCTS</h2>
-          <p>ABOUT US</p>
-          <p>ADVERTISE WITH US</p>
-          <p>DEVELOPERS</p>
-          <p>OUR BRANDS</p>
-          <p>CARRIERS</p>
-          <p>SOCIAL RESPONSIBILITY</p>
-          <p>NEWS AND MEDIA</p>
-          <p>INVESTORS</p>
-          <p>CUSTOMER SERVICE</p>
-          <p>SCHEDULE A SERVICE</p>
-         
-       </div>
-       <div>
+          <p>Cookie Setting</p>
+          <p>Cookie Policy</p>
+          <p>Contact Us</p>
+          <p>Privacy Policy</p>
+          <p>Terms of Service</p>
+      </div>
+      <div>
+        <h2>PRODUCTS</h2>
+        <p>ABOUT US</p>
+        <p>ADVERTISE WITH US</p>
+        <p>DEVELOPERS</p>
+        <p>OUR BRANDS</p>
+        <p>CARRIERS</p>
+        <p>SOCIAL RESPONSIBILITY</p>
+        <p>NEWS AND MEDIA</p>
+        <p>INVESTORS</p>
+        <p>CUSTOMER SERVICE</p>
+        <p>SCHEDULE A SERVICE</p>
+
+      </div>
+      <div>
 
 
-          <h2>CUSTOMER SERVICE</h2>
-          <p>VISIT OUR SUPPORT CENTER</p>
-          <p>CUSTOMER SERVICE</p>
-          <p>SCHEDULE A SERVICE</p>
-          <p>MANAGE AN APPOINTMENT</p>
-         <p>Questions</p>
-         <p>Help</p>
-         <p>CONTACT US</p>
+        <h2>CUSTOMER SERVICE</h2>
+        <p>VISIT OUR SUPPORT CENTER</p>
+        <p>CUSTOMER SERVICE</p>
+        <p>SCHEDULE A SERVICE</p>
+        <p>MANAGE AN APPOINTMENT</p>
+        <p>Questions</p>
+        <p>Help</p>
+        <p>CONTACT US</p>
 
-       </div>
+      </div>
 
     </div>
 
 
     <!-- ICONS -->
 
-    <div id="icons"><img src="../image/facebook.png" alt=".\facebook.png">
+    <div id="icons"><img src="./image/facebook.png" alt=".\facebook.png">
       <!-- twitter  -->
-          <img src="../image/twitter.png" alt="">
-          <!-- instagram -->
-          <img src="../image/instagram.png" alt="">
+      <img src="./image/twitter.png" alt="">
+      <!-- instagram -->
+      <img src="./image/instagram.png" alt="">
 
-          <!-- pinterest -->
-          <img src="../image/pinterest (1).png" alt="">
-          <!-- youtube -->
-          <img src="../image/youtube.png" alt="">
+      <!-- pinterest -->
+      <img src="./image/pinterest (1).png" alt="">
+      <!-- youtube -->
+      <img src="./image/youtube.png" alt="">
     </div>
- </div>
+  </div>
   <script>
     // Hide the preloader when the page is loaded
     window.addEventListener("load", () => {
@@ -187,36 +194,50 @@
       theme: "snow",
     });
 
-    let x = document.querySelector("form").addEventListener("submit", async(event) => {
+    let x = document.querySelector("form").addEventListener("submit", async (event) => {
       event.preventDefault();
       let question = document.getElementById("heading").value;
       // let innerhtml = quill.root.innerHTML;
       let description = quill.root.innerText;
-      console.log(question,description)
-      
-      let postObject ={
-        title : question,
-        description : description
+      // console.log(question, description)
+
+      let postObject = {
+        title: question,
+        description: description
       }
 
-      let token = localStorage.getItem("token");
+      let token = sessionStorage.getItem("token")
 
-      let postTheNewQuestion = await fetch("http://localhost:2000/question/addquestion",{
-        method : "POST",
-        headers :{
-          "Content-Type":"application/json",
-          authorization: token,
-        },
-        body:JSON.stringify(postObject)
-      })
-      console.log(postTheNewQuestion)
-      let data = await postTheNewQuestion.json();
-      console.log(data)
-        if(data){
+      if (token) {
+        document.getElementById("ls").style.display = "none"
+        document.querySelector(".user").innerText = "Hi!!" + " " + sessionStorage.getItem("Name");
+      } else {
+        document.querySelector("#Name").style.display = "none"
+      }
+
+
+      if (token) {
+        let postTheNewQuestion = await fetch("https://poised-shorts-toad.cyclic.app/question/addquestion", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            authorization: token,
+          },
+          body: JSON.stringify(postObject)
+        })
+        // console.log(postTheNewQuestion)
+        let data = await postTheNewQuestion.json();
+        // console.log(data)
+        if (data) {
           console.log(true);
-        }else{
+        } else {
           console.log(false);
         }
+      } else {
+        alert("You Have to Login First!!!")
+        window.location.href = "login.html"
+      }
+
     })
   </script>
 </body>

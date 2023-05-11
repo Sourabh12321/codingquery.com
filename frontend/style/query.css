@@ -1,157 +1,175 @@
 #ask{
-    width: 90vw;
-    margin: 70px auto;
-    /* background-color: rgb(250, 250, 250); */
-    /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
-    padding: 25px;
+  width: 90vw;
+  margin: 70px auto;
+  /* background-color: rgb(250, 250, 250); */
+  /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+  padding: 25px;
 }
 #ask>h1{
-    text-align: left;
-    padding: 0 0 20px 0;
-    margin-bottom: 50px;
-    font-weight: 400;
-    font-size: 30px;
+  text-align: left;
+  padding: 0 0 20px 0;
+  margin-bottom: 50px;
+  font-weight: 400;
+  font-size: 30px;
 }
 .heading{
-  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-    padding: 25px;
-    border-radius: 6px;
+box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  padding: 25px;
+  border-radius: 6px;
 }
 .heading>h3{
-    padding: 5px 0;
-    margin: 0;
-    font-size: 20px;
+  padding: 5px 0;
+  margin: 0;
+  font-size: 20px;
 }
 .heading>p{
-    padding: 0;
-    margin: 0;
-    font-size: 14px;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
 }
 #heading{
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid gray;
-    outline: none;
-    width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid gray;
+  outline: none;
+  width: 100%;
 }
 #question_body>h3{
-    font-size: 20px;
-    padding: 5px 0;
-    margin: 0;
+  font-size: 20px;
+  padding: 5px 0;
+  margin: 0;
 }
 #question_body>p{
-    padding: 0;
-    margin: 0 0 10px 0;
-    font-size: 14px;
+  padding: 0;
+  margin: 0 0 10px 0;
+  font-size: 14px;
 }
 #question_body:last-child{
-    height: 150px;
+  height: 150px;
 }
 #submit {
-  background-color: #0095ff;
-  border: 1px solid transparent;
-  border-radius: 3px;
-  box-shadow: rgba(255, 255, 255, .4) 0 1px 0 0 inset;
-  box-sizing: border-box;
-  color: #fff;
-  cursor: pointer;
-  display: inline-block;
-  font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
-  font-size: 13px;
-  font-weight: 400;
-  line-height: 1.15385;
-  margin: 0;
-  outline: none;
-  padding: 8px .8em;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  vertical-align: baseline;
-  white-space: nowrap;
-  margin: 5px 0;
+background-color: #0095ff;
+border: 1px solid transparent;
+border-radius: 3px;
+box-shadow: rgba(255, 255, 255, .4) 0 1px 0 0 inset;
+box-sizing: border-box;
+color: #fff;
+cursor: pointer;
+display: inline-block;
+font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
+font-size: 13px;
+font-weight: 400;
+line-height: 1.15385;
+margin: 0;
+outline: none;
+padding: 8px .8em;
+position: relative;
+text-align: center;
+text-decoration: none;
+user-select: none;
+-webkit-user-select: none;
+touch-action: manipulation;
+vertical-align: baseline;
+white-space: nowrap;
+margin: 5px 0;
 }
 
 #submit:hover,
 #submit:focus {
-  background-color: #07c;
+background-color: #07c;
 }
 
 #submit:focus {
-  box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
 }
 
 #submit:active {
-  background-color: #0064bd;
-  box-shadow: none;
+background-color: #0064bd;
+box-shadow: none;
 }
 
 @media screen and (max-width: 600px){
-    #ask{
-        width: 100vw;
-        padding: 10px;
-    }
-    .heading{
-        padding: 10px;
-        box-shadow: none;
-    }
+  #ask{
+      width: 100vw;
+      padding: 10px;
+  }
+  .heading{
+      padding: 10px;
+      box-shadow: none;
+  }
 }
 
 /* Center the preloader */
 #preloader {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 100vh;
-    background-color: #fafafb;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 9999;
-    overflow: hidden;
-    scrollbar-width: none;
-  }
-  
-  /* Rotate the loading icon */
-  .preloader-icon {
-    animation: spin 1s infinite linear;
-    font-size: 4rem;
-    color: #f48024;
-  }
-  
-  /* Rotate the preloader */
-  @keyframes spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-  
-  /* Hide the preloader when the page is loaded */
-  .loaded #preloader {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fafafb;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  overflow: hidden;
+  scrollbar-width: none;
+}
 
-  .Good-Question{
-    border: 1px solid #acc9df;
-    margin-bottom: 20px;
-    background-color: #ebf4fb;
-    padding: 20px;
-    font-size: medium;
-    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-    border-radius: 6px;
-  }
-  .unordered{
-    padding-left: 40px;
-  }
+/* Rotate the loading icon */
+.preloader-icon {
+  animation: spin 1s infinite linear;
+  font-size: 4rem;
+  color: #f48024;
+}
 
-  .Good-Question > h2{
-    font-weight: 200;
+/* Rotate the preloader */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
   }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Hide the preloader when the page is loaded */
+.loaded #preloader {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+}
+
+.Good-Question{
+  border: 1px solid #acc9df;
+  margin-bottom: 20px;
+  background-color: #ebf4fb;
+  padding: 20px;
+  font-size: medium;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  border-radius: 6px;
+}
+.unordered{
+  padding-left: 40px;
+}
+
+.Good-Question > h2{
+  font-weight: 200;
+}
+
+#ls{
+  /* border: 2px solid red; */
+  display: flex;
+  /* justify-content: space-evenly; */
+  justify-content: center;
+  align-items: center;
+  width:10% ;
+  display: none;
+}
+#ls button{
+  margin-right: 7px;
+  padding:10px;
+  color:white;
+  border-radius: 5px;
+  background-color:#f48024 ;
+  border:none;
+}

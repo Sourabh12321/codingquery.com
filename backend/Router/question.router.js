@@ -4,12 +4,13 @@ const { validateUser } = require("../middlewares/authentication");
 const moment = require("moment");
 const questionRouter = express.Router();
 
-
+//To get All Data
 questionRouter.get("/getAllQuestions", async (req, res) => {
   const allQuestions = await QuestionModel.find();
-  res.send({"data":allQuestions});
+  res.json(allQuestions);
 });
 
+//To post question to backend
 questionRouter.post("/addquestion", validateUser, async (req, res) => {
   const { name, description, title, email } = req.body;
   try {
@@ -28,7 +29,7 @@ questionRouter.post("/addquestion", validateUser, async (req, res) => {
     res.json("Something Went Wrong Whie Add Question route");
   }
 });
-
+//To add answer to backend
 questionRouter.post("/addans", validateUser, async (req, res) => {
   const { name, answer, userid, email, _id } = req.body;
   const userEmail = await QuestionModel.findOne({ _id: _id });

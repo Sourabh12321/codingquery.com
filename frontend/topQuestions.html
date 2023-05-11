@@ -6,14 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CodingQuerries</title>
-  <link rel="shortcut icon" href="../image/logo.img.jpeg" />
+  <link rel="shortcut icon" href="/frontend/image/orangelogo.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
     integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
     crossorigin="anonymous" />
   <script src="https://kit.fontawesome.com/05fc89279a.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="../style/navBar.css" />
-  <link rel="stylesheet" href="../style/topQuesstions.css" />
-  <link rel="stylesheet" href="../style/index.css" />
+  <link rel="stylesheet" href="./style/navBar.css" />
+  <link rel="stylesheet" href="./style/topQuesstions.css" />
+  <link rel="stylesheet" href="./style/index.css" />
 </head>
 
 <body>
@@ -24,23 +24,24 @@
   <!-- here comes the navbar -->
   <div id="navbar">
     <div id="hb">
-      <!-- <img src="../image/hamburger.png" alt=""> -->
+      <img src="./image/hamburger.png" alt="">
       <div id="contents">
-          <button>TopQuestions</button>
-          <button>Query</button>
-          <button>Client</button> 
+        <a href="./topQuestions.html"> <button>Top Question</button></a>
+        <a href="./query.html"> <button>Query</button></a>
+        <a href="./users.html"> <button>Users</button></a>
       </div>
   </div>
     
     <div id="lh">
-      <!-- <img src="../image/hamburger.png" alt=""> -->
-       <a href="../../index.html"><img src="../image/orangelogo.png" alt="logo"></a> 
+      <!-- <img src="../image/hamburger.png" id="hanb" alt=""> -->
+     
+        <a href="../index.html"><img style="width: 130px;" src="./image/orangelogo.png" alt="logo"></a>
     </div>
     <div id="sec">
         <div id="navbtn">
-        <button>TopQuestions</button>
-        <button>Query</button>
-        <button>Client</button>
+        <a href="./topQuestions.html"> <button>TopQuestion</button></a>
+        <a href="./query.html"> <button>Query</button></a>
+        <a href="./users.html"> <button>Users</button></a>
         </div>
         <div>
             <input id="input" type="text" placeholder="Search Query "  >
@@ -50,10 +51,13 @@
     <div id="ls">
       <!-- <a href="register.html">Sign up</a>
       <a href="login.html">Login</a> -->
-        <button> <a href="register.html">Sign up</a> </button>
-        <button> <a href="login.html"> Login</a></button>
+        <button> <a id="signUp" href="register.html">Sign up</a> </button>
+        <button> <a id="signIn" href="login.html"> Login</a></button>
     </div>
-   
+
+    <div id="Name">
+      <p class="user"><p/>
+    </div>
 </div>
 
   <div id="whole-page" style="margin-top: 51px;">
@@ -75,12 +79,12 @@
     </div>
     <div class="right-sidebar">
       <div class="boxOne">
-        <img src="../image/imgonline-com-ua-twotoone-Y1vW58VhPW8P9-removebg-preview.png" alt="">
+        <img src="/frontend/image/imgonline-com-ua-twotoone-Y1vW58VhPW8P9-removebg-preview.png" alt="">
       </div>
     </div>
   </div>
 
-  <button class="open-button" onclick="openForm()">Chat</button>
+  <!-- <button class="open-button" onclick="openForm()">Chat</button>
 
   <div class="chat-popup" id="myForm">
     <div class="chat-container">
@@ -102,7 +106,7 @@
     </div>
 
     <button id="close" type="button" class="btn cancel" onclick="closeForm()">Close</button>
-  </div>
+  </div> -->
 
 
   <div class="footer">
@@ -119,7 +123,7 @@
           <p>Data</p>
        </div>
        <div>
-          <h2>COMPANY/h2>
+          <h2>COMPANY</h2>
           <p>About</p>
           <p>Press</p>
          <p>Cookie Setting</p>
@@ -161,99 +165,99 @@
 
     <!-- ICONS -->
 
-    <div id="icons"><img src="../image/facebook.png" alt=".\facebook.png">
+    <div id="icons"><img src="./image/facebook.png" alt=".\facebook.png">
       <!-- twitter  -->
-          <img src="../image/twitter.png" alt="">
+          <img src="./image/twitter.png" alt="">
           <!-- instagram -->
-          <img src="../image/instagram.png" alt="">
+          <img src="./image/instagram.png" alt="">
 
           <!-- pinterest -->
-          <img src="../image/pinterest (1).png" alt="">
+          <img src="./image/pinterest (1).png" alt="">
           <!-- youtube -->
-          <img src="../image/youtube.png" alt="">
+          <img src="./image/youtube.png" alt="">
     </div>
  </div>
- <script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
+
   <script>
     // Hide the preloader when the page is loaded
     window.addEventListener("load", () => {
       document.querySelector("body").classList.add("loaded");
     });
 
-    document.querySelector(".chat-form-container").addEventListener("click", (e) => {
-        window.stop();
-        e.preventDefault();
-      })
-      function openForm() {
-        document.getElementById("myForm").style.display = "block";
-      }
+    // document.querySelector(".chat-form-container").addEventListener("click", (e) => {
+    //     window.stop();
+    //     e.preventDefault();
+    //   })
+    //   function openForm() {
+    //     document.getElementById("myForm").style.display = "block";
+    //   }
 
-      function closeForm() {
-        document.getElementById("myForm").style.display = "none";
-      }
-      const socket = io("http://localhost:2000", { transports: ["websocket"] });
+    //   function closeForm() {
+    //     document.getElementById("myForm").style.display = "none";
+    //   }
+    //   const socket = io("http://localhost:2000", { transports: ["websocket"] });
 
-      const chatmessage = document.getElementById("msg");
-      const chatmessages = document.querySelector(".chat-messages");
-      const user_name = document.querySelector(".btn");
-      const btn = document.querySelector(".btn-icon");
-
-
-
-      const url = new URLSearchParams(window.location.search);
-      // const username = url.get("username");
-      // const room = url.get("room")
-      const username = "sourabh";
-      const room = "javaScript";
-
-      console.log(username, room);
-      user_name.innerText = username;
-
-      socket.emit("joinroom", { username, room });
-
-      socket.emit("msg", "one user in connected");
-
-      socket.on("msg", (message) => {
-        console.log("hello");
-        console.log("bye");
-        console.log(message);
-        outputmsg(message);
-        chatmessages.scrollTop = chatmessages.scrollHeight;
-      })
-      btn.addEventListener("click", (e) => {
-        e.preventDefault();
-        console.log("hello ")
-        const msg = chatmessage.value;
-        socket.emit("chatmessage", msg);
-        console.log(msg);
-      })
-      function outputmsg(message) {
-        let div = document.createElement("div");
-        div.classList.add("message");
-
-        let p = document.createElement("p");
-        p.classList.add("meta");
-
-        p.innerText = message.username;
-        p.innerHTML += `<span>${message.time}</span>`;
+    //   const chatmessage = document.getElementById("msg");
+    //   const chatmessages = document.querySelector(".chat-messages");
+    //   const user_name = document.querySelector(".btn");
+    //   const btn = document.querySelector(".btn-icon");
 
 
-        div.appendChild(p);
 
-        const para = document.createElement("p");
+    //   const url = new URLSearchParams(window.location.search);
+    //   // const username = url.get("username");
+    //   // const room = url.get("room")
+    //   const username = "sourabh";
+    //   const room = "javaScript";
 
-        para.classList.add("text");
-        para.innerText = message.text;
+    //   console.log(username, room);
+    //   user_name.innerText = username;
 
-        div.appendChild(para);
-        chatmessages.appendChild(div);
-      }
+    //   socket.emit("joinroom", { username, room });
+
+    //   socket.emit("msg", "one user in connected");
+
+    //   socket.on("msg", (message) => {
+    //     console.log("hello");
+    //     console.log("bye");
+    //     console.log(message);
+    //     outputmsg(message);
+    //     chatmessages.scrollTop = chatmessages.scrollHeight;
+    //   })
+    //   btn.addEventListener("click", (e) => {
+    //     e.preventDefault();
+    //     console.log("hello ")
+    //     const msg = chatmessage.value;
+    //     socket.emit("chatmessage", msg);
+    //     console.log(msg);
+    //   })
+    //   function outputmsg(message) {
+    //     let div = document.createElement("div");
+    //     div.classList.add("message");
+
+    //     let p = document.createElement("p");
+    //     p.classList.add("meta");
+
+    //     p.innerText = message.username;
+    //     p.innerHTML += `<span>${message.time}</span>`;
+
+
+    //     div.appendChild(p);
+
+    //     const para = document.createElement("p");
+
+    //     para.classList.add("text");
+    //     para.innerText = message.text;
+
+    //     div.appendChild(para);
+    //     chatmessages.appendChild(div);
+    //   }
 
   </script>
 </body>
 
 </html>
 
-<script src="../scripts/topQuestion.js"></script>
+<script src="./scripts/topQuestion.js"></script>
 <!-- <script type="module" src="../scripts/navbar.js"></script> -->
 <!-- <script type="module" src="../scripts/header.js"></script> -->
