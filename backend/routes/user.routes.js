@@ -73,6 +73,8 @@ UserRouter.get("/getall",async(req,res)=>{
 })
 
 
+
+
 module.exports = {
   UserRouter,
 };
