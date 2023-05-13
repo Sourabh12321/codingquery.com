@@ -53,7 +53,7 @@ function sign_up(){
    console.log(inputs[i].name);
       default: 
   document.querySelectorAll('.input_form_sign')[i].className = "input_form_sign d_block";
-  window.location.href="index.html"
+  // window.location.href="index.html"
     }
   } 
   
@@ -108,7 +108,7 @@ function sign_up(){
   }
   
   
-  window.onload =function(){
-    document.querySelector('.cont_centrar').className = "cont_centrar cent_active";
+  // window.onload =function(){
+  //   document.querySelector('.cont_centrar').className = "cont_centrar cent_active";
   
-  }
+  // }

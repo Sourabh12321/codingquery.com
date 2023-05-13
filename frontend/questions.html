@@ -24,7 +24,7 @@
     <!-- this is the preloader -->
     <i class="preloader-icon fa fa-spinner"></i>
   </div>
-  
+
   <div id="navbar">
     <div id="hb">
       <img src="./image/hamburger.png" alt="">
@@ -33,31 +33,31 @@
         <a href="./query.html"> <button>Query</button></a>
         <a href="./users.html"> <button>Users</button></a>
       </div>
-  </div>
-    
+    </div>
+
     <div id="lh">
       <img src="./image/hamburger.png" alt="">
       <a href="../index.html"><img style="width: 130px;" src="./image/orangelogo.png" alt="logo"></a>
     </div>
     <div id="sec">
-        <div id="navbtn">
-          <a href="./topQuestions.html"> <button>TopQuestion</button></a>
-          <a href="./query.html"> <button>Query</button></a>
-          <a href="./users.html"> <button>Users</button></a>
-        </div>
-        <div>
-            <input id="input" type="text" placeholder="Search Query "  >
-        </div>
+      <div id="navbtn">
+        <a href="./topQuestions.html"> <button>TopQuestion</button></a>
+        <a href="./query.html"> <button>Query</button></a>
+        <a href="./users.html"> <button>Users</button></a>
+      </div>
+      <div>
+        <input id="input" type="text" placeholder="Search Query ">
+      </div>
     </div>
-   
+
     <div id="ls">
       <!-- <a href="register.html">Sign up</a>
       <a href="login.html">Login</a> -->
-        <button> <a href="register.html">Sign up</a> </button>
-        <button> <a href="login.html"> Login</a></button>
+      <button> <a href="register.html">Sign up</a> </button>
+      <button> <a href="login.html"> Login</a></button>
     </div>
-   
-</div>
+
+  </div>
 
   <div id="home">
     <div id="renderdata">
@@ -72,57 +72,57 @@
     </div>
   </div>
 
-  
+
   <div class="footer">
     <div id="pTag">
-       <div>
-          <h2>CODING EXCHANGE NETWORK</h2>
-          <p>Technology</p>
-          <p>Culture & receation</p>
-          <p>Life & arts</p>
-          <p>Science</p>
-          <p>Professional</p>
-          <p>Business</p>
-          <p>API</p>
-          <p>Data</p>
-       </div>
-       <div>
-          <h2>COMPANY/h2>
+      <div>
+        <h2>CODING EXCHANGE NETWORK</h2>
+        <p>Technology</p>
+        <p>Culture & receation</p>
+        <p>Life & arts</p>
+        <p>Science</p>
+        <p>Professional</p>
+        <p>Business</p>
+        <p>API</p>
+        <p>Data</p>
+      </div>
+      <div>
+        <h2>COMPANY/h2>
           <p>About</p>
           <p>Press</p>
-         <p>Cookie Setting</p>
-         <p>Cookie Policy</p>
-         <p>Contact Us</p>
-         <p>Privacy Policy</p>
-         <p>Terms of Service</p>
-       </div>
-       <div>
-          <h2>PRODUCTS</h2>
-          <p>ABOUT US</p>
-          <p>ADVERTISE WITH US</p>
-          <p>DEVELOPERS</p>
-          <p>OUR BRANDS</p>
-          <p>CARRIERS</p>
-          <p>SOCIAL RESPONSIBILITY</p>
-          <p>NEWS AND MEDIA</p>
-          <p>INVESTORS</p>
-          <p>CUSTOMER SERVICE</p>
-          <p>SCHEDULE A SERVICE</p>
-         
-       </div>
-       <div>
+          <p>Cookie Setting</p>
+          <p>Cookie Policy</p>
+          <p>Contact Us</p>
+          <p>Privacy Policy</p>
+          <p>Terms of Service</p>
+      </div>
+      <div>
+        <h2>PRODUCTS</h2>
+        <p>ABOUT US</p>
+        <p>ADVERTISE WITH US</p>
+        <p>DEVELOPERS</p>
+        <p>OUR BRANDS</p>
+        <p>CARRIERS</p>
+        <p>SOCIAL RESPONSIBILITY</p>
+        <p>NEWS AND MEDIA</p>
+        <p>INVESTORS</p>
+        <p>CUSTOMER SERVICE</p>
+        <p>SCHEDULE A SERVICE</p>
+
+      </div>
+      <div>
 
 
-          <h2>CUSTOMER SERVICE</h2>
-          <p>VISIT OUR SUPPORT CENTER</p>
-          <p>CUSTOMER SERVICE</p>
-          <p>SCHEDULE A SERVICE</p>
-          <p>MANAGE AN APPOINTMENT</p>
-         <p>Questions</p>
-         <p>Help</p>
-         <p>CONTACT US</p>
+        <h2>CUSTOMER SERVICE</h2>
+        <p>VISIT OUR SUPPORT CENTER</p>
+        <p>CUSTOMER SERVICE</p>
+        <p>SCHEDULE A SERVICE</p>
+        <p>MANAGE AN APPOINTMENT</p>
+        <p>Questions</p>
+        <p>Help</p>
+        <p>CONTACT US</p>
 
-       </div>
+      </div>
 
     </div>
 
@@ -131,16 +131,16 @@
 
     <div id="icons"><img src="./image/facebook.png" alt=".\facebook.png">
       <!-- twitter  -->
-          <img src="./image/twitter.png" alt="">
-          <!-- instagram -->
-          <img src="./image/instagram.png" alt="">
+      <img src="./image/twitter.png" alt="">
+      <!-- instagram -->
+      <img src="./image/instagram.png" alt="">
 
-          <!-- pinterest -->
-          <img src="./image/pinterest (1).png" alt="">
-          <!-- youtube -->
-          <img src="./image/youtube.png" alt="">
+      <!-- pinterest -->
+      <img src="./image/pinterest (1).png" alt="">
+      <!-- youtube -->
+      <img src="./image/youtube.png" alt="">
     </div>
- </div>
+  </div>
   <script>
     // Hide the preloader when the page is loaded
     window.addEventListener("load", () => {
@@ -152,6 +152,14 @@
   <script src="./scripts/questions.js"></script>
 </body>
 <script>
+
+  const myCookie = document.cookie.split(';').find(cookie => cookie.trim().startsWith('name='));
+  if (myCookie) {
+    const myCookieValue = myCookie.split('=')[1];
+    console.log('My cookie value is:', myCookieValue);
+  } else {
+    console.log('Cookie not found.');
+  }
   var quill = new Quill("#editor-container", {
     modules: {
       toolbar: [

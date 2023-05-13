@@ -172,7 +172,7 @@
     let token = sessionStorage.getItem("token")
 
     if (token) {
-        let baseURL = "https://poised-shorts-toad.cyclic.app/user/getall";
+        let baseURL = "http://localhost:2000/user/getall";
         let bag = [];
         let getAllUsers = async () => {
             try {
