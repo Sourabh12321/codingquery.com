@@ -1,4 +1,3 @@
-
 body {
     margin: 0;
     padding: 0;
@@ -288,25 +287,55 @@ body {
 
 @media screen and (max-width: 810px) {
     .navbar-brand {
-      flex: initial;
+        flex: initial;
     }
 
 }
-    .navbar-search {
-        flex: initial;
-        align-items: center;
-        width: 100%;
-        position: absolute;
-        top: 4.7rem;
-        padding: 0.8rem 1rem;
-        background-color: #d6d9dc;
-        margin-right: initial;
-        display: none;
-      }
-      .navbar-search.open {
-        display: flex;
-      }
-      
-      #ls{
-        display: none;
-      }
+
+.navbar-search {
+    flex: initial;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    top: 4.7rem;
+    padding: 0.8rem 1rem;
+    background-color: #d6d9dc;
+    margin-right: initial;
+    display: none;
+}
+
+.navbar-search.open {
+    display: flex;
+}
+
+#ls {
+    display: none;
+}
+
+#Name {
+    display: flex;
+    gap: 5px;
+    width: 500px;
+}
+
+#logout {
+    border: 2px solid #f48024;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 8px;
+    color: #f48024;
+    font-weight: 600;
+}
+
+.user {
+    border: 2px solid #f48024;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 8px;
+    color: #f48024;
+    font-weight: 600;
+}
+
+.user::after {
+    content: " \1F60E";
+}

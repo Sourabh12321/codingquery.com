@@ -436,6 +436,19 @@
   height: auto;
 
 } */
+#Name{
+  display:flex;
+  gap:5px;
+  width:500px;
+}
+#logout{
+  border: 2px solid #f48024;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 8px;
+  color: #f48024;
+  font-weight: 600;
+}
 
 .user{
   border: 2px solid #f48024;

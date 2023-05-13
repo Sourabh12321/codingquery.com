@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="./style/navBar.css" />
     <link rel="stylesheet" href="./style/index.css" />
     <link rel="stylesheet" href="./style/user.css" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 </head>
 
@@ -57,7 +58,11 @@
             <button> <a href="register.html">Sign up</a> </button>
             <button> <a href="login.html"> Login</a></button>
         </div>
-
+        <div id="Name">
+            <p class="user">
+                <p />
+                <button id="logout">logout</button>
+        </div>
     </div>
 
     <div class="cntnr" style="height: auto">
@@ -165,7 +170,7 @@
 
 </html>
 <!-- <script type="module" src="../script/navbar.js"></script> -->
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 <script>
     // let baseURL = "http://localhost:2000"
 
@@ -181,7 +186,10 @@
                 bag = users; // for searching functionality;
                 display(users);
             } catch (error) {
-                alert(error);
+                swal({
+                    title: "error",
+                    icon: "error",
+                });
             }
         }
         getAllUsers();
@@ -223,9 +231,25 @@
             });
             display(newData);
         }
-    }else{
-        alert("You Have to Login First")
+    } else {
+        swal({
+            title: "you have to login first",
+            icon: "warning",
+        });
         window.location.href = "login.html"
+    }
+
+
+    let logout = document.querySelector("#logout").addEventListener("click", () => {
+        sessionStorage.clear();
+        window.location.href = "../index.html"
+    })
+
+    if (token) {
+        document.getElementById("ls").style.display = "none"
+        document.querySelector(".user").innerText = "Hi!!" + " " + sessionStorage.getItem("Name");
+    } else {
+        document.querySelector("#Name").style.display = "none"
     }
 
 

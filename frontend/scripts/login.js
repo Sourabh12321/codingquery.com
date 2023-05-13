@@ -44,7 +44,7 @@ async function lgn(data) {
                     sessionStorage.setItem("loggedInUser", JSON.stringify(data.email))
                     sessionStorage.setItem("token", X.token);
                     sessionStorage.setItem("Name", X.user);
-                    // window.location.href = `./topQuestions.html?token=${X.token}&name=${X.user}&email=${X.email}`;
+                    window.location.href = `./topQuestions.html`;
                 }, 3000)
             }
             else {

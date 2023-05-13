@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="./style/navBar.css" />
   <link rel="stylesheet" href="./style/query.css" />
   <link rel="stylesheet" href="./style/index.css" />
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <!----------------------------- navbar css --------------------------------->
 </head>
 
@@ -57,6 +58,7 @@
     <div id="Name">
       <p class="user">
         <p />
+        <button id="logout">logout</button>
     </div>
 
   </div>
@@ -234,11 +236,31 @@
           console.log(false);
         }
       } else {
-        alert("You Have to Login First!!!")
-        window.location.href = "login.html"
+        swal({
+          title: "you have to login first",
+          icon: "warning",
+        });
+
+        setTimeout(() => {
+          window.location.href = "login.html"
+        }, 2000)
+
       }
 
     })
+    let token = sessionStorage.getItem("token")
+
+    let logout = document.querySelector("#logout").addEventListener("click", () => {
+      sessionStorage.clear();
+      window.location.href = "../index.html"
+    })
+
+    if (token) {
+      document.getElementById("ls").style.display = "none"
+      document.querySelector(".user").innerText = "Hi!!" + " " + sessionStorage.getItem("Name");
+    } else {
+      document.querySelector("#Name").style.display = "none"
+    }
   </script>
 </body>
 

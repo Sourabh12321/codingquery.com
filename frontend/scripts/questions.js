@@ -13,7 +13,7 @@ const particularquestion = JSON.parse(
 renderQuestion(particularquestion);
 
 function renderQuestion(particularquestion) {
-//   console.log("HEllO", particularquestion);
+  //   console.log("HEllO", particularquestion);
 
   question_div.innerHTML = null;
   let temp = document.createElement("div");
@@ -97,6 +97,19 @@ function answers(data) {
 }
 
 let token = sessionStorage.getItem("token");
+
+
+let logout = document.querySelector("#logout").addEventListener("click", () => {
+  sessionStorage.clear();
+  window.location.href = "../index.html"
+})
+
+if (token) {
+  document.getElementById("ls").style.display = "none"
+  document.querySelector(".user").innerText = "Hi!!" + " " + sessionStorage.getItem("Name");
+} else {
+  document.querySelector("#Name").style.display = "none"
+}
 let particularQuestion = JSON.parse(localStorage.getItem("particularQuestion"));
 let _id = particularQuestion._id;
 document.getElementById("submit").addEventListener("click", async () => {
@@ -128,13 +141,19 @@ document.getElementById("submit").addEventListener("click", async () => {
         const res = await post_question.json();
         window.location.reload()
       } else {
-        return alert("You Cannot answer your own question");
+        return swal({
+          title: "you cannot answer your own questions",
+          icon: "warning",
+      });
       }
     } catch (error) {
       console.log(error);
     }
   } else {
-    alert("You Have to Login First")
+    swal({
+      title: "you have to login first",
+      icon: "warning",
+    });
     window.location.href = "login.html"
   }
 });
