@@ -1,6 +1,10 @@
 let question_div = document.getElementById("question");
 let question_id = localStorage.getItem("question_id");
 
+
+
+
+
 // storing Particula quesition in localStoarage 
 const particularquestion = JSON.parse(
   localStorage.getItem("particularQuestion")
@@ -111,7 +115,7 @@ document.getElementById("submit").addEventListener("click", async () => {
       // console.log(y.email);
       if (x != y.email) {
         let post_question = await fetch(
-          `https://poised-shorts-toad.cyclic.app/question/addans`,
+          `http://localhost:2000/question/addans`,
           {
             method: "POST",
             headers: {
@@ -138,7 +142,7 @@ document.getElementById("submit").addEventListener("click", async () => {
 let x = JSON.parse(localStorage.getItem("particularQuestion"));
 let id = x._id;
 async function GetSpecific(id) {
-  let res = await fetch(`https://poised-shorts-toad.cyclic.app/question/getAllQuestions`);
+  let res = await fetch(`http://localhost:2000/question/getAllQuestions`);
   let data = await res.json();
 
   data.forEach((elem) => {
