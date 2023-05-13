@@ -7,7 +7,6 @@ const { UserModel } = require("../models/user.model");
 const UserRouter = express.Router();
 const { authentication } = require("../middlewares/authentication");
 
-// Render All Users
 UserRouter.get("/getall", async (req, res) => {
   const all = await UserModel.find();
   res.json(all);
@@ -52,23 +51,41 @@ UserRouter.post("/login", async (req, res) => {
     if (!user) {
       return res.json({ msg: "the user does not exist, please signup first" });
     } else {
+      
+      
       const isPasswordMatch = await bcrypt.compare(password, user.password);
       if (!isPasswordMatch) {
         return res.json({ msg: "Invalid username or password" });
       }
-      //an access token is generated.
+      // const d = res.cookie('mycookie', 'myvalue');
+      // console.log(d);
+      
+      // document.cookie = `email = ${user.email}`
+            //an access token is generated.
       const token = jwt.sign(
         { userid: user._id, email: user.email, name: user.name },
         process.env.token
       );
       console.log(token);
-      res.json({ msg: "login successful", token, user:user.name });
+      res.json({ msg: "login successful", token, user:user.name, email:user.email});
     }
   } catch (err) {
     console.log(err);
     res.send("something went wrong in login route");
   }
 });
+
+UserRouter.get("/set", async (req, res) => {
+  let data = res.cookie("myname", "sourabh");
+  console.log(data);
+  res.send(data);
+})
+
+UserRouter.get("/cookie", async (req, res) => {
+  let data = req.cookies.mycookie;
+  console.log(data);
+  res.send(data);
+})
 
 module.exports = {
   UserRouter,
