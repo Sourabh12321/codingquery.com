@@ -127,11 +127,12 @@ app.get("/auth/github", async (req, res) => {
             password: uuidv4(),
         };
         console.log(user);
-        const isUserpresent = await UserModel.find({ email: user.emailemail });
+        const isUserpresent = await UserModel.find({ email: user.email });
         console.log(isUserpresent + "data");
         if (isUserpresent) {
             console.log("hero");
-            res.redirect("https://astounding-tarsier-f5de8a.netlify.app/")
+            sessionStorage.setItem("Name",isUserpresent[0].name);
+            res.redirect("https://thunderous-alpaca-184d8d.netlify.app/frontend/topquestions")
         } else {
             const userData = new UserModel({ name: user.name, email: user.email, password: user.password });
             await userData.save();
@@ -142,7 +143,7 @@ app.get("/auth/github", async (req, res) => {
                     expiresIn: "7h",
                 }
             );
-            res.redirect("https://astounding-tarsier-f5de8a.netlify.app/")
+            res.redirect("https://thunderous-alpaca-184d8d.netlify.app/frontend/topquestions")
             // save the user details in the database here
             // res.send({
             //     msg: "Github authentication successful!",
