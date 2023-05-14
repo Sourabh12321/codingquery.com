@@ -276,3 +276,151 @@
 .user::after{
   content: " \1F60E";
 }
+
+@media (min-width: 120px) and (max-width: 319px) {
+  #navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px;
+  }
+  #sec {
+    display: none;
+  }
+  #Name{
+    display: none;
+  }
+  #hb {
+    display: block;
+    border: 0px solid black;
+  }
+  /* #lh {
+    display: none;
+  } */
+  #contents {
+    display: none;
+  }
+  #hb:hover #contents {
+    /* display:block; */
+    display: flex;
+    flex-direction: column;
+  }
+  #ls {
+    border: 0px solid black;
+  }
+  .top-section {
+    background-image: none;
+    /* background-color: red; */
+  }
+  #parents {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .footer {
+    display: flex;
+    flex-wrap: wrap;
+  }
+   #logout{
+    display:none;
+  }
+ 
+
+}
+
+@media (min-width: 320px) and (max-width: 600px) {
+  #Name{
+    display:none;
+  }
+  #navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px;
+    width:100%
+  }
+  #sec {
+    display: none;
+  }
+  
+  #hb {
+   display:none;
+  }
+  /* #lh {
+    display: none;
+  } */
+  #contents {
+    display: none;
+  }
+  #hb:hover #contents {
+    /* display:block; */
+    display: flex;
+    flex-direction: column;
+  }
+  #ls {
+    border: 0px solid black;
+  }
+  .top-section {
+    background-image: none;
+    /* background-color: red; */
+  }
+  #parents {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .footer {
+    display: flex;
+    flex-wrap: wrap;
+  }
+   #logout{
+    display:none;
+  }
+  /* #Name{
+    border:0px solid red;
+  margin-left: 30%;
+} */
+}
+
+@media (min-width: 601px) and (max-width: 1000px) {
+  #navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px;
+  }
+  #sec {
+    display: none;
+  }
+ 
+  #hb {
+   display:none
+  }
+  /* #lh {
+    display: none;
+  } */
+  #contents {
+    display: none;
+  }
+  #hb:hover #contents {
+    /* display:block; */
+    display: flex;
+    flex-direction: column;
+  }
+  #ls {
+    border: 0px solid black;
+  }
+  .top-section {
+    background-image: none;
+    /* background-color: red; */
+  }
+  #parents {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .footer {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #logout{
+    display:none;
+  }
+  #Name{
+   display:none
+}
+}

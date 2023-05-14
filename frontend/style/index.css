@@ -976,7 +976,9 @@ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
 /*----------------------Media Queries-------------------------*/
 @media screen and (max-width: 1100px) {
-
+#Name{
+    display:none;
+  }
   
   .plansOfTeams{
     display:grid;
@@ -999,6 +1001,9 @@ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
 }
 @media screen and (max-width: 810px) {
+  #Name{
+    display:none;
+  }
   .navbar-brand {
     flex: initial;
   }
@@ -1149,6 +1154,9 @@ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
 }
 @media screen and (max-width: 830px) {
+  #Name{
+    display:none;
+  }
   .footer-content {
     flex-wrap: wrap;
   }
@@ -1158,11 +1166,17 @@ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
 }
 @media screen and (max-width: 500px) {
+  #Name{
+    display:none;
+  }
   .questions-div-grid {
     padding: 0;
   }
 }
 @media screen and (max-width: 640px) {
+  #Name{
+    display:none;
+  }
   /* .nav-icon {
     padding: 0 1rem;
   }
@@ -1354,7 +1368,7 @@ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 #Name{
   display:flex;
   gap:5px;
-  width:500px;
+  width:70%;
 }
 #logout{
   border: 2px solid #f48024;
@@ -1374,4 +1388,154 @@ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .user::after{
   content: " \1F60E";
+}
+
+
+@media (min-width: 120px) and (max-width: 319px) {
+  #navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px;
+  }
+  #sec {
+    display: none;
+  }
+  #Name{
+    display: none;
+  }
+  #hb {
+    display: block;
+    border: 0px solid black;
+  }
+  /* #lh {
+    display: none;
+  } */
+  #contents {
+    display: none;
+  }
+  #hb:hover #contents {
+    /* display:block; */
+    display: flex;
+    flex-direction: column;
+  }
+  #ls {
+    border: 0px solid black;
+  }
+  .top-section {
+    background-image: none;
+    /* background-color: red; */
+  }
+  #parents {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .footer {
+    display: flex;
+    flex-wrap: wrap;
+  }
+   #logout{
+    display:none;
+  }
+ 
+
+}
+
+@media (min-width: 320px) and (max-width: 600px) {
+  #Name{
+    display:none;
+  }
+  #navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px;
+  }
+  #sec {
+    display: none;
+  }
+  
+  #hb {
+    display: block;
+    border: 0px solid black;
+  }
+  /* #lh {
+    display: none;
+  } */
+  #contents {
+    display: none;
+  }
+  #hb:hover #contents {
+    /* display:block; */
+    display: flex;
+    flex-direction: column;
+  }
+  #ls {
+    border: 0px solid black;
+  }
+  .top-section {
+    background-image: none;
+    /* background-color: red; */
+  }
+  #parents {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .footer {
+    display: flex;
+    flex-wrap: wrap;
+  }
+   #logout{
+    display:none;
+  }
+  /* #Name{
+    border:0px solid red;
+  margin-left: 30%;
+} */
+}
+
+@media (min-width: 601px) and (max-width: 1000px) {
+  #navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px;
+  }
+  #sec {
+    display: none;
+  }
+ 
+  #hb {
+    display: block;
+    border: 0px solid black;
+  }
+  /* #lh {
+    display: none;
+  } */
+  #contents {
+    display: none;
+  }
+  #hb:hover #contents {
+    /* display:block; */
+    display: flex;
+    flex-direction: column;
+  }
+  #ls {
+    border: 0px solid black;
+  }
+  .top-section {
+    background-image: none;
+    /* background-color: red; */
+  }
+  #parents {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .footer {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #logout{
+    display:none;
+  }
+  #Name{
+   display:none
+}
 }
