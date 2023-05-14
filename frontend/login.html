@@ -8,10 +8,53 @@
     <title>Login</title>
     <link rel="shortcut icon" href="./image/orangelogo.png" />
     <link rel="stylesheet" href="./style/login.css">
+    <link rel="stylesheet" href="./style/navBar.css">
+    <link rel="stylesheet" href="./style/index.css">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body>
+    <div id="navbar">
+        <div id="hb">
+            <img src="../frontend/image/hamburger.png" alt="#">
+            <div id="contents">
+                <a href="./frontend/topQuestions.html"> <button>TopQuestion</button></a>
+                <a href="./frontend/query.html"> <button>Query</button></a>
+                <a href="./frontend/users.html"> <button>Users</button></a>
+            </div>
+        </div>
+
+        <div id="lh">
+            <!-- <img src="../image/hamburger.png" id="hanb" alt=""> -->
+
+            <img style="width: 130px;" src="../frontend/image/orangelogo.png" alt="logo">
+        </div>
+        <div id="sec">
+            <div id="navbtn">
+                <a href="./frontend/topQuestions.html"> <button>TopQuestion</button></a>
+                <a href="./frontend/query.html"> <button>Query</button></a>
+                <a href="./frontend/users.html"> <button>Users</button></a>
+            </div>
+            <!-- <div>
+            <input id="input" type="text" placeholder="Search Query ">
+        </div> -->
+        </div>
+
+        <div id="ls">
+            <!-- <a href="register.html">Sign up</a>
+        <a href="login.html">Login</a> -->
+            <button style="width:100%"> <a href="./register.html">Sign up</a> </button>
+            <button> <a href="./login.html"> Login</a></button>
+        </div>
+        <div id="Name">
+            <p class="user">
+                <p />
+                <button id="logout">logout</button>
+        </div>
+
+    </div>
+
+
 
     <div id="container">
         <div id="left">
@@ -21,11 +64,11 @@
         <div id="right">
             <h1>Log in</h1>
             <!-- <form> -->
-                <label for="email">Email</label><br>
-                <input type="email" id="email" required><br>
-                <label for="password">Password</label>
-                <input type="password" id="password" required><br>
-                <button id="login">Log in</button>
+            <label for="email">Email</label><br>
+            <input type="email" id="email" required><br>
+            <label for="password">Password</label>
+            <input type="password" id="password" required><br>
+            <button id="login">Log in</button>
             <!-- </form> -->
             <div id="right1">
                 <p>or login with</p>
@@ -51,5 +94,5 @@
 <!-- <script src="./scripts/login.js"></script> -->
 
 <script type="module" src="./scripts/login.js">
-  
+
 </script>

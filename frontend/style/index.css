@@ -293,7 +293,7 @@ color:white;
 }
 
 .top-section {
-  background-image: url("https://media2.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif?cid=ecf05e476c4f2uzekjgleio6z0344a2p8lyg5dp8he9mvhv3&rid=giphy.gif&ct=g");
+  /* background-image: url("https://media2.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif?cid=ecf05e476c4f2uzekjgleio6z0344a2p8lyg5dp8he9mvhv3&rid=giphy.gif&ct=g"); */
   background-repeat: no-repeat;
   background-position:  left;
   background-color: #003140 ;
@@ -976,13 +976,15 @@ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
 /*----------------------Media Queries-------------------------*/
 @media screen and (max-width: 1100px) {
+
+  
   .plansOfTeams{
     display:grid;
     grid-template-columns: repeat(2,1fr);
   }
   #parents{
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(1,1fr);
     gap: 15px;
     height: auto;
   }
@@ -1161,7 +1163,7 @@ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
 }
 @media screen and (max-width: 640px) {
-  .nav-icon {
+  /* .nav-icon {
     padding: 0 1rem;
   }
 
@@ -1184,10 +1186,10 @@ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
   .containerr P {
     font-size: 2.5rem;
-  }
+  } */
 
   .top-section {
-    background-image: url("https://media1.giphy.com/media/g06HKnMmtK1aXurndU/giphy.gif?cid=ecf05e47lkp4jodz4mi37womhbho6wm5k8ls9dlbslova1lh&rid=giphy.gif&ct=g");
+    /* background-image: url("https://media1.giphy.com/media/g06HKnMmtK1aXurndU/giphy.gif?cid=ecf05e47lkp4jodz4mi37womhbho6wm5k8ls9dlbslova1lh&rid=giphy.gif&ct=g"); */
     background-position: center;
     background-size: 80%;
     /* margin-top: -; */
