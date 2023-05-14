@@ -308,38 +308,33 @@ body {
     display: flex;
 }
 
-#ls {
-    display: none;
+#ls{
+  display: none;
 }
-
-#Name {
-    display: flex;
-    gap: 5px;
-    width: 500px;
+#Name{
+  display:flex;
+  gap:5px;
+  width:500px;
 }
-
-#logout {
-    border: 2px solid #f48024;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 8px;
-    color: #f48024;
-    font-weight: 600;
+#logout{
+  border: 2px solid #f48024;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 8px;
+  color: #f48024;
+  font-weight: 600;
 }
-
-.user {
-    border: 2px solid #f48024;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 8px;
-    color: #f48024;
-    font-weight: 600;
+.user{
+  border: 2px solid #f48024;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 8px;
+  color: #f48024;
+  font-weight: 600;
 }
-
-.user::after {
-    content: " \1F60E";
+.user::after{
+  content: " \1F60E";
 }
-
 
 @media (min-width: 120px) and (max-width: 319px) {
   #navbar {
@@ -398,14 +393,14 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 4px;
+    width:100%
   }
   #sec {
     display: none;
   }
   
   #hb {
-    display: block;
-    border: 0px solid black;
+   display:none;
   }
   /* #lh {
     display: none;
@@ -453,8 +448,7 @@ body {
   }
  
   #hb {
-    display: block;
-    border: 0px solid black;
+   display:none
   }
   /* #lh {
     display: none;

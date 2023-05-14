@@ -436,6 +436,9 @@
   height: auto;
 
 } */
+#ls{
+  display: none;
+}
 #Name{
   display:flex;
   gap:5px;
@@ -449,7 +452,6 @@
   color: #f48024;
   font-weight: 600;
 }
-
 .user{
   border: 2px solid #f48024;
   padding-left: 10px;
@@ -519,14 +521,14 @@
     display: flex;
     justify-content: space-between;
     padding: 4px;
+    width:100%
   }
   #sec {
     display: none;
   }
   
   #hb {
-    display: block;
-    border: 0px solid black;
+   display:none;
   }
   /* #lh {
     display: none;
@@ -574,8 +576,7 @@
   }
  
   #hb {
-    display: block;
-    border: 0px solid black;
+   display:none
   }
   /* #lh {
     display: none;

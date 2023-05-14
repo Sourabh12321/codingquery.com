@@ -1365,10 +1365,13 @@ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   width: 90%;
 }
 
+#ls{
+  display: block;
+}
 #Name{
   display:flex;
   gap:5px;
-  width:70%;
+  width:500px;
 }
 #logout{
   border: 2px solid #f48024;
@@ -1389,7 +1392,6 @@ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 .user::after{
   content: " \1F60E";
 }
-
 
 @media (min-width: 120px) and (max-width: 319px) {
   #navbar {
@@ -1448,14 +1450,14 @@ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     display: flex;
     justify-content: space-between;
     padding: 4px;
+    width:100%
   }
   #sec {
     display: none;
   }
   
   #hb {
-    display: block;
-    border: 0px solid black;
+   display:none;
   }
   /* #lh {
     display: none;
@@ -1503,8 +1505,7 @@ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
  
   #hb {
-    display: block;
-    border: 0px solid black;
+   display:none
   }
   /* #lh {
     display: none;

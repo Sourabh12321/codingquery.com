@@ -73,7 +73,7 @@
                 <div class="user-body-filter row">
                     <img src="./image/magniflyingglass.png" alt="search" />
                     <input type="text" class="user-body-filter-searchbox" placeholder="Filter by user"
-                        oninput="search()" />
+                        onchange="search()" />
                 </div>
                 <div class="user-body-sorting row">
                     <div>Reputation</div>
@@ -177,13 +177,13 @@
     let token = sessionStorage.getItem("token")
 
     if (token) {
-        let baseURL = "http://localhost:2000/user/getall";
+        let baseURL = "https://jade-wicked-clownfish.cyclic.app/user/getall";
         let bag = [];
         let getAllUsers = async () => {
             try {
                 let fData = await fetch(baseURL);
                 const users = await fData.json();
-                bag = users; // for searching functionality;
+                bag = [...users]; // for searching functionality;
                 display(users);
             } catch (error) {
                 swal({
@@ -214,10 +214,10 @@
                 let name = document.createElement("h3");
                 name.innerText = user.name;
 
-                let email = document.createElement("p");
-                email.innerText = user.email;
+                // let email = document.createElement("p");
+                // email.innerText = user.email;
 
-                div2.append(name, email);
+                div2.append(name);
                 div1.append(img, div2);
 
                 basket.append(div1);
@@ -225,6 +225,9 @@
         }
 
         async function search() {
+            console.log("alfla")
+            console.log(bag);
+            
             let input = document.querySelector(".user-body-filter-searchbox").value;
             let newData = bag.filter((element) => {
                 return element.name.toLowerCase().includes(input.toLowerCase());

@@ -163,7 +163,7 @@ box-shadow: none;
   justify-content: center;
   align-items: center;
   width:10% ;
-  display: none;
+  display: block;
 }
 #ls button{
   margin-right: 7px;
@@ -172,6 +172,9 @@ box-shadow: none;
   border-radius: 5px;
   background-color:#f48024 ;
   border:none;
+}
+#ls{
+  display: none;
 }
 #Name{
   display:flex;
@@ -198,13 +201,11 @@ box-shadow: none;
   content: " \1F60E";
 }
 
-
 @media (min-width: 120px) and (max-width: 319px) {
   #navbar {
     display: flex;
     justify-content: space-between;
     padding: 4px;
-    width:100%
   }
   #sec {
     display: none;
@@ -264,8 +265,7 @@ box-shadow: none;
   }
   
   #hb {
-    display: block;
-    border: 0px solid black;
+   display:none;
   }
   /* #lh {
     display: none;
@@ -307,15 +307,13 @@ box-shadow: none;
     display: flex;
     justify-content: space-between;
     padding: 4px;
-    width:100%
   }
   #sec {
     display: none;
   }
  
   #hb {
-    display: block;
-    border: 0px solid black;
+   display:none
   }
   /* #lh {
     display: none;

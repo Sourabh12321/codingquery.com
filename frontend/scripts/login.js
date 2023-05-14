@@ -27,7 +27,7 @@ btn.addEventListener("click", (e) => {
 async function lgn(data) {
     // console.log("DATATATAT",data)
     try {
-        let res = await fetch("http://localhost:2000/user/login", {
+        let res = await fetch("https://jade-wicked-clownfish.cyclic.app/user/login", {
             method: "POST",
             body: JSON.stringify(data),
             headers: { "Content-type": "application/json" }
