@@ -3,7 +3,7 @@
 # coding query
 
 Coding query is clone of stakoverflow. Here users can ask any type of coding question and reply to other questions.
-Deployed Link :- thunderous-alpaca-184d8d.netlify.app
+Deployed Link :- https://thunderous-alpaca-184d8d.netlify.app/
 
 
 
