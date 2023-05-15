@@ -118,7 +118,7 @@
     padding: 4px;
   }
   #sec {
-    display: none;
+    display: block;
   }
   
   #hb {
@@ -166,7 +166,7 @@
     padding: 4px;
   }
   #sec {
-    display: none;
+    display: block;
   }
  
   #hb {
@@ -214,7 +214,7 @@
     padding: 4px;
   }
   #sec {
-    display: none;
+    display: block;
   }
   #Name{
     display: none;

@@ -75,17 +75,7 @@ UserRouter.post("/login", async (req, res) => {
   }
 });
 
-UserRouter.get("/set", async (req, res) => {
-  let data = res.cookie("myname", "sourabh");
-  console.log(data);
-  res.send(data);
-})
 
-UserRouter.get("/cookie", async (req, res) => {
-  let data = req.cookies.mycookie;
-  console.log(data);
-  res.send(data);
-})
 
 module.exports = {
   UserRouter,

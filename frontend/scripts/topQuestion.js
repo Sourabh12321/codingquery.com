@@ -2,6 +2,23 @@ document.querySelector(".AskButton").addEventListener("click", () => {
     window.location.href = "query.html"
 })
 
+// Suppose the current URL is "https://example.com/?id=123&name=John"
+const params = new URLSearchParams(window.location.search);
+
+// Get the value of the "id" parameter
+const githubtoken = params.get('token'); // "123"
+const githubname = params.get('Name'); // "123"
+
+
+// Get the value of the "name" parameter
+if(githubname){
+    sessionStorage.setItem("token",githubtoken);
+    sessionStorage.setItem("Name",githubname);
+
+}
+
+
+
 let token = sessionStorage.getItem("token")
 
 let logout = document.querySelector("#logout").addEventListener("click", () => {

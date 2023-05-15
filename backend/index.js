@@ -1,6 +1,6 @@
 const http = require("http");
 const express = require("express");
-const socketio = require("socket.io");
+// const socketio = require("socket.io");
 require("dotenv").config();
 const { UserModel } = require("./models/user.model")
 const { UserRouter } = require("./routes/user.routes");
@@ -13,10 +13,10 @@ const app = express();
 const { v4: uuidv4 } = require("uuid");
 const { githubRouter } = require("./Oauth/github")
 const jwt = require("jsonwebtoken");
-const cookieParser = require("cookie-parser");
+// const cookieParser = require("cookie-parser");
 // Render All Users
 
-app.use(cookieParser());
+// app.use(cookieParser());
 
 const cors = require("cors")
 const { connection } = require("./configs/db");
@@ -31,6 +31,9 @@ const httpServer = http.createServer(app);
 
 app.use(express.static(__dirname + '/frontend'));
 
+app.get("/",(req,res)=>{
+    res.send("home page");
+})
 
 //redis
 const redisClient = redis.createClient({
@@ -52,7 +55,7 @@ var GoogleStrategy = require('passport-google-oauth20').Strategy;
 passport.use(new GoogleStrategy({
     clientID: process.env.google_client_id,
     clientSecret: process.env.google_client_secret,
-    callbackURL: "https://thunderous-alpaca-184d8d.netlify.app/user/auth/google/callback"
+    callbackURL: "https://jade-wicked-clownfish.cyclic.app/auth/google/callback"
 },
     async function  (accessToken, refreshToken, profile, cb) {
         let name =profile._json.name;
@@ -76,15 +79,22 @@ passport.use(new GoogleStrategy({
 
 
 
-app.get('/user/auth/google',
+app.get('/auth/google',
     passport.authenticate('google', { scope: ['profile','email'] }));
 
-app.get('/user/auth/google/callback',
+app.get('/auth/google/callback',
     passport.authenticate('google', { failureRedirect: '/login',session:false }),
     function (req, res) {
         let user = req.user;
-        console.log(user);
-        res.redirect("https://thunderous-alpaca-184d8d.netlify.app/")
+        
+        const tosendtoken = jwt.sign(
+            { email: user.email },
+            process.env.secret,
+            {
+                expiresIn: "7h",
+            }
+        ); 
+        res.redirect(`https://thunderous-alpaca-184d8d.netlify.app/frontend/topquestions?token=${tosendtoken}&Name=${user.name}`)
         // Successful authentication, redirect home.
         // res.redirect('/');
     });
@@ -127,11 +137,17 @@ app.get("/auth/github", async (req, res) => {
             password: uuidv4(),
         };
         console.log(user);
-        const isUserpresent = await UserModel.find({ email: user.email });
+        const isUserpresent = await UserModel.findOne({ email: user.email });
         console.log(isUserpresent + "data");
         if (isUserpresent) {
-            console.log("hero");
-            res.redirect("https://thunderous-alpaca-184d8d.netlify.app/frontend/topquestions")
+            const tosendtoken = jwt.sign(
+                { email: isUserpresent.email },
+                process.env.secret,
+                {
+                    expiresIn: "7h",
+                }
+            );
+            res.redirect(`https://thunderous-alpaca-184d8d.netlify.app/frontend/topquestions?token=${tosendtoken}&Name=${isUserpresent.name}`)
         } else {
             const userData = new UserModel({ name: user.name, email: user.email, password: user.password });
             await userData.save();
@@ -142,7 +158,7 @@ app.get("/auth/github", async (req, res) => {
                     expiresIn: "7h",
                 }
             );
-            res.redirect("https://thunderous-alpaca-184d8d.netlify.app/frontend/topquestions")
+            res.redirect(`https://thunderous-alpaca-184d8d.netlify.app/frontend/topquestions?token=${tosendtoken}&Name=${user.name}`)
             // save the user details in the database here
             // res.send({
             //     msg: "Github authentication successful!",
