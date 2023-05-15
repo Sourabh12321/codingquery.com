@@ -52,7 +52,7 @@ var GoogleStrategy = require('passport-google-oauth20').Strategy;
 passport.use(new GoogleStrategy({
     clientID: process.env.google_client_id,
     clientSecret: process.env.google_client_secret,
-    callbackURL: "http://localhost:2000/user/auth/google/callback"
+    callbackURL: "https://thunderous-alpaca-184d8d.netlify.app/user/auth/google/callback"
 },
     async function  (accessToken, refreshToken, profile, cb) {
         let name =profile._json.name;
@@ -84,7 +84,7 @@ app.get('/user/auth/google/callback',
     function (req, res) {
         let user = req.user;
         console.log(user);
-        res.redirect("https://astounding-tarsier-f5de8a.netlify.app/")
+        res.redirect("https://thunderous-alpaca-184d8d.netlify.app/")
         // Successful authentication, redirect home.
         // res.redirect('/');
     });
@@ -131,7 +131,6 @@ app.get("/auth/github", async (req, res) => {
         console.log(isUserpresent + "data");
         if (isUserpresent) {
             console.log("hero");
-            sessionStorage.setItem("Name",isUserpresent[0].name);
             res.redirect("https://thunderous-alpaca-184d8d.netlify.app/frontend/topquestions")
         } else {
             const userData = new UserModel({ name: user.name, email: user.email, password: user.password });
