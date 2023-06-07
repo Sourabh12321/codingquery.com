@@ -16,6 +16,8 @@ Deployed Link :- https://thunderous-alpaca-184d8d.netlify.app/
 → Node Modules: mongoose | bcrypt | cors | dotenv | jsonwebtoken | nodemon | socket.io | passport | node-fetch | redis | moment | uuid
 
 # API end points
+
+
 1) POST /user/register - to register
 2) POST /user/login - to login
 3) GET /auth/google/callback - for Google Outh
