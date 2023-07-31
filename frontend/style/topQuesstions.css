@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0px;
   padding: 0px;
 }
@@ -31,6 +31,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -71,6 +72,7 @@
   padding: 10px 0px;
   color: #a0a5ab;
 }
+
 .home:hover {
   font-weight: 700;
   color: black;
@@ -81,20 +83,21 @@
   color: #a0a5ab;
 }
 
-.ques > p:hover {
+.ques>p:hover {
   font-weight: 700;
   color: black;
 }
+
 .ques .fa-earth-americas {
   color: black;
 }
 
-.subparts > p {
+.subparts>p {
   padding: 10px 0px 10px 30px;
   color: #a0a5ab;
 }
 
-.subparts > p:hover {
+.subparts>p:hover {
   font-weight: 700;
   color: black;
 }
@@ -109,7 +112,7 @@
   display: flex;
 }
 
-.starImage > p {
+.starImage>p {
   /* border: 2px solid black; */
   padding-top: 5px;
   padding-left: 5px;
@@ -117,6 +120,7 @@
   margin-top: 10px;
   color: #a0a5ab;
 }
+
 .fa-solid {
   /* border: 2px solid black; */
   padding-top: 17px;
@@ -140,7 +144,7 @@
   padding: 10px;
 }
 
-.first-section > h1 {
+.first-section>h1 {
   /* padding: 20px 0px 0px 20px; */
   font-weight: 400;
   font-size: 30px;
@@ -160,6 +164,27 @@
 }
 
 .AskButton:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  cursor: pointer;
+}
+
+#chat {
+  padding: 10px;
+  background-color: rgb(10, 149, 255);
+  color: white;
+  border-radius: 6px;
+  border: 2px solid rgb(10, 149, 255);
+
+}
+
+#chat>a {
+  text-decoration: none;
+  color: white;
+  transition: all 0.5s;
+}
+
+#chat {
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
     rgba(0, 0, 0, 0.22) 0px 10px 10px;
   cursor: pointer;
@@ -209,6 +234,7 @@
   width: 80%;
   margin-left: 10px;
 }
+
 .questionTitle {
   /* border: 2px solid red; */
   margin-top: 8px;
@@ -244,7 +270,7 @@
   color: rgb(89, 129, 177);
 }
 
-.boxOne > img {
+.boxOne>img {
   border: 1px solid rgb(220, 215, 215);
   width: 300px;
   margin-left: 0px;
@@ -252,20 +278,22 @@
   height: 100%;
 }
 
-@media screen and (min-width:768px) and (max-width:1440px){
-  .boxOne{
+@media screen and (min-width:768px) and (max-width:1440px) {
+  .boxOne {
     display: none;
   }
-  .topQuestion{
+
+  .topQuestion {
     margin: auto;
   }
 }
 
-@media screen and (min-width:576px) and (max-width:767px){
-  .boxOne{
+@media screen and (min-width:576px) and (max-width:767px) {
+  .boxOne {
     display: none;
   }
-  .topQuestion{
+
+  .topQuestion {
     margin: auto;
   }
 }
@@ -436,15 +464,17 @@
   height: auto;
 
 } */
-#ls{
+#ls {
   display: none;
 }
-#Name{
-  display:flex;
-  gap:5px;
-  width:500px;
+
+#Name {
+  display: flex;
+  gap: 5px;
+  width: 500px;
 }
-#logout{
+
+#logout {
   border: 2px solid #f48024;
   padding-left: 10px;
   padding-right: 10px;
@@ -452,7 +482,8 @@
   color: #f48024;
   font-weight: 600;
 }
-.user{
+
+.user {
   border: 2px solid #f48024;
   padding-left: 10px;
   padding-right: 10px;
@@ -460,7 +491,8 @@
   color: #f48024;
   font-weight: 600;
 }
-.user::after{
+
+.user::after {
   content: " \1F60E";
 }
 
@@ -470,155 +502,237 @@
     justify-content: space-between;
     padding: 4px;
   }
-  #sec {
-    display: block;
+  .second-top {
+    display: none;
+    float: right;
+    margin-top: 30px;
+    margin-right: 0px;
   }
-  #Name{
+  #sec {
     display: none;
   }
+
+  #Name {
+    display: none;
+  }
+
   #hb {
     display: block;
     border: 0px solid black;
   }
+
   /* #lh {
     display: none;
   } */
   #contents {
     display: none;
   }
+
   #hb:hover #contents {
     /* display:block; */
     display: flex;
     flex-direction: column;
   }
+
   #ls {
     border: 0px solid black;
   }
+
   .top-section {
     background-image: none;
     /* background-color: red; */
   }
+
   #parents {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
   }
+
   .footer {
     display: flex;
     flex-wrap: wrap;
   }
-   #logout{
-    display:none;
+
+  #logout {
+    display: none;
   }
- 
+
 
 }
 
 @media (min-width: 320px) and (max-width: 600px) {
-  #Name{
-    display:none;
+  #Name {
+    display: none;
   }
+  .second-top {
+    display: none;
+    float: right;
+    margin-top: 30px;
+    margin-right: 0px;
+  }
+  .first-section {
+    /* border: 2px solid blue; */
+    display: block;
+    justify-content: space-between;
+    /* height: 200px; */
+    padding: 10px;
+  }
+  .AskButton{
+    margin:10px 10px;
+  }
+  #hidenav{
+    display: none;
+  }
+
   #navbar {
     display: flex;
     justify-content: space-between;
     padding: 4px;
-    width:100%
+    width: 100%
   }
+
   #sec {
-    display: block;
+    display: none;
   }
-  
+
   #hb {
-   display:none;
+    display: none;
   }
+
   /* #lh {
     display: none;
   } */
   #contents {
     display: none;
   }
+
   #hb:hover #contents {
     /* display:block; */
     display: flex;
     flex-direction: column;
   }
+
   #ls {
     border: 0px solid black;
   }
+
   .top-section {
     background-image: none;
     /* background-color: red; */
   }
+
   #parents {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
   }
+
   .footer {
     display: flex;
     flex-wrap: wrap;
   }
-   #logout{
-    display:none;
+
+  #logout {
+    display: none;
   }
+
   /* #Name{
     border:0px solid red;
   margin-left: 30%;
 } */
 }
+#ham-nav{
+  position:fixed;
+  top:0;
+  left:100%;
+  width:100%;
+  min-height: 100vh;
+  display:block;
+  z-index: 98;
+  background-color: rgb(195, 195, 197);
+  padding-top: 120px;
+  margin-top: 70px;
+
+}
+#ham-nav.is-active{
+  left:0;
+}
+#ham-nav h1 a {
+  display:block;
+  width:100%;
+  max-width: 200px;
+  margin: 0 auto 16px;
+  text-align: center;
+  padding:12px 16px;
+  background-color: white;
+  color:red;
+  text-decoration: none;
+}
 
 @media (min-width: 601px) and (max-width: 1000px) {
-  
+
   #navbar {
     display: flex;
     justify-content: space-between;
     padding: 4px;
   }
+  .hamburger{
+    display:block;
+  }
   #sec {
-    display: block;
+    display: none;
   }
- 
+
   #hb {
-   display:none
+    display: none
   }
-  
+
   #contents {
     display: none;
   }
+
   #hb:hover #contents {
     /* display:block; */
     display: flex;
     flex-direction: column;
   }
+
   #ls {
     border: 0px solid black;
   }
+
   .top-section {
     background-image: none;
     /* background-color: red; */
   }
+
   #parents {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
+
   .footer {
     display: flex;
     flex-wrap: wrap;
   }
-  #logout{
-    display:none;
+
+  #logout {
+    display: none;
   }
-  #Name{
-   display:none
-}
+
+  #Name {
+    display: none
+  }
 }
 
 @media (min-width: 100px) and (max-width: 760px) {
-  #sec{
-    display:flex;
+  #sec {
+    display: none;
     flex-wrap: wrap;
-    
+
     margin-left: 30px;
   }
-  #lh{
+
+  #lh {
     display: none;
   }
 

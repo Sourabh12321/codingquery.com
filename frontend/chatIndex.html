@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/f584623432.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../style/chat.css">
+    <link rel="stylesheet" href="./style/chatIndex.css">
     <title>Coding query</title>
 
 </head>
@@ -14,25 +14,19 @@
 <body>
     <div class="join-container">
         <header class="join-header">
-            <h1>Coding query <i class="fa-brands fa-airbnb" style="rotate: 90deg;"></i></h1>
+            <h1>Coding query <i class="fa-brands fa-airbnb" style="transform: rotate(90deg);"></i></h1>
         </header>
         <main class="join-main">
-            <form action="chat.html">
+            <form action="./chat.html">
                 <div class="form-control">
                     <label for="username">Participants</label>
                     <input type="text" name="username" id="username" placeholder="Enter username..." required />
-                </div>
-                <div class="form-control">
-                    <label for="room">Room</label>
-                    <select name="room" id="room">
-                        <option value="Private">Private</option>
-                        <option value="Group">Group</option>
-                    </select>
                 </div>
                 <button type="submit" class="btn">Join Room</button>
             </form>
         </main>
     </div>
+    
 
 </body>
 

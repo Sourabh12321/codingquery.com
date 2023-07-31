@@ -21,16 +21,20 @@
     <i class="preloader-icon fa fa-spinner"></i>
     <!-- this is the preloader -->
   </div>
+  <div id="ham-nav">
+    <h1><a href="../index.html">Home</a></h1>
+    <h1><a href="./query.html">Query</a></h1>
+    <h1><a href="./topQuestions.html">Top Questions</a></h1>
+    <h1><a href="./users.html">Users</a></h1>
+</div>
 
   <div id="navbar">
-    <div id="hb">
-      <img src="./image/hamburger.png" alt="">
-      <div id="contents">
-        <a href="./topQuestions.html"> <button>Top Question</button></a>
-        <a href="./query.html"> <button>Query</button></a>
-        <a href="./users.html"> <button>Users</button></a>
-      </div>
+    <div>
+      <button class="hamburger">
+        <div class="bar"></div>
+      </button>
     </div>
+    
 
     <div id="lh">
       <!-- <img src="../image/hamburger.png" id="hanb" alt=""> -->
@@ -43,7 +47,7 @@
         <a href="./query.html"> <button>Query</button></a>
         <a href="./users.html"> <button>Users</button></a>
       </div>
-      
+
     </div>
 
     <div id="ls">
@@ -126,7 +130,7 @@
           <p>Privacy Policy</p>
           <p>Terms of Service</p>
       </div>
-      <div>
+      <div id="hidenav">
         <h2>PRODUCTS</h2>
         <p>ABOUT US</p>
         <p>ADVERTISE WITH US</p>
@@ -140,9 +144,7 @@
         <p>SCHEDULE A SERVICE</p>
 
       </div>
-      <div>
-
-
+      <div id="hidenav">
         <h2>CUSTOMER SERVICE</h2>
         <p>VISIT OUR SUPPORT CENTER</p>
         <p>CUSTOMER SERVICE</p>
@@ -172,6 +174,14 @@
     </div>
   </div>
   <script>
+    window.onload = function () {
+      const hambtn1 = document.querySelector("#ham-nav");
+      const hambtn = document.querySelector(".hamburger");
+      hambtn.addEventListener("click", () => {
+        hambtn.classList.toggle("is-active");
+        hambtn1.classList.toggle("is-active");
+      })
+    }
     // Hide the preloader when the page is loaded
     window.addEventListener("load", () => {
       document.querySelector("body").classList.add("loaded");

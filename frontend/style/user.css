@@ -187,6 +187,9 @@ body {
         width: 80%;
         margin-left: 10%;
     }
+    #hidenav{
+      display: none;
+    }
 
     .first {
         flex-wrap: wrap;
@@ -217,6 +220,9 @@ body {
     #user-body {
         width: 80%;
         margin-left: 8%;
+    }
+    #hidenav{
+      display: none;
     }
 
     .first {
@@ -308,17 +314,35 @@ body {
     display: flex;
 }
 
-#ls{
-  display: none;
+/* #ls{
+  display: flex;
+  align-items: center;
+  display: block;
 }
+#ls button{
+  margin-right: 7px;
+  padding:10px;
+  color:white;
+  border-radius: 5px;
+  background-color:#f48024 ;
+  border:none;
+}
+#ls{
+  display: block;
+} */
 #Name{
   display:flex;
   gap:5px;
-  width:500px;
+  width:40%;
+}
+#Name>p{
+  width:60%;
+
 }
 #logout{
   border: 2px solid #f48024;
   padding-left: 10px;
+  width: 40%;
   padding-right: 10px;
   border-radius: 8px;
   color: #f48024;
@@ -342,11 +366,32 @@ body {
     justify-content: space-between;
     padding: 4px;
   }
+  #Name{
+    display:flex;
+    gap:5px;
+    width:60%;
+  }
+  #Name>p{
+    width:60%;
+  
+  }
+  #logout{
+    border: 2px solid #f48024;
+    padding-left: 10px;
+    width: 40%;
+    padding-right: 10px;
+    border-radius: 8px;
+    color: #f48024;
+    font-weight: 600;
+  }
+  #hidenav{
+    display: none;
+  }
   #sec {
-    display: block;
+    display: none;
   }
   #Name{
-    display: none;
+    display: block;
   }
   #hb {
     display: block;
@@ -363,9 +408,10 @@ body {
     display: flex;
     flex-direction: column;
   }
-  #ls {
+  /* #ls {
+    display: block;
     border: 0px solid black;
-  }
+  } */
   .top-section {
     background-image: none;
     /* background-color: red; */
@@ -379,15 +425,15 @@ body {
     flex-wrap: wrap;
   }
    #logout{
-    display:none;
+    display:block;
   }
  
 
 }
 
-@media (min-width: 320px) and (max-width: 600px) {
+@media (min-width: 320px) and (max-width: 1000px) {
   #Name{
-    display:none;
+    display:block;
   }
   #navbar {
     display: flex;
@@ -395,8 +441,30 @@ body {
     padding: 4px;
     width:100%
   }
+  #Name{
+    display:flex;
+    gap:5px;
+    width:70%;
+    justify-content: space-evenly;
+  }
+  #Name>p{
+    width:60%;
+    margin-right: 5px;
+  
+  }
+  #logout{
+    border: 2px solid #f48024;
+    /* padding-right: 120px; */
+    width: 70%;
+    text-align: center;
+    /* padding: 30px; */
+    margin-left: 20px;
+    border-radius: 8px;
+    color: #f48024;
+    font-weight: 600;
+  }
   #sec {
-    display: block;
+    display: none;
   }
   
   #hb {
@@ -413,9 +481,10 @@ body {
     display: flex;
     flex-direction: column;
   }
-  #ls {
+  /* #ls {
+    display: block;
     border: 0px solid black;
-  }
+  } */
   .top-section {
     background-image: none;
     /* background-color: red; */
@@ -429,7 +498,7 @@ body {
     flex-wrap: wrap;
   }
    #logout{
-    display:none;
+    display:block;
   }
   /* #Name{
     border:0px solid red;
@@ -438,14 +507,43 @@ body {
 }
 
 @media (min-width: 601px) and (max-width: 1000px) {
+  #hidenav{
+    display: none;
+  }
+  .hamburger{
+    display:block;
+  }
+  #Name{
+    width:60%;
+    /* display: block; */
+    display:flex;
+    gap:5px;
+    
+    justify-content: space-evenly;
+  }
+  #Name>p{
+    width:50%;
+    margin-right: 5px;
   
+  }
+  #logout{
+    border: 2px solid #f48024;
+    /* padding-right: 120px; */
+    width: 40%;
+    text-align: center;
+    /* padding: 30px; */
+    /* margin-left: 20px; */
+    border-radius: 8px;
+    color: #f48024;
+    font-weight: 600;
+  }
   #navbar {
     display: flex;
     justify-content: space-between;
     padding: 4px;
   }
   #sec {
-    display: block;
+    display: none;
   }
  
   #hb {
@@ -460,9 +558,10 @@ body {
     display: flex;
     flex-direction: column;
   }
-  #ls {
+  /* #ls {
+    display:block;
     border: 0px solid black;
-  }
+  } */
   .top-section {
     background-image: none;
     /* background-color: red; */
@@ -476,22 +575,23 @@ body {
     flex-wrap: wrap;
   }
   #logout{
-    display:none;
+    display:block;
   }
   #Name{
-   display:none
+   display:block
 }
 }
 
 @media (min-width: 100px) and (max-width: 760px) {
   #sec{
-    display:flex;
+    display:none;
     flex-wrap: wrap;
     
     margin-left: 30px;
   }
   #lh{
-    display: none;
+    display: block;
+    margin-right: 10px;
   }
 
 }

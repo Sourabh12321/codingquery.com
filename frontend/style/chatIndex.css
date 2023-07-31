@@ -1,0 +1,78 @@
+/* Reset some default styles */
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	line-height: 1.6;
+	background-color: #f0f0f0;
+}
+
+.join-container {
+	max-width: 400px;
+	margin: 0 auto;
+	padding: 20px;
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.join-header {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.join-header h1 {
+	font-size: 24px;
+	color: #333;
+}
+
+.join-main {
+	text-align: center;
+}
+
+.form-control {
+	margin-bottom: 20px;
+}
+
+.form-control label {
+	display: block;
+	font-size: 16px;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+.form-control input,
+.form-control select {
+	width: 100%;
+	padding: 10px;
+	font-size: 16px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+.btn {
+	display: inline-block;
+	background-color: #007bff;
+	color: #fff;
+	padding: 10px 20px;
+	font-size: 16px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+	background-color: #0056b3;
+}
+
+/* Additional styles for font-awesome icon */
+.fa-brands {
+	font-size: 24px;
+	vertical-align: middle;
+	margin-left: 5px;
+}

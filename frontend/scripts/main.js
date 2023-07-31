@@ -1,51 +1,75 @@
-const socket = io("http://localhost:2000",{transports :["websocket"]});
+const socket = io("http://localhost:2000", { transports: ["websocket"] });
 
-const chatForm = document.getElementById("chat-form");
-const chatmessages =document.querySelector(".chat-messages");
-const user_name = document.querySelector("#user-name");
+const chatForm = document.getElementById("chat");
+const chatmessages = document.getElementById("messages");
+const leftbutton = document.getElementById("left");
+const user_name = document.querySelector(".chat-header h1");
+
+leftbutton.addEventListener("click",()=>{
+    window.location.href = "../index.html"
+})
+
+const username = sessionStorage.getItem("Name");
+console.log(username);
 
 
-const url = new URLSearchParams(window.location.search);
-const username = url.get("username");
-const room = url.get("room")
 
-console.log(username,room);
 user_name.innerText = username;
 
-socket.emit("joinroom",{username,room});
+console.log(username);
+socket.emit("joinRoom", { username });
 
-socket.emit("msg","one user in connected");
+socket.on("message", (message) => {
+  console.log(message);
+  if (message.username === "system") {
+    // Handle system messages (welcome and user joined)
+    outputSystemMessage(message);
+  } else {
+    // Handle regular chat messages
+    outputChatMessage(message);
+  }
+  chatmessages.scrollTop = chatmessages.scrollHeight;
+});
 
-socket.on("msg",(message)=>{
-    console.log(message);
-    outputmsg(message);
-    chatmessages.scrollTop= chatmessages.scrollHeight;
-})
+chatForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const message = e.target.elements.msg.value;
+  let msg = { username: username, msg: message };
+  console.log(msg);
+  socket.emit("chatmessage", msg);
+  e.target.elements.msg.value = ""; // Clear the input field after sending the message
+});
 
-chatForm.addEventListener("submit",(e)=>{
-    e.preventDefault();
-    const msg = e.target.elements.msg.value;
-    socket.emit("chatmessage",msg);
-})
+function outputSystemMessage(message) {
+  let div = document.createElement("div");
+  div.classList.add("message");
+  div.classList.add("system-message");
+  div.classList.add("left"); 
+  const para = document.createElement("p");
+  para.classList.add("text");
+  para.innerText = message.text+" ";
+  para.innerHTML += `<span>${message.time}</span>`
 
-function outputmsg(message){
-    let div = document.createElement("div");
-    div.classList.add("message");
+  div.appendChild(para);
+  chatmessages.appendChild(div);
+}
 
-    let p = document.createElement("p");
-    p.classList.add("meta");
+function outputChatMessage(message) {
+  let div = document.createElement("div");
+  div.classList.add("message");
+  div.classList.add("right");
+  let p = document.createElement("p");
+  p.classList.add("meta");
 
-    p.innerText = message.username;
-    p.innerHTML += `<span>${message.time}</span>`;
+  p.innerText = message.username +" ";
+  p.innerHTML += `<span>${message.time}</span>`;
 
+  div.appendChild(p);
 
-    div.appendChild(p);
+  const para = document.createElement("p");
+  para.classList.add("text");
+  para.innerText = message.text;
 
-    const para = document.createElement("p");
-
-    para.classList.add("text");
-    para.innerText = message.text;
-
-    div.appendChild(para);
-    chatmessages.appendChild(div);
+  div.appendChild(para);
+  chatmessages.appendChild(div);
 }

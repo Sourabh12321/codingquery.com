@@ -977,7 +977,7 @@ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 /*----------------------Media Queries-------------------------*/
 @media screen and (max-width: 1100px) {
 #Name{
-    display:none;
+    display:block;
   }
   
   .plansOfTeams{
@@ -1002,7 +1002,7 @@ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 @media screen and (max-width: 810px) {
   #Name{
-    display:none;
+    display:block;
   }
   .navbar-brand {
     flex: initial;
@@ -1155,7 +1155,7 @@ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 @media screen and (max-width: 830px) {
   #Name{
-    display:none;
+    display:block;
   }
   .footer-content {
     flex-wrap: wrap;
@@ -1167,7 +1167,7 @@ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 @media screen and (max-width: 500px) {
   #Name{
-    display:none;
+    display:block;
   }
   .questions-div-grid {
     padding: 0;
@@ -1400,10 +1400,17 @@ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     padding: 4px;
   }
   #sec {
-    display: block;
+    display: none;
   }
   #Name{
-    display: none;
+    display: flex;
+    width:20%;
+  }
+  #Name>p{
+    width:70%;
+  }
+  #Name>button{
+    width:30%;
   }
   #hb {
     display: block;
@@ -1421,6 +1428,8 @@ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     flex-direction: column;
   }
   #ls {
+    display:none;
+    margin-right: 20px;
     border: 0px solid black;
   }
   .top-section {
@@ -1436,7 +1445,7 @@ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     flex-wrap: wrap;
   }
    #logout{
-    display:none;
+    display:block;
   }
  
 
@@ -1444,7 +1453,17 @@ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
 @media (min-width: 320px) and (max-width: 600px) {
   #Name{
-    display:none;
+    display: flex;
+    width:60%;
+  }
+  #hidenav{
+    display: none;
+  }
+  #Name>p{
+    width:70%;
+  }
+  #Name>button{
+    width:30%;
   }
   #navbar {
     display: flex;
@@ -1453,7 +1472,7 @@ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     width:100%
   }
   #sec {
-    display: block;
+    display: none;
   }
   
   #hb {
@@ -1471,6 +1490,7 @@ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     flex-direction: column;
   }
   #ls {
+    margin-right: 20px;
     border: 0px solid black;
   }
   .top-section {
@@ -1486,7 +1506,7 @@ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     flex-wrap: wrap;
   }
    #logout{
-    display:none;
+    display:block;
   }
   /* #Name{
     border:0px solid red;
@@ -1502,7 +1522,7 @@ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     padding: 4px;
   }
   #sec {
-    display: block;
+    display: none;
   }
  
   #hb {
@@ -1518,6 +1538,8 @@ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     flex-direction: column;
   }
   #ls {
+    display:block;
+    margin-right: 20px;
     border: 0px solid black;
   }
   .top-section {
@@ -1533,22 +1555,30 @@ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     flex-wrap: wrap;
   }
   #logout{
-    display:none;
+    display:block;
   }
   #Name{
-   display:none
-}
+    display: flex;
+    width:40%;
+    margin:auto;
+  }
+  #Name>p{
+    width:70%;
+  }
+  #Name>button{
+    width:30%;
+  }
 }
 
 @media (min-width: 100px) and (max-width: 760px) {
   #sec{
     display:flex;
     flex-wrap: wrap;
-    
+    display:none;
     margin-left: 30px;
   }
   #lh{
-    display: none;
+    display: block;
   }
 
 }

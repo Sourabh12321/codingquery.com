@@ -1,11 +1,12 @@
 const http = require("http");
 const express = require("express");
-// const socketio = require("socket.io");
+const socketio = require("socket.io");
 require("dotenv").config();
 const { UserModel } = require("./models/user.model")
 const { UserRouter } = require("./routes/user.routes");
 const passport = require("passport");
 // const googleStrategy = require("passport-google-oauth20").Strategy
+const { Server } = require("socket.io")
 
 // const {passport}=require("./oauth(google)");
 const redis = require("redis");
@@ -21,19 +22,53 @@ const jwt = require("jsonwebtoken");
 const cors = require("cors")
 const { connection } = require("./configs/db");
 const { questionRouter } = require("./Router/question.router");
-const { formatmessage } = require("./utils/message")
-const { userjoin, getcurrentuser, userleave, getroomusers } = require("./utils/users")
+const { fmessage } = require("./utils/message")
+const { userjoin, userleave } = require("./utils/users")
 app.use(cors());
 
 // app.use(cookieParser());
 app.use(express.json())
 const httpServer = http.createServer(app);
 
+
+
+
 app.use(express.static(__dirname + '/frontend'));
 
-app.get("/",(req,res)=>{
+app.get("/", (req, res) => {
     res.send("home page");
 })
+
+
+const io = socketio(httpServer);
+
+io.on("connection", (socket) => {
+    console.log("One user is connected");
+
+    socket.on("joinRoom", ({ username }) => {
+        userjoin(socket.id, username);
+        console.log("join");
+        socket.emit("message", fmessage("system", `Welcome to our chat, ${username}!`));
+        socket.broadcast.emit("message", fmessage("system", `${username} has joined the chat`));
+    });
+
+    socket.on("chatmessage", (msg) => {
+        io.emit("message", fmessage(msg.username, msg.msg));
+    });
+
+    socket.on("disconnect", () => {
+        const user = userleave(socket.id);
+        if (user) {
+            io.emit("message", fmessage("system", `${user.username} has left the chat`));
+        }
+        console.log("User has left");
+    });
+});
+
+
+
+
+
 
 //redis
 const redisClient = redis.createClient({
@@ -57,20 +92,20 @@ passport.use(new GoogleStrategy({
     clientSecret: process.env.google_client_secret,
     callbackURL: "https://jade-wicked-clownfish.cyclic.app/auth/google/callback"
 },
-    async function  (accessToken, refreshToken, profile, cb) {
-        let name =profile._json.name;
+    async function (accessToken, refreshToken, profile, cb) {
+        let name = profile._json.name;
         let email = profile._json.email;
         let verified = profile._json.email_verified;
-        if(verified){
-            let user = await UserModel.findOne({email:email});
-            if(user){
-                return cb(null,user)
+        if (verified) {
+            let user = await UserModel.findOne({ email: email });
+            if (user) {
+                return cb(null, user)
             }
-            let newUser = new UserModel({name:name,email:email,password:uuidv4()});
+            let newUser = new UserModel({ name: name, email: email, password: uuidv4() });
             await newUser.save();
-            return cb(null,newUser);
+            return cb(null, newUser);
         }
-    
+
         // User.findOrCreate({ googleId: profile.id }, function (err, user) {
         //   return cb(err, user);
         // });
@@ -80,20 +115,20 @@ passport.use(new GoogleStrategy({
 
 
 app.get('/auth/google',
-    passport.authenticate('google', { scope: ['profile','email'] }));
+    passport.authenticate('google', { scope: ['profile', 'email'] }));
 
 app.get('/auth/google/callback',
-    passport.authenticate('google', { failureRedirect: '/login',session:false }),
+    passport.authenticate('google', { failureRedirect: '/login', session: false }),
     function (req, res) {
         let user = req.user;
-        
+
         const tosendtoken = jwt.sign(
             { email: user.email },
             process.env.secret,
             {
                 expiresIn: "7h",
             }
-        ); 
+        );
         res.redirect(`https://thunderous-alpaca-184d8d.netlify.app/frontend/topquestions?token=${tosendtoken}&Name=${user.name}`)
         // Successful authentication, redirect home.
         // res.redirect('/');

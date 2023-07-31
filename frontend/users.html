@@ -26,14 +26,17 @@
         <!-- this is the preloader -->
         <i class="preloader-icon fa fa-spinner"></i>
     </div>
+    <div id="ham-nav">
+        <h1><a href="../index.html">Home</a></h1>
+        <h1><a href="./query.html">Query</a></h1>
+        <h1><a href="./topQuestions.html">Top Questions</a></h1>
+        <h1><a href="./users.html">Users</a></h1>
+    </div>
     <div id="navbar">
-        <div id="hb">
-            <img src="./image/hamburger.png" alt="">
-            <div id="contents">
-                <a href="./topQuestions.html"> <button>Top Question</button></a>
-                <a href="./query.html"> <button>Query</button></a>
-                <a href="./users.html"> <button>Users</button></a>
-            </div>
+        <div>
+            <button class="hamburger">
+                <div class="bar"></div>
+            </button>
         </div>
 
         <div id="lh">
@@ -47,12 +50,10 @@
                 <a href="./query.html"> <button>Query</button></a>
                 <a href="./users.html"> <button>Users</button></a>
             </div>
-            
+
         </div>
 
         <div id="ls">
-            <!-- <a href="register.html">Sign up</a>
-          <a href="login.html">Login</a> -->
             <button> <a href="register.html">Sign up</a> </button>
             <button> <a href="login.html"> Login</a></button>
         </div>
@@ -111,7 +112,7 @@
                     <p>Privacy Policy</p>
                     <p>Terms of Service</p>
             </div>
-            <div>
+            <div id="hidenav">
                 <h2>PRODUCTS</h2>
                 <p>ABOUT US</p>
                 <p>ADVERTISE WITH US</p>
@@ -125,7 +126,7 @@
                 <p>SCHEDULE A SERVICE</p>
 
             </div>
-            <div>
+            <div id="hidenav">
 
 
                 <h2>CUSTOMER SERVICE</h2>
@@ -173,6 +174,7 @@
     // let baseURL = "http://localhost:2000"
 
     let token = sessionStorage.getItem("token")
+    
 
     if (token) {
         let baseURL = "https://jade-wicked-clownfish.cyclic.app/user/getall";
@@ -225,7 +227,7 @@
         async function search() {
             console.log("alfla")
             console.log(bag);
-            
+
             let input = document.querySelector(".user-body-filter-searchbox").value;
             let newData = bag.filter((element) => {
                 return element.name.toLowerCase().includes(input.toLowerCase());
