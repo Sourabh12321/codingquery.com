@@ -1,6 +1,11 @@
 // Almost out of storage … 
 // If you run out, you can't create or edit files, send or receive email on Gmail, or back up to Google Photos.
-
+let homee = document.querySelector("#homeLogo");
+homee.addEventListener("click", (e) => {
+    e.preventDefault();
+    console.log("click");
+    window.location.href = "https://thunderous-alpaca-184d8d.netlify.app/"
+})
 function sign_up(){
     var inputs = document.querySelectorAll('.input_form_sign');
   document.querySelectorAll('.ul_tabs > li')[0].className=""; 

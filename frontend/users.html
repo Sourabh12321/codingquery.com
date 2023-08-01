@@ -27,7 +27,7 @@
         <i class="preloader-icon fa fa-spinner"></i>
     </div>
     <div id="ham-nav">
-        <h1><a href="../index.html">Home</a></h1>
+        <h1 id="homeA"><a href="">Home</a></h1>
         <h1><a href="./query.html">Query</a></h1>
         <h1><a href="./topQuestions.html">Top Questions</a></h1>
         <h1><a href="./users.html">Users</a></h1>
@@ -42,7 +42,7 @@
         <div id="lh">
             <!-- <img src="../image/hamburger.png" id="hanb" alt=""> -->
 
-            <a href="../index.html"><img style="width: 130px;" src="./image/orangelogo.png" alt="logo"></a>
+            <a href=""><img id="homeLogo" style="width: 130px;" src="./image/orangelogo.png" alt="logo"></a>
         </div>
         <div id="sec">
             <div id="navbtn">
@@ -171,13 +171,33 @@
 <!-- <script type="module" src="../script/navbar.js"></script> -->
 
 <script>
+    window.onload = function () {
+        const hambtn1 = document.querySelector("#ham-nav");
+        const hambtn = document.querySelector(".hamburger");
+        hambtn.addEventListener("click", () => {
+            hambtn.classList.toggle("is-active");
+            hambtn1.classList.toggle("is-active");
+        })
+    }
     // let baseURL = "http://localhost:2000"
 
     let token = sessionStorage.getItem("token")
-    
+    let home = document.querySelector("#homeA");
+    home.addEventListener("click", (e) => {
+        e.preventDefault();
+        console.log("click");
+        window.location.href = "https://thunderous-alpaca-184d8d.netlify.app/"
+    })
+    let homee = document.querySelector("#homeLogo");
+    homee.addEventListener("click", (e) => {
+        e.preventDefault();
+        console.log("click");
+        window.location.href = "https://thunderous-alpaca-184d8d.netlify.app/"
+    })
+
 
     if (token) {
-        let baseURL = "https://jade-wicked-clownfish.cyclic.app/user/getall";
+        let baseURL = "https://codingquery.onrender.com/user/getall";
         let bag = [];
         let getAllUsers = async () => {
             try {
@@ -245,7 +265,7 @@
 
     let logout = document.querySelector("#logout").addEventListener("click", () => {
         sessionStorage.clear();
-        window.location.href = "../index.html"
+        window.location.href = "https://thunderous-alpaca-184d8d.netlify.app/"
     })
 
     if (token) {

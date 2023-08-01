@@ -648,7 +648,7 @@
   min-height: 100vh;
   display:block;
   z-index: 98;
-  background-color: rgb(195, 195, 197);
+  background-color: white;
   padding-top: 120px;
   margin-top: 70px;
 
@@ -664,7 +664,7 @@
   text-align: center;
   padding:12px 16px;
   background-color: white;
-  color:red;
+  color:#f48024;
   text-decoration: none;
 }
 

@@ -15,26 +15,26 @@
 
 <body>
 
-<div id="navbar">
-    
+    <div id="navbar">
 
-    <div id="lh">
-        <!-- <img src="../image/hamburger.png" id="hanb" alt=""> -->
 
-        <a href="../index.html"><img style="width: 130px;" src="../frontend/image/orangelogo.png" alt="logo"></a>
-    </div>
-    <div id="sec">
-        <!-- <div id="navbtn">
+        <div id="lh">
+            <!-- <img src="../image/hamburger.png" id="hanb" alt=""> -->
+
+            <a href=""><img id="homeLogo" style="width: 130px;" src="./image/orangelogo.png" alt="logo"></a>
+        </div>
+        <div id="sec">
+            <!-- <div id="navbtn">
             <a href="./frontend/topQuestions.html"> <button>TopQuestion</button></a>
             <a href="./frontend/query.html"> <button>Query</button></a>
             <a href="./frontend/users.html"> <button>Users</button></a>
         </div> -->
-        <!-- <div>
+            <!-- <div>
             <input id="input" type="text" placeholder="Search Query ">
         </div> -->
-    </div>
+        </div>
 
-    <!-- <div id="ls">
+        <!-- <div id="ls">
        
         <button style="width:100%"> <a href="#">Sign up</a> </button>
         <button> <a href="./login.html"> Login</a></button>
@@ -45,7 +45,7 @@
             <button id="logout">logout</button>
     </div> -->
 
-</div>
+    </div>
 
 
 
@@ -76,7 +76,12 @@
     let signup = document.getElementById("Signup").addEventListener("click", () => {
         register()
     })
-
+    let homee = document.querySelector("#homeLogo");
+    homee.addEventListener("click", (e) => {
+        e.preventDefault();
+        console.log("click");
+        window.location.href = "https://thunderous-alpaca-184d8d.netlify.app/"
+    })
 
     const register = async () => {
         const payload = {
@@ -93,7 +98,7 @@
             });
         }
         else {
-            let data = await fetch("https://jade-wicked-clownfish.cyclic.app/user/register", {
+            let data = await fetch("https://codingquery.onrender.com/user/register", {
                 method: "POST",
                 headers: {
                     "Content-type": "application/json"

@@ -10,28 +10,54 @@ const githubtoken = params.get('token'); // "123"
 const githubname = params.get('Name'); // "123"
 
 
+let chatbtn = document.querySelector("#chat");
+let home = document.querySelector("#homeA");
+home.addEventListener("click", (e) => {
+    e.preventDefault();
+    console.log("click");
+    window.location.href = "https://thunderous-alpaca-184d8d.netlify.app/"
+})
+let homee = document.querySelector("#homeLogo");
+homee.addEventListener("click", (e) => {
+    e.preventDefault();
+    console.log("click");
+    window.location.href = "https://thunderous-alpaca-184d8d.netlify.app/"
+})
+
+
 // Get the value of the "name" parameter
-if(githubname){
-    sessionStorage.setItem("token",githubtoken);
-    sessionStorage.setItem("Name",githubname);
+if (githubname) {
+    sessionStorage.setItem("token", githubtoken);
+    sessionStorage.setItem("Name", githubname);
 
 }
 window.onload = function () {
     const hambtn1 = document.querySelector("#ham-nav");
     const hambtn = document.querySelector(".hamburger");
-    hambtn.addEventListener("click",()=>{
+    hambtn.addEventListener("click", () => {
         hambtn.classList.toggle("is-active");
         hambtn1.classList.toggle("is-active");
     })
-  }
+}
 
 
 let token = sessionStorage.getItem("token")
 
+chatbtn.addEventListener("click", (a) => {
+    a.preventDefault();
+    if (token) {
+        window.location.href = "../frontend/chat.html"
+    } else {
+        swal({
+            title: "Please Login first",
+            icon: "warning",
+        });
+    }
 
+})
 let logout = document.querySelector("#logout").addEventListener("click", () => {
     sessionStorage.clear();
-    window.location.href = "../index.html"
+    window.location.href = "https://thunderous-alpaca-184d8d.netlify.app/"
 })
 
 if (token) {
@@ -42,7 +68,7 @@ if (token) {
 }
 
 async function getData() {
-    let data = await fetch("https://jade-wicked-clownfish.cyclic.app/question/getAllQuestions");
+    let data = await fetch("https://codingquery.onrender.com/question/getAllQuestions");
     let res = await data.json();
     showAllQuestion(res)
 }

@@ -1,4 +1,4 @@
-const socket = io("http://localhost:2000", { transports: ["websocket"] });
+const socket = io("https://codingquery.onrender.com", { transports: ["websocket"] });
 
 const chatForm = document.getElementById("chat");
 const chatmessages = document.getElementById("messages");

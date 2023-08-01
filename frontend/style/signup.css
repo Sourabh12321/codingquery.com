@@ -109,6 +109,13 @@ button:hover {
     background-color: #5a0fcb;
 }
 
+@media (max-width: 768px) {
+  #container {
+      flex-direction: block;
+      width: 80%;
+  }
+}
+
 @media (min-width: 120px) and (max-width: 319px) {
   #navbar {
     display: flex;

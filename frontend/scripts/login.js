@@ -3,6 +3,13 @@
 
 //LOGIN FUNCTIONALITY
 let btn = document.querySelector("#login");
+let homee = document.querySelector("#homeLogo");
+
+homee.addEventListener("click", (e) => {
+    e.preventDefault();
+    console.log("click");
+    window.location.href = "https://thunderous-alpaca-184d8d.netlify.app/"
+})
 btn.addEventListener("click", (e) => {
     
     e.preventDefault()
@@ -27,7 +34,7 @@ btn.addEventListener("click", (e) => {
 async function lgn(data) {
     // console.log("DATATATAT",data)
     try {
-        let res = await fetch("https://jade-wicked-clownfish.cyclic.app/user/login", {
+        let res = await fetch("https://codingquery.onrender.com/user/login", {
             method: "POST",
             body: JSON.stringify(data),
             headers: { "Content-type": "application/json" }

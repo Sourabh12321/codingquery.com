@@ -1,13 +1,25 @@
 let question_div = document.getElementById("question");
 let question_id = localStorage.getItem("question_id");
 
+let home = document.querySelector("#homeA");
+home.addEventListener("click", (e) => {
+  e.preventDefault();
+  console.log("click");
+  window.location.href = "https://thunderous-alpaca-184d8d.netlify.app/"
+})
+let homee = document.querySelector("#homeLogo");
+homee.addEventListener("click", (e) => {
+  e.preventDefault();
+  console.log("click");
+  window.location.href = "https://thunderous-alpaca-184d8d.netlify.app/"
+})
 
 window.onload = function () {
   const hambtn1 = document.querySelector("#ham-nav");
   const hambtn = document.querySelector(".hamburger");
-  hambtn.addEventListener("click",()=>{
-      hambtn.classList.toggle("is-active");
-      hambtn1.classList.toggle("is-active");
+  hambtn.addEventListener("click", () => {
+    hambtn.classList.toggle("is-active");
+    hambtn1.classList.toggle("is-active");
   })
 }
 
@@ -108,7 +120,7 @@ let token = sessionStorage.getItem("token");
 
 let logout = document.querySelector("#logout").addEventListener("click", () => {
   sessionStorage.clear();
-  window.location.href = "../index.html"
+  window.location.href = "https://thunderous-alpaca-184d8d.netlify.app/"
 })
 
 if (token) {
@@ -135,7 +147,7 @@ document.getElementById("submit").addEventListener("click", async () => {
       // console.log(y.email);
       if (x != y.email) {
         let post_question = await fetch(
-          `https://jade-wicked-clownfish.cyclic.app/question/addans`,
+          `https://codingquery.onrender.com/question/addans`,
           {
             method: "POST",
             headers: {
@@ -151,7 +163,7 @@ document.getElementById("submit").addEventListener("click", async () => {
         return swal({
           title: "you cannot answer your own questions",
           icon: "warning",
-      });
+        });
       }
     } catch (error) {
       console.log(error);
@@ -168,7 +180,7 @@ document.getElementById("submit").addEventListener("click", async () => {
 let x = JSON.parse(localStorage.getItem("particularQuestion"));
 let id = x._id;
 async function GetSpecific(id) {
-  let res = await fetch(`https://jade-wicked-clownfish.cyclic.app/question/getAllQuestions`);
+  let res = await fetch(`https://codingquery.onrender.com/question/getAllQuestions`);
   let data = await res.json();
 
   data.forEach((elem) => {

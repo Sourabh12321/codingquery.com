@@ -119,8 +119,12 @@ button:hover {
     height: 40px;
 }
 
-
-
+@media (max-width: 768px) {
+  #container {
+      flex-direction: block;
+      width: 80%;
+  }
+}
 @media (min-width: 120px) and (max-width: 319px) {
   #navbar {
     display: flex;
