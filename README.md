@@ -1,6 +1,6 @@
-# ludicrous-range-5121
 
-# coding query
+
+# Coding Query
 
 Coding query is clone of stakoverflow. Here users can ask any type of coding question and reply to other questions.
 
