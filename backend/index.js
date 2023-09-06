@@ -2,6 +2,8 @@ const http = require("http");
 const express = require("express");
 const socketio = require("socket.io");
 require("dotenv").config();
+const fetch = (...args) =>
+  import("node-fetch").then(({ default: fetch }) => fetch(...args));
 const { UserModel } = require("./models/user.model")
 const { UserRouter } = require("./routes/user.routes");
 const passport = require("passport");
