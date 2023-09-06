@@ -165,7 +165,7 @@ app.get("/auth/github", async (req, res) => {
                 Authorization: `Bearer ${Atoken}`,
             },
         }).then((res) => res.json());
-        console.log(userDetails);
+        console.log({userdetails:userDetails});
         // send the token to the frontend (email is needed because we are using email to authenticate the user to the protected routes)
         const { login, name } = userDetails;
         const user = {
