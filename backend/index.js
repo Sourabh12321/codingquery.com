@@ -143,7 +143,7 @@ app.get('/auth/google/callback',
 
 // ----------------
 
-// -------------------- gihub authentication starts  -------------------------
+// -------------------- gihub authentication starts from here   -------------------------
 app.get("/auth/github", async (req, res) => {
     const { code } = req.query;
     try {
